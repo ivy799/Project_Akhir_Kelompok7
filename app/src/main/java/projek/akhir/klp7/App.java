@@ -5,7 +5,7 @@ package projek.akhir.klp7;
 
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "Hello GLOBE";
     }
 
     public static void main(String[] args) {
