@@ -17,3 +17,9 @@
 
     -fx-fit-height: true;
 }
+
+
+
+#main{
+    -fx-background-color: #E5DDDA;
+}
