@@ -1,0 +1,19 @@
+#header{
+    -fx-background-color: #001B48;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+#headerLabel {
+    -fx-text-fill: white;
+}
+
+#headerLogo{
+    -fx-max-width: 35px;
+    -fx-max-height: 35px;
+
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+
+    -fx-fit-height: true;
+}

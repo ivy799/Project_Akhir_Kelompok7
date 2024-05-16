@@ -23,6 +23,10 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
+
+    // JavaFX dependencies
+    implementation 'org.openjfx:javafx-controls:17.0.1'
+    implementation 'org.openjfx:javafx-fxml:17.0.1'
 }
 
 application {
@@ -30,3 +34,7 @@ application {
     mainClass = 'projek.akhir.klp7.App'
 }
 
+javafx {
+    version = '17.0.1'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
