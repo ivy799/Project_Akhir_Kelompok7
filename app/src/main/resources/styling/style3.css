@@ -98,6 +98,12 @@
     -fx-text-fill:white;
     -fx-font-size:10px;
     -fx-font-weight: bold;
+    -fx-background-color: transparent;
+}
+
+#tripName:hover{
+    -fx-text-fill:rgb(193, 193, 193);
+    -fx-cursor: hand;
 }
 
 #umkm{

@@ -3,10 +3,6 @@ package projek.akhir.klp7;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.common.collect.Streams;
-
-import javafx.application.Application;
-import javafx.beans.binding.StringBinding;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -24,19 +20,40 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import projek.model.DataKota;
 
 public class Scene3 {
     private Stage stage;
+    private DataKota dataKota;
 
     public Scene3() {
     }
 
-    public Scene3(Stage stage) {
+    public Scene3(Stage stage, DataKota dataKota) {
         this.stage = stage;
+        this.dataKota = dataKota;
     }
 
     public void show() {
         // Scene 3 main variables
+
+        //Right section
+        //wisata
+        String UrlGmbrwisata1 = getClass().getResource(dataKota.getUrlGmbrwisata1()).toExternalForm();
+        String UrlGmbrwisata2 = getClass().getResource(dataKota.getUrlGmbrwisata2()).toExternalForm();
+        String UrlGmbrwisata3 = getClass().getResource(dataKota.getUrlGmbrwisata3()).toExternalForm();
+
+        String tripName1 = "NUSA PENIDA,\nsoutheast coast of Bali";
+        String tripName2 = "BATUR MOUNT,\ncentral-eastern of Bali";
+        String tripName3 = "KUTA Beach,\nsouthern of Bal";
+        //UMKM
+        String umkmImageUrl1 = "/image/image29.png";
+        String umkmImageUrl2 = "/image/image30.png";
+        String umkmImageUrl3 = "/image/image31.png";
+
+        String umkmNameUrl1 = "Tenun Bali Collection";
+        String umkmNameUrl2 = "Oleh Oleh Perak Bali";
+        String umkmNameUrl3 = "Leolle Official Shop";
 
 
 
@@ -95,28 +112,16 @@ public class Scene3 {
 
 
 
-
-        //right section
-
-
-        //wisata
-        String rightBgImageUrl1 = getClass().getResource("/image/image26.png").toExternalForm();
-        String rightBgImageUrl2 = getClass().getResource("/image/image27.png").toExternalForm();
-        String rightBgImageUrl3 = getClass().getResource("/image/image28.png").toExternalForm();
-
-        String tripName1 = "NUSA PENIDA,\nsoutheast coast of Bali";
-        String tripName2 = "BATUR MOUNT,\ncentral-eastern of Bali";
-        String tripName3 = "KUTA Beach,\nsouthern of Bal";
-
-        Label tripNameContainer1 = new Label(tripName1);
+        //right section;
+        Button tripNameContainer1 = new Button(tripName1);
         tripNameContainer1.setPadding(new Insets(5));
         tripNameContainer1.setId("tripName");
 
-        Label tripNameContainer2 = new Label(tripName2);
+        Button tripNameContainer2 = new Button(tripName2);
         tripNameContainer2.setPadding(new Insets(5));
         tripNameContainer2.setId("tripName");
 
-        Label tripNameContainer3 = new Label(tripName3);
+        Button tripNameContainer3 = new Button(tripName3);
         tripNameContainer3.setPadding(new Insets(5));
         tripNameContainer3.setId("tripName");
 
@@ -130,17 +135,17 @@ public class Scene3 {
         BorderPane rightImage1 = new BorderPane();
         rightImage1.setBottom(tripNameContainer1);
         rightImage1.setId("rightImage");
-        rightImage1.setStyle("-fx-background-image: url('" + rightBgImageUrl1 + "');");
+        rightImage1.setStyle("-fx-background-image: url('" + UrlGmbrwisata1 + "');");
 
         BorderPane rightImage2 = new BorderPane();
         rightImage2.setBottom(tripNameContainer2);
         rightImage2.setId("rightImage");
-        rightImage2.setStyle("-fx-background-image: url('" + rightBgImageUrl2 + "');");
+        rightImage2.setStyle("-fx-background-image: url('" + UrlGmbrwisata2 + "');");
 
         BorderPane rightImage3 = new BorderPane();
         rightImage3.setBottom(tripNameContainer3);
         rightImage3.setId("rightImage");
-        rightImage3.setStyle("-fx-background-image: url('" + rightBgImageUrl3 + "');");
+        rightImage3.setStyle("-fx-background-image: url('" + UrlGmbrwisata3 + "');");
 
 
 
@@ -150,15 +155,7 @@ public class Scene3 {
 
 
 
-        //umkm
-        String umkmImageUrl1 = "/image/image29.png";
-        String umkmImageUrl2 = "/image/image30.png";
-        String umkmImageUrl3 = "/image/image31.png";
-
-        String umkmNameUrl1 = "Tenun Bali Collection";
-        String umkmNameUrl2 = "Oleh Oleh Perak Bali";
-        String umkmNameUrl3 = "Leolle Official Shop";
-
+        //UMKM
         Label rightTittle2 = new Label("UMKM");
         rightTittle2.setId("rightTittle");
 
@@ -222,6 +219,22 @@ public class Scene3 {
             scene2.show(); 
         });
 
+        tripNameContainer1.setOnAction(V -> {
+            Scene4A scene4A = new Scene4A(stage);
+            scene4A.show(); 
+        });
+
+        tripNameContainer2.setOnAction(V -> {
+            Scene4A scene4A = new Scene4A(stage);
+            scene4A.show(); 
+        });
+
+        tripNameContainer3.setOnAction(V -> {
+            Scene4A scene4A = new Scene4A(stage);
+            scene4A.show();  
+        });
+
+
 
 
 
@@ -246,7 +259,6 @@ public class Scene3 {
 
     private List<ItemData> getItemData() {
         // main variables
-
         // images
         String image1_1 = "/image/image24.png";
         String image1_2 = "/image/image24.png";

@@ -27,6 +27,7 @@ dependencies {
     // JavaFX dependencies
     implementation 'org.openjfx:javafx-controls:17.0.1'
     implementation 'org.openjfx:javafx-fxml:17.0.1'
+    implementation 'org.xerial:sqlite-jdbc:3.34.0'
 }
 
 application {

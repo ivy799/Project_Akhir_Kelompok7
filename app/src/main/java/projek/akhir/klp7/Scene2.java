@@ -8,13 +8,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import projek.controller.DataKotaController;
+import projek.model.DataKota;
 
 public class Scene2 {
     private Stage stage;
@@ -74,7 +73,7 @@ public class Scene2 {
         //listview item
         ListView<String> listView = new ListView<>();
         ObservableList<String> cityNames = FXCollections.observableArrayList(
-                "MAKASSAR",
+                "BALI",
                 "SINJAI",
                 "BULUKUMBA",
                 "BONE",
@@ -88,15 +87,6 @@ public class Scene2 {
                 "surabaya",
                 "yogyakarta"
                 );
-
-
-        //listview item listener
-        listView.setItems(cityNames);
-        listView.setId("listView");
-        listView.setOnMouseClicked(e -> {
-            String selectedCity = listView.getSelectionModel().getSelectedItem();
-            System.out.println("Anda memilih kota: " + selectedCity);
-        });
 
         
         
@@ -153,6 +143,19 @@ public class Scene2 {
         backButton.setOnAction(V -> {
             Scene1 loginPage = new Scene1(stage);
             loginPage.show(); 
+        });
+
+        //listview item listener
+        listView.setItems(cityNames);
+        listView.setId("listView");
+
+    
+
+        listView.setOnMouseClicked(e -> {
+            String selectedCity = listView.getSelectionModel().getSelectedItem();
+            DataKota dataKota = DataKotaController.geDataKota(selectedCity);
+            Scene3 scene3 = new Scene3(stage,dataKota);
+            scene3.show();
         });
 
 
