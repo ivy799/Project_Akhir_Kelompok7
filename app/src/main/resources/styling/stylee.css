@@ -1,0 +1,102 @@
+#body {
+    -fx-background-color: #001B48;
+}
+
+#container1{
+    -fx-background-image: url("/image/image14.png");
+    -fx-min-width: 645;
+}
+
+#mainText{
+    -fx-font-size:20px;
+    -fx-text-fill:white;
+    -fx-font-weight: bold;
+    -fx-background-color: #001B48;
+    -fx-padding: 10px;
+    -fx-background-radius: 10px;
+}
+
+#listViewContainer{
+    -fx-max-height: 490;
+    -fx-max-width: 362;
+}
+
+
+#mainContainer{
+    /* -fx-background-color: #769ad8; */
+    -fx-max-width: 362;
+    -fx-background-image: url("/image/image17.png");
+
+}
+
+#listView .list-cell{
+    -fx-font-size:15px;
+    -fx-font-weight: bold;
+    -fx-text-fill:#001B48;
+    -fx-alignment: CENTER;
+    -fx-border-width: 1px;   
+    -fx-border-style: solid;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10;
+    -fx-background-color: #D9D9D9;
+}
+
+#listView .list-cell:hover{
+    -fx-text-fill:rgb(153, 153, 153);
+    -fx-cursor: hand;
+}
+
+#listView {
+    -fx-background-color: transparent;
+    -fx-padding: 10px;
+}
+
+#listView .scroll-bar:vertical {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+#container2{
+    /* -fx-background-color: red; */
+    -fx-min-width: 655;
+}
+
+#subText{
+    -fx-font-size:20px;
+    -fx-text-fill:white;
+    -fx-font-weight: bold;
+}
+
+#recomend {
+    /* -fx-background-image: url("/image/image19.png"); */
+    -fx-min-height: 152;
+    -fx-min-width: 568.45;
+}
+
+#recomend:hover {
+    -fx-background-size: cover, cover;
+    -fx-background-blend-mode: screen;
+    -fx-cursor: hand;
+    -fx-font-size:20px;
+}
+
+#recomendtext{
+    -fx-text-fill:white;
+    -fx-font-weight: bold;
+}
+
+#backButton {
+    -fx-background-color: transparent;
+    -fx-font-size:15px;
+    -fx-text-fill:rgb(255, 255, 255);
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 2, 2);
+}
+
+#backButton:hover {
+    -fx-text-fill:rgb(153, 153, 153);
+    -fx-cursor: hand;
+}

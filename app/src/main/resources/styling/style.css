@@ -1,25 +1,62 @@
-#header{
-    -fx-background-color: #001B48;
-    -fx-padding: 15;
-    -fx-spacing: 10;
+@font-face {
+    font-family: "Petrona";
+    src: url("/font/Petrona-VariableFont_wght.ttf");
 }
 
-#headerLabel {
-    -fx-text-fill: white;
+#body {
+    -fx-background-image: url("/image/image12.png");
 }
 
-#headerLogo{
-    -fx-max-width: 35px;
-    -fx-max-height: 35px;
-
-    -fx-min-width: 20px;
-    -fx-min-height: 20px;
-
-    -fx-fit-height: true;
+#HeaderText{
+    -fx-font-size:18px;
+    -fx-text-fill:white;
+    -fx-font-weight: bold;
+    /* -fx-font: 18 Petrona; */
 }
 
+#mainContainer{
+    /* -fx-background-color:rgb(250, 74, 74); */
+    /* -fx-max-width: 1000px; */
+    -fx-max-height: 495px;
 
+}
 
-#main{
-    -fx-background-color: #E5DDDA;
+#loginField{
+    -fx-background-image: url("/image/image13.png");
+    -fx-border-radius: 10;
+    -fx-min-height: 495;
+    -fx-min-width: 455;
+}
+
+#mainText {
+    -fx-font-size:50px;
+    -fx-text-fill:white;
+    -fx-font-weight: bold;
+    /* -fx-background-color: red; */
+    /* -fx-margin: 90px 0px 0px 0px; Atas, Kanan, Bawah, Kiri */
+}
+
+#mainButton {
+    -fx-background-color: transparent;
+    -fx-font-size:15px;
+    -fx-text-fill:white;
+}
+
+#mainButton:hover {
+    -fx-text-fill:rgb(153, 153, 153);
+    -fx-cursor: hand;
+    
+}
+
+#loginFieldText{
+    -fx-font-size:40px;
+    -fx-text-fill:white;
+    -fx-font-weight: bold;
+}
+
+#userfield{
+    -fx-max-width: 250px;
+    -fx-background-radius: 15;
+    -fx-padding: 10px; 
+    -fx-background-color: #D9D9D9;
 }

@@ -1,0 +1,57 @@
+#body{
+    -fx-background-image: url("/image/image12.png");
+}
+
+
+#mainDetail{
+    -fx-background-image: url("/image/image18.png");
+}
+
+
+
+#mainContainer{
+    /* -fx-background-color: rgb(46, 54, 173); */
+    /* -fx-max-width: 650;
+    -fx-min-width: 650; */
+    -fx-max-height: 298;
+    -fx-min-height: 298;
+}
+
+#namaWisata {
+    -fx-font-size:20px;
+    -fx-text-fill:white;
+    /* -fx-font-weight: bold; */
+}
+
+#mainText2{
+    /* -fx-font-size:15px; */
+    -fx-text-fill:white;
+
+}
+
+#MainButton{
+    -fx-background-color: transparent;
+    -fx-font-size:15px;
+    -fx-text-fill:rgb(255, 255, 255);
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 2, 2);
+}
+
+#MainButton:hover {
+    -fx-text-fill:rgb(153, 153, 153);
+    -fx-cursor: hand;
+    
+}
+
+#slideButton{
+    -fx-background-color: transparent;
+    -fx-font-size:20px;
+    -fx-text-fill:white;
+    -fx-font-weight: 300px;
+}
+
+#slideButton:hover {
+    -fx-text-fill:rgb(153, 153, 153);
+    -fx-cursor: hand;
+    
+}

@@ -1,0 +1,39 @@
+#mainDetail{
+    /* -fx-background-color: red; */
+    -fx-background-image: url("/image/image22.png");
+    -fx-min-height: 288;
+}
+
+#mainText{
+    -fx-font-size:45px;
+    -fx-text-fill:white;
+    -fx-font-weight: bold;
+}
+
+#HeaderButton{
+    -fx-background-color: transparent;
+    -fx-font-size:15px;
+    -fx-text-fill:rgb(255, 255, 255);
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 2, 2);
+}
+
+#HeaderButton:hover{
+    -fx-text-fill:rgb(133, 133, 133);
+    -fx-cursor: hand;
+}
+
+#detail{
+    -fx-background-color: #D9D9D9;
+    -fx-background-radius: 10;
+    -fx-min-width: 298;
+    -fx-min-height: 55;
+    -fx-alignment: CENTER;
+}
+
+
+#tittle{
+    -fx-font-size:15px;
+    -fx-text-fill:white;
+    -fx-font-weight: bold;
+}
