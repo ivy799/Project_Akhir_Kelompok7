@@ -48,7 +48,7 @@ public class Scene4B {
         HBox.setHgrow(spacer1, Priority.ALWAYS);
 
         HBox header = new HBox();
-        header.getChildren().addAll(backButton,spacer1,homeButton);
+        header.getChildren().addAll(homeButton,spacer1,backButton);
         header.setAlignment(Pos.CENTER);
         header.setPadding(new Insets(10));
 
@@ -130,7 +130,18 @@ public class Scene4B {
 
 
 
+        //button eventListener
+        backButton.setOnAction(V -> {
+            Scene3 scene3 = new Scene3(stage);
+            scene3.show(); 
+        });
 
+        homeButton.setOnAction(V -> {
+            Scene2 scene2 = new Scene2(stage);
+            scene2.show(); 
+        });
+
+        
 
         HBox mainDetail = new HBox(40);
         mainDetail.getChildren().addAll(locationContainer,productContainer,contactContainer);

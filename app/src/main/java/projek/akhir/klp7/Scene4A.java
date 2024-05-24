@@ -82,7 +82,7 @@ public class Scene4A {
         container2.setPadding(new Insets(20));
 
         HBox container3 = new HBox();
-        container3.getChildren().addAll(backButton,spacer1,homeButton);
+        container3.getChildren().addAll(homeButton,spacer1,backButton);
         container3.setPadding(new Insets(20));
         container3.setId("header");
 
@@ -96,10 +96,13 @@ public class Scene4A {
         mainDetail.getChildren().addAll(mainContainer);
         mainDetail.setAlignment(Pos.CENTER);
 
-        // backButton.setOnAction(V -> {
-        //     Scene4 scene3 = new Scene4(stage);
-        //     scene3.show(); 
-        // });
+
+
+        //button eventListener
+        backButton.setOnAction(V -> {
+            Scene3 scene3 = new Scene3(stage);
+            scene3.show(); 
+        });
 
         homeButton.setOnAction(V -> {
             Scene2 scene2 = new Scene2(stage);
