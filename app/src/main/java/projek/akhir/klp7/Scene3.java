@@ -143,7 +143,7 @@ public class Scene3 {
         rightImage3.setId("rightImage");
         rightImage3.setStyle("-fx-background-image: url('" + Scene3TripImageUrl3 + "');");
 
-        HBox innerRightContainer1 = new HBox(10);
+        HBox innerRightContainer1 = new HBox(25);
         innerRightContainer1.setAlignment(Pos.CENTER);
         innerRightContainer1.getChildren().addAll(rightImage1,rightImage2,rightImage3);
 
@@ -184,7 +184,7 @@ public class Scene3 {
         rightImage6.setId("umkm");
 
 
-        HBox innerRightContainer2 = new HBox(10);
+        HBox innerRightContainer2 = new HBox(25);
         innerRightContainer2.setAlignment(Pos.CENTER);
         innerRightContainer2.getChildren().addAll(rightImage4,rightImage5,rightImage6);
 
@@ -216,34 +216,32 @@ public class Scene3 {
 
         //tripButton event lsitener
         tripNameContainer1.setOnAction(V -> {
-            Scene4A scene4A = new Scene4A(stage,this);
+            Scene4A scene4A = new Scene4A(stage,this,this.dataKota.getScene4ATripDetail1(),this.dataKota.getScene4ATripImageUrl1(),this.dataKota.getScene4ATripName1(),this.dataKota.getScene4ATripRatingUrl1());
             scene4A.show(); 
         });
 
         tripNameContainer2.setOnAction(V -> {
-            Scene4A scene4A = new Scene4A(stage, this);
+            Scene4A scene4A = new Scene4A(stage,this,this.dataKota.getScene4ATripDetail2(),this.dataKota.getScene4ATripImageUrl2(),this.dataKota.getScene4ATripName2(),this.dataKota.getScene4ATripRatingUrl2());
             scene4A.show(); 
         });
 
         tripNameContainer3.setOnAction(V -> {
-            Scene4A scene4A = new Scene4A(stage,this);
+            Scene4A scene4A = new Scene4A(stage,this,this.dataKota.getScene4ATripDetail3(),this.dataKota.getScene4ATripImageUrl3(),this.dataKota.getScene4ATripName3(),this.dataKota.getScene4ATripRatingUrl3());
             scene4A.show();  
         });
 
         
         //UMKM button eventlistener
         umkmName1.setOnAction(V -> {
-            Scene4B scene4B = new Scene4B(stage,this);
+            Scene4B scene4B = new Scene4B(stage,this,this.dataKota.getScene4BUmkmImageUrl1(),this.dataKota.getScene4BUmkmName1(),this.dataKota.getScene4BUmkmRatingUrl1(),this.dataKota.getScene4BLocationDetail1(),this.dataKota.getScene4BProductDetail1(),this.dataKota.getScene4BContactDetail1());
             scene4B.show(); 
         });
-
         umkmName2.setOnAction(V -> {
-            Scene4B scene4B = new Scene4B(stage,this);
+            Scene4B scene4B = new Scene4B(stage,this,this.dataKota.getScene4BUmkmImageUrl2(),this.dataKota.getScene4BUmkmName2(),this.dataKota.getScene4BUmkmRatingUrl2(),this.dataKota.getScene4BLocationDetail2(),this.dataKota.getScene4BProductDetail2(),this.dataKota.getScene4BContactDetail2());
             scene4B.show(); 
         });
-
         umkmName3.setOnAction(V -> {
-            Scene4B scene4B = new Scene4B(stage,this);
+            Scene4B scene4B = new Scene4B(stage,this,this.dataKota.getScene4BUmkmImageUrl3(),this.dataKota.getScene4BUmkmName3(),this.dataKota.getScene4BUmkmRatingUrl3(),this.dataKota.getScene4BLocationDetail3(),this.dataKota.getScene4BProductDetail3(),this.dataKota.getScene4BContactDetail3());
             scene4B.show(); 
         });
 
@@ -268,41 +266,13 @@ public class Scene3 {
 
     //list item and additional class
     private List<ItemData> getItemData() {
-        // main variables
-        // images
-        // String Scene3HistoryImageUrl1 = "/image/image24.png";
-        // String Scene3HistoryImageUrl2 = "/image/image24.png";
-        // String Scene3HistoryImageUrl3 = "/image/image24.png";
-        
-        // String Scene3TraditionImageUrl1 = "/image/image24.png";
-        // String Scene3TraditionImageUrl2 = "/image/image24.png";
-        // String Scene3TraditionImageUrl3 = "/image/image24.png";
-
-        // String Scene3FoodImageUrl1 = "/image/image24.png";
-        // String Scene3FoodImageUrl2 = "/image/image24.png";
-        // String Scene3FoodImageUrl3 = "/image/image24.png";
-
-        // texts
-        // String Scene3HistoryText1 = dataKota.getScene3HistoryText1();
-        // String Scene3HistoryText2 = "Text for item 1 in container 2.";
-        // String Scene3HistoryText3 = "Text for item 1 in container 3.";
-        
-        // String Scene3TraditionText1 = "Text for item 2 in container 1.";
-        // String Scene3TraditionText2 = "Text for item 2 in container 2.";
-        // String Scene3TraditionText3 = "Text for item 2 in container 3.";
-
-        // String Scene3FoodText1 = "Text for item 3 in container 1.";
-        // String Scene3FoodText2 = "Text for item 3 in container 2.";
-        // String Scene3FoodText3 = "Text for item 3 in container 3.";
-
-        
-
         List<ItemData> items = new ArrayList<>();
         items.add(new ItemData("Sejarah dan Warisan", dataKota.getScene3HistoryText1(), dataKota.getScene3HistoryImageUrl1(), dataKota.getScene3HistoryText2(), dataKota.getScene3HistoryImageUrl2(), dataKota.getScene3HistoryText3(), dataKota.getScene3HistoryImageUrl3()));
         items.add(new ItemData("tradisi dan Upacara Adat", dataKota.getScene3TraditionText1(), dataKota.getScene3TraditionImageUrl1(), dataKota.getScene3TraditionText2(), dataKota.getScene3TraditionImageUrl2(), dataKota.getScene3TraditionText3(), dataKota.getScene3TraditionImageUrl3()));
         items.add(new ItemData("kuliner", dataKota.getScene3FoodText1(), dataKota.getScene3FoodImageUrl1(), dataKota.getScene3FoodText2(), dataKota.getScene3FoodImageUrl2(), dataKota.getScene3FoodText3(), dataKota.getScene3FoodImageUrl3()));
         return items;
     }
+    
 
     static class ItemData {
         private final String title;
@@ -362,14 +332,14 @@ public class Scene3 {
         private boolean isExpanded;
 
         public ButtonListCell() {
-            vbox = new VBox();
+            vbox = new VBox(20);
             button = new Button();
             button.setId("listViewButton");
             buttonPane = new StackPane();
             buttonPane.setId("buttonContainer");
-            innerContainer1 = new HBox(10);
-            innerContainer2 = new HBox(10);
-            innerContainer3 = new HBox(10);
+            innerContainer1 = new HBox(20);
+            innerContainer2 = new HBox(20);
+            innerContainer3 = new HBox(20);
 
             button.setOnAction(e -> toggleDetails());
 
@@ -393,14 +363,23 @@ public class Scene3 {
                 innerContainer3.getChildren().clear();
 
                 Label containerText1 = new Label(item.getText1());
+                containerText1.setWrapText(true);
+                containerText1.setMaxWidth(390); 
+                containerText1.setId("detailText");
                 ImageView containerImage1 = new ImageView(new Image(getClass().getResourceAsStream(item.getImageUrl1())));
                 innerContainer1.getChildren().addAll(containerImage1, containerText1);
 
                 Label containerText2 = new Label(item.getText2());
+                containerText2.setWrapText(true);
+                containerText2.setMaxWidth(390); 
+                containerText2.setId("detailText");
                 ImageView containerImage2 = new ImageView(new Image(getClass().getResourceAsStream(item.getImageUrl2())));
                 innerContainer2.getChildren().addAll(containerText2, containerImage2);
 
                 Label containerText3 = new Label(item.getText3());
+                containerText3.setWrapText(true);
+                containerText3.setMaxWidth(390); 
+                containerText3.setId("detailText");
                 ImageView containerImage3 = new ImageView(new Image(getClass().getResourceAsStream(item.getImageUrl3())));
                 innerContainer3.getChildren().addAll(containerImage3, containerText3);
 

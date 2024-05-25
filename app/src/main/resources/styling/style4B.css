@@ -24,11 +24,11 @@
 }
 
 #detail{
-    -fx-background-color: #D9D9D9;
-    -fx-background-radius: 10;
+    -fx-text-fill:rgb(255, 255, 255);
     -fx-min-width: 298;
-    -fx-min-height: 55;
+    -fx-min-height: 80;
     -fx-alignment: CENTER;
+    -fx-font-size:12px;
 }
 
 
@@ -36,4 +36,5 @@
     -fx-font-size:15px;
     -fx-text-fill:white;
     -fx-font-weight: bold;
+    /* -fx-background-color: rgb(255, 114, 114); */
 }

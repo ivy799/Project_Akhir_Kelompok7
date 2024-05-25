@@ -12,7 +12,7 @@
 #listView .list-cell{
     /* -fx-text-fill:#001B48; */
     -fx-alignment: CENTER;
-    -fx-background-color: #D9D9D9;
+    -fx-background-color: transparent;
 
 }
 
@@ -31,8 +31,10 @@
 }
 
 #leftContainer{
-    -fx-background-color: #D9D9D9;
+    -fx-background-color: #E5DDDA;
     -fx-background-radius: 10;
+    -fx-min-width: 650;
+    -fx-min-height: 514;
 }
 
 #leftTittle{
@@ -124,4 +126,8 @@
 #umkmName:hover{
     -fx-cursor: hand;
     
+}
+
+#detailText{
+    -fx-font-size:9px;
 }

@@ -17,30 +17,31 @@ import javafx.stage.Stage;
 public class Scene4B extends Scene3{
     private Stage stage;
     private Scene3 scene3;
+    String Scene4BUmkmImageUrl,Scene4BUmkmName,Scene4BUmkmRatingUrl,Scene4BLocationDetail,Scene4BProductDetail,Scene4BContactDetail;
 
     //constructor
-    public Scene4B(Stage stage, Scene3 scene3) {
+    public Scene4B(Stage stage, Scene3 scene3, String Scene4BUmkmImageUrl,String Scene4BUmkmName,String Scene4BUmkmRatingUrl,String Scene4BLocationDetail,String Scene4BProductDetail,String Scene4BContactDetail) {
         this.stage = stage;
         this.scene3 = scene3;
+        this.Scene4BUmkmImageUrl = Scene4BUmkmImageUrl;
+        this.Scene4BUmkmName = Scene4BUmkmName;
+        this.Scene4BUmkmRatingUrl = Scene4BUmkmRatingUrl;
+        this.Scene4BLocationDetail = Scene4BLocationDetail;
+        this.Scene4BProductDetail = Scene4BProductDetail;
+        this.Scene4BContactDetail = Scene4BContactDetail;
         initialize();
     }
 
 
+    
+    
     private void initialize(){
-        //Scene 4B main variabel
-        // String Scene4BUmkmImageUrl = getClass().getResource("/image/image23.png").toExternalForm();
-        // String Scene4BUmkmName = "JALANGKOTE RACING";
-        // String Scene4BUmkmRatingUrl = getClass().getResource("/image/image21.png").toExternalForm();
-        // String Scene4BLocationDetail = "lorem ipsum";
-        // String Scene4BProductDetail = "lorem ipsum";
-        // String Scene4BContactDetail = "lorem ipsum";
-        
-
 
         //layoting
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
-        root_1.setStyle("-fx-background-image: url('" + dataKota.getScene4BUmkmImageUrl() + "');");
+        root_1.setStyle("-fx-background-image: url(" + Scene4BUmkmImageUrl + ");");
+        
 
 
         // button eventListener
@@ -69,10 +70,10 @@ public class Scene4B extends Scene3{
 
 
         //BODY
-        Label mainText = new Label(dataKota.getScene4BUmkmName());
+        Label mainText = new Label(Scene4BUmkmName);
         mainText.setId("mainText");
 
-        Image ratingimage = new Image(dataKota.getScene4BUmkmRatingUrl());
+        Image ratingimage = new Image(Scene4BUmkmRatingUrl);
         ImageView rating = new ImageView(ratingimage);
 
         HBox mainTextContainer = new HBox(mainText);
@@ -97,8 +98,11 @@ public class Scene4B extends Scene3{
         Image line1 = new Image("/image/line2.png");
         ImageView line11 = new ImageView(line1);
 
-        Label locationDetail = new Label(dataKota.getScene4BLocationDetail()); 
+        Label locationDetail = new Label(Scene4BLocationDetail); 
         locationDetail.setId("detail");
+        locationDetail.setWrapText(true);
+        locationDetail.setMaxWidth(168);
+        // locationDetail.setMaxWidth(168);
         
         HBox locationDetailContainer = new HBox(locationDetail);
         locationDetailContainer.setAlignment(Pos.CENTER);
@@ -112,8 +116,11 @@ public class Scene4B extends Scene3{
         Image line2 = new Image("/image/line2.png");
         ImageView line22 = new ImageView(line2);
 
-        Label productDetail = new Label(dataKota.getScene4BProductDetail()); 
+        Label productDetail = new Label(Scene4BProductDetail); 
         productDetail.setId("detail");
+        productDetail.setWrapText(true);
+        productDetail.setMaxWidth(327);
+        // productDetail.setMaxWidth(327);
         
         HBox productDetailContainer = new HBox(productDetail);
         productDetailContainer.setAlignment(Pos.CENTER);
@@ -127,7 +134,7 @@ public class Scene4B extends Scene3{
         Image line3 = new Image("/image/line2.png");
         ImageView line33 = new ImageView(line3);
 
-        Label contactDetail = new Label(dataKota.getScene4BContactDetail()); 
+        Label contactDetail = new Label(Scene4BContactDetail); 
         contactDetail.setId("detail");
         
         HBox contactDetailContainer = new HBox(contactDetail);
@@ -141,7 +148,7 @@ public class Scene4B extends Scene3{
         HBox mainDetail = new HBox(40);
         mainDetail.getChildren().addAll(locationContainer,productContainer,contactContainer);
         mainDetail.setId("mainDetail");
-        mainDetail.setAlignment(Pos.TOP_CENTER);
+        mainDetail.setAlignment(Pos.CENTER);
 
 
 

@@ -2,13 +2,28 @@ package projek.model;
 
 public class DataKota {
     private String namaKota;
-    private String Scene3TripImageUrl1,Scene3TripImageUrl2,Scene3TripImageUrl3,Scene3TripName1,Scene3TripName2,Scene3TripName3;
-    private String Scene3UmkmImageUrl1,Scene3UmkmImageUrl2,Scene3UmkmImageUrl3,Scene3UmkmName1,Scene3UmkmName2,Scene3UmkmName3;
-    private String Scene3HistoryImageUrl1,Scene3HistoryImageUrl2,Scene3HistoryImageUrl3,Scene3TraditionImageUrl1,Scene3TraditionImageUrl2,Scene3TraditionImageUrl3,Scene3FoodImageUrl1,Scene3FoodImageUrl2,Scene3FoodImageUrl3;
-    private String Scene3HistoryText1,Scene3HistoryText2,Scene3HistoryText3,Scene3TraditionText1,Scene3TraditionText2,Scene3TraditionText3,Scene3FoodText1,Scene3FoodText2,Scene3FoodText3;
-    private String Scene4ATripDetail,Scene4ATripName,Scene4ATripImageUrl,Scene4ATripRatingUrl;
-    private String Scene4BUmkmImageUrl,Scene4BUmkmName,Scene4BUmkmRatingUrl,Scene4BLocationDetail,Scene4BProductDetail,Scene4BContactDetail;
+    private String Scene3TripImageUrl1, Scene3TripImageUrl2, Scene3TripImageUrl3;
+    private String Scene3TripName1, Scene3TripName2, Scene3TripName3;
+    private String Scene3UmkmImageUrl1, Scene3UmkmImageUrl2, Scene3UmkmImageUrl3;
+    private String Scene3UmkmName1, Scene3UmkmName2, Scene3UmkmName3;
+    private String Scene3HistoryImageUrl1, Scene3HistoryImageUrl2, Scene3HistoryImageUrl3;
+    private String Scene3TraditionImageUrl1, Scene3TraditionImageUrl2, Scene3TraditionImageUrl3;
+    private String Scene3FoodImageUrl1, Scene3FoodImageUrl2, Scene3FoodImageUrl3;
+    private String Scene3HistoryText1, Scene3HistoryText2, Scene3HistoryText3;
+    private String Scene3TraditionText1, Scene3TraditionText2, Scene3TraditionText3;
+    private String Scene3FoodText1, Scene3FoodText2, Scene3FoodText3;
+    private String Scene4ATripDetail1, Scene4ATripDetail2, Scene4ATripDetail3;
+    private String Scene4ATripName1, Scene4ATripName2, Scene4ATripName3;
+    private String Scene4ATripImageUrl1, Scene4ATripImageUrl2, Scene4ATripImageUrl3;
+    private String Scene4ATripRatingUrl1, Scene4ATripRatingUrl2, Scene4ATripRatingUrl3;
+    private String Scene4BUmkmImageUrl1, Scene4BUmkmImageUrl2, Scene4BUmkmImageUrl3;
+    private String Scene4BUmkmName1, Scene4BUmkmName2, Scene4BUmkmName3;
+    private String Scene4BUmkmRatingUrl1, Scene4BUmkmRatingUrl2, Scene4BUmkmRatingUrl3;
+    private String Scene4BLocationDetail1, Scene4BLocationDetail2, Scene4BLocationDetail3;
+    private String Scene4BProductDetail1, Scene4BProductDetail2, Scene4BProductDetail3;
+    private String Scene4BContactDetail1, Scene4BContactDetail2, Scene4BContactDetail3;
 
+    
     public DataKota(String namaKota, String scene3TripImageUrl1, String scene3TripImageUrl2, String scene3TripImageUrl3,
             String scene3TripName1, String scene3TripName2, String scene3TripName3, String scene3UmkmImageUrl1,
             String scene3UmkmImageUrl2, String scene3UmkmImageUrl3, String scene3UmkmName1, String scene3UmkmName2,
@@ -17,10 +32,16 @@ public class DataKota {
             String scene3TraditionImageUrl3, String scene3FoodImageUrl1, String scene3FoodImageUrl2,
             String scene3FoodImageUrl3, String scene3HistoryText1, String scene3HistoryText2, String scene3HistoryText3,
             String scene3TraditionText1, String scene3TraditionText2, String scene3TraditionText3,
-            String scene3FoodText1, String scene3FoodText2, String scene3FoodText3, String scene4aTripDetail,
-            String scene4aTripName, String scene4aTripImageUrl, String scene4aTripRatingUrl, String scene4bUmkmImageUrl,
-            String scene4bUmkmName, String scene4aUmkmRatingUrl, String scene4bLocationDetail,
-            String scene4bProductDetail, String scene4bContactDetail) {
+            String scene3FoodText1, String scene3FoodText2, String scene3FoodText3, String scene4aTripDetail1,
+            String scene4aTripDetail2, String scene4aTripDetail3, String scene4aTripName1, String scene4aTripName2,
+            String scene4aTripName3, String scene4aTripImageUrl1, String scene4aTripImageUrl2,
+            String scene4aTripImageUrl3, String scene4aTripRatingUrl1, String scene4aTripRatingUrl2,
+            String scene4aTripRatingUrl3, String scene4bUmkmImageUrl1, String scene4bUmkmImageUrl2,
+            String scene4bUmkmImageUrl3, String scene4bUmkmName1, String scene4bUmkmName2, String scene4bUmkmName3,
+            String scene4bUmkmRatingUrl1, String scene4bUmkmRatingUrl2, String scene4bUmkmRatingUrl3,
+            String scene4bLocationDetail1, String scene4bLocationDetail2, String scene4bLocationDetail3,
+            String scene4bProductDetail1, String scene4bProductDetail2, String scene4bProductDetail3,
+            String scene4bContactDetail1, String scene4bContactDetail2, String scene4bContactDetail3) {
         this.namaKota = namaKota;
         Scene3TripImageUrl1 = scene3TripImageUrl1;
         Scene3TripImageUrl2 = scene3TripImageUrl2;
@@ -52,200 +73,344 @@ public class DataKota {
         Scene3FoodText1 = scene3FoodText1;
         Scene3FoodText2 = scene3FoodText2;
         Scene3FoodText3 = scene3FoodText3;
-        Scene4ATripDetail = scene4aTripDetail;
-        Scene4ATripName = scene4aTripName;
-        Scene4ATripImageUrl = scene4aTripImageUrl;
-        Scene4ATripRatingUrl = scene4aTripRatingUrl;
-        Scene4BUmkmImageUrl = scene4bUmkmImageUrl;
-        Scene4BUmkmName = scene4bUmkmName;
-        Scene4BUmkmRatingUrl = scene4aUmkmRatingUrl;
-        Scene4BLocationDetail = scene4bLocationDetail;
-        Scene4BProductDetail = scene4bProductDetail;
-        Scene4BContactDetail = scene4bContactDetail;
+        Scene4ATripDetail1 = scene4aTripDetail1;
+        Scene4ATripDetail2 = scene4aTripDetail2;
+        Scene4ATripDetail3 = scene4aTripDetail3;
+        Scene4ATripName1 = scene4aTripName1;
+        Scene4ATripName2 = scene4aTripName2;
+        Scene4ATripName3 = scene4aTripName3;
+        Scene4ATripImageUrl1 = scene4aTripImageUrl1;
+        Scene4ATripImageUrl2 = scene4aTripImageUrl2;
+        Scene4ATripImageUrl3 = scene4aTripImageUrl3;
+        Scene4ATripRatingUrl1 = scene4aTripRatingUrl1;
+        Scene4ATripRatingUrl2 = scene4aTripRatingUrl2;
+        Scene4ATripRatingUrl3 = scene4aTripRatingUrl3;
+        Scene4BUmkmImageUrl1 = scene4bUmkmImageUrl1;
+        Scene4BUmkmImageUrl2 = scene4bUmkmImageUrl2;
+        Scene4BUmkmImageUrl3 = scene4bUmkmImageUrl3;
+        Scene4BUmkmName1 = scene4bUmkmName1;
+        Scene4BUmkmName2 = scene4bUmkmName2;
+        Scene4BUmkmName3 = scene4bUmkmName3;
+        Scene4BUmkmRatingUrl1 = scene4bUmkmRatingUrl1;
+        Scene4BUmkmRatingUrl2 = scene4bUmkmRatingUrl2;
+        Scene4BUmkmRatingUrl3 = scene4bUmkmRatingUrl3;
+        Scene4BLocationDetail1 = scene4bLocationDetail1;
+        Scene4BLocationDetail2 = scene4bLocationDetail2;
+        Scene4BLocationDetail3 = scene4bLocationDetail3;
+        Scene4BProductDetail1 = scene4bProductDetail1;
+        Scene4BProductDetail2 = scene4bProductDetail2;
+        Scene4BProductDetail3 = scene4bProductDetail3;
+        Scene4BContactDetail1 = scene4bContactDetail1;
+        Scene4BContactDetail2 = scene4bContactDetail2;
+        Scene4BContactDetail3 = scene4bContactDetail3;
     }
+
 
     public String getNamaKota() {
         return namaKota;
     }
 
+
     public String getScene3TripImageUrl1() {
         return Scene3TripImageUrl1;
     }
+
 
     public String getScene3TripImageUrl2() {
         return Scene3TripImageUrl2;
     }
 
+
     public String getScene3TripImageUrl3() {
         return Scene3TripImageUrl3;
     }
+
 
     public String getScene3TripName1() {
         return Scene3TripName1;
     }
 
+
     public String getScene3TripName2() {
         return Scene3TripName2;
     }
+
 
     public String getScene3TripName3() {
         return Scene3TripName3;
     }
 
+
     public String getScene3UmkmImageUrl1() {
         return Scene3UmkmImageUrl1;
     }
+
 
     public String getScene3UmkmImageUrl2() {
         return Scene3UmkmImageUrl2;
     }
 
+
     public String getScene3UmkmImageUrl3() {
         return Scene3UmkmImageUrl3;
     }
+
 
     public String getScene3UmkmName1() {
         return Scene3UmkmName1;
     }
 
+
     public String getScene3UmkmName2() {
         return Scene3UmkmName2;
     }
+
 
     public String getScene3UmkmName3() {
         return Scene3UmkmName3;
     }
 
+
     public String getScene3HistoryImageUrl1() {
         return Scene3HistoryImageUrl1;
     }
+
 
     public String getScene3HistoryImageUrl2() {
         return Scene3HistoryImageUrl2;
     }
 
+
     public String getScene3HistoryImageUrl3() {
         return Scene3HistoryImageUrl3;
     }
+
 
     public String getScene3TraditionImageUrl1() {
         return Scene3TraditionImageUrl1;
     }
 
+
     public String getScene3TraditionImageUrl2() {
         return Scene3TraditionImageUrl2;
     }
+
 
     public String getScene3TraditionImageUrl3() {
         return Scene3TraditionImageUrl3;
     }
 
+
     public String getScene3FoodImageUrl1() {
         return Scene3FoodImageUrl1;
     }
+
 
     public String getScene3FoodImageUrl2() {
         return Scene3FoodImageUrl2;
     }
 
+
     public String getScene3FoodImageUrl3() {
         return Scene3FoodImageUrl3;
     }
+
 
     public String getScene3HistoryText1() {
         return Scene3HistoryText1;
     }
 
+
     public String getScene3HistoryText2() {
         return Scene3HistoryText2;
     }
+
 
     public String getScene3HistoryText3() {
         return Scene3HistoryText3;
     }
 
+
     public String getScene3TraditionText1() {
         return Scene3TraditionText1;
     }
+
 
     public String getScene3TraditionText2() {
         return Scene3TraditionText2;
     }
 
+
     public String getScene3TraditionText3() {
         return Scene3TraditionText3;
     }
+
 
     public String getScene3FoodText1() {
         return Scene3FoodText1;
     }
 
+
     public String getScene3FoodText2() {
         return Scene3FoodText2;
     }
+
 
     public String getScene3FoodText3() {
         return Scene3FoodText3;
     }
 
-    public String getScene4ATripDetail() {
-        return Scene4ATripDetail;
+
+    public String getScene4ATripDetail1() {
+        return Scene4ATripDetail1;
     }
 
-    public String getScene4ATripName() {
-        return Scene4ATripName;
+
+    public String getScene4ATripDetail2() {
+        return Scene4ATripDetail2;
     }
 
-    public String getScene4ATripImageUrl() {
-        return Scene4ATripImageUrl;
+
+    public String getScene4ATripDetail3() {
+        return Scene4ATripDetail3;
     }
 
-    public String getScene4ATripRatingUrl() {
-        return Scene4ATripRatingUrl;
+
+    public String getScene4ATripName1() {
+        return Scene4ATripName1;
     }
 
-    public String getScene4BUmkmImageUrl() {
-        return Scene4BUmkmImageUrl;
+
+    public String getScene4ATripName2() {
+        return Scene4ATripName2;
     }
 
-    public String getScene4BUmkmName() {
-        return Scene4BUmkmName;
+
+    public String getScene4ATripName3() {
+        return Scene4ATripName3;
     }
 
-    public String getScene4BUmkmRatingUrl() {
-        return Scene4BUmkmRatingUrl;
+
+    public String getScene4ATripImageUrl1() {
+        return Scene4ATripImageUrl1;
     }
 
-    public String getScene4BLocationDetail() {
-        return Scene4BLocationDetail;
+
+    public String getScene4ATripImageUrl2() {
+        return Scene4ATripImageUrl2;
     }
 
-    public String getScene4BProductDetail() {
-        return Scene4BProductDetail;
+
+    public String getScene4ATripImageUrl3() {
+        return Scene4ATripImageUrl3;
     }
 
-    public String getScene4BContactDetail() {
-        return Scene4BContactDetail;
+
+    public String getScene4ATripRatingUrl1() {
+        return Scene4ATripRatingUrl1;
+    }
+
+
+    public String getScene4ATripRatingUrl2() {
+        return Scene4ATripRatingUrl2;
+    }
+
+
+    public String getScene4ATripRatingUrl3() {
+        return Scene4ATripRatingUrl3;
+    }
+
+
+    public String getScene4BUmkmImageUrl1() {
+        return Scene4BUmkmImageUrl1;
+    }
+
+
+    public String getScene4BUmkmImageUrl2() {
+        return Scene4BUmkmImageUrl2;
+    }
+
+
+    public String getScene4BUmkmImageUrl3() {
+        return Scene4BUmkmImageUrl3;
+    }
+
+
+    public String getScene4BUmkmName1() {
+        return Scene4BUmkmName1;
+    }
+
+
+    public String getScene4BUmkmName2() {
+        return Scene4BUmkmName2;
+    }
+
+
+    public String getScene4BUmkmName3() {
+        return Scene4BUmkmName3;
+    }
+
+
+    public String getScene4BUmkmRatingUrl1() {
+        return Scene4BUmkmRatingUrl1;
+    }
+
+
+    public String getScene4BUmkmRatingUrl2() {
+        return Scene4BUmkmRatingUrl2;
+    }
+
+
+    public String getScene4BUmkmRatingUrl3() {
+        return Scene4BUmkmRatingUrl3;
+    }
+
+
+    public String getScene4BLocationDetail1() {
+        return Scene4BLocationDetail1;
+    }
+
+
+    public String getScene4BLocationDetail2() {
+        return Scene4BLocationDetail2;
+    }
+
+
+    public String getScene4BLocationDetail3() {
+        return Scene4BLocationDetail3;
+    }
+
+
+    public String getScene4BProductDetail1() {
+        return Scene4BProductDetail1;
+    }
+
+
+    public String getScene4BProductDetail2() {
+        return Scene4BProductDetail2;
+    }
+
+
+    public String getScene4BProductDetail3() {
+        return Scene4BProductDetail3;
+    }
+
+
+    public String getScene4BContactDetail1() {
+        return Scene4BContactDetail1;
+    }
+
+
+    public String getScene4BContactDetail2() {
+        return Scene4BContactDetail2;
+    }
+
+
+    public String getScene4BContactDetail3() {
+        return Scene4BContactDetail3;
     }
 
     
-
-    
-    
-    
-
-    
-    
-
-    // @Override
-    // public String toString() {
-    //     return "DataKota{" +
-    //             "namaKota='" + namaKota + '\'' +
-    //             ", UrlGmbrwisata1='" + UrlGmbrwisata1 + '\'' +
-    //             ", UrlGmbrwisata2='" + UrlGmbrwisata2 + '\'' +
-    //             ", UrlGmbrwisata3='" + UrlGmbrwisata3 + '\'' +
-    //             '}';
-    // }
     
 
     

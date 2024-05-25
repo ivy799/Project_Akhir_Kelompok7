@@ -13,36 +13,35 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-// import projek.model.DataKota;
 
 public class Scene4A extends Scene3{
     private Stage stage;
     private Scene3 scene3;
+    private String getScene4ATripDetail,getScene4ATripImageUrl,getScene4ATripName,getScene4ATripRatingUrl;
 
     // Constructor
-    public Scene4A(Stage stage, Scene3 scene3) {
+    public Scene4A(Stage stage, Scene3 scene3, String getScene4ATripDetail, String getScene4ATripImageUrl,String getScene4ATripName, String getScene4ATripRatingUrl ) {
         this.stage = stage;
         this.scene3 = scene3;
+        this.getScene4ATripDetail = getScene4ATripDetail;
+        this.getScene4ATripImageUrl = getScene4ATripImageUrl;
+        this.getScene4ATripName = getScene4ATripName;
+        this.getScene4ATripRatingUrl = getScene4ATripRatingUrl;
         initialize();
     }
+    
 
     private void initialize() {
-        // Main variables for scene 4A
-        // String Scene4ATripDetail = "Apparalang Cliff, a very high and wide rock cliff, to enjoy the beauty of Apparalang Beach. Usually,\n it is the beach that offers bonus tourist offerings in the form of cliffs. However, unlike this one, it\n is the cliff that offers a tourist bonus in the form of a beautiful beach.";
-        // String Scene4ATripName = "Apparalang\nBulukumba,south sulawesi";
-        // String Scene4ATripImageUrl = getClass().getResource("/image/image12.png").toExternalForm();
-        // String Scene4ATripRatingUrl = getClass().getResource("/image/comp1.png").toExternalForm();
-
-
+        
         //layouting
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
-        root_1.setStyle("-fx-background-image: url('" + dataKota.getScene4ATripImageUrl() + "');");
+        root_1.setStyle("-fx-background-image: url(" + getScene4ATripImageUrl + ");");
 
-        Label mainText = new Label(dataKota.getScene4ATripName());
+        Label mainText = new Label(getScene4ATripName);
         mainText.setId("namaWisata");
 
-        Image rating = new Image(dataKota.getScene4ATripRatingUrl());
+        Image rating = new Image(getScene4ATripRatingUrl);
         ImageView imageView = new ImageView(rating);
 
         Image line = new Image("/image/line1.png");
@@ -51,10 +50,11 @@ public class Scene4A extends Scene3{
         Button homeButton = new Button("HOME");
         homeButton.setId("MainButton");
 
-
-        //button event listener
         Button backButton = new Button("BACK");
         backButton.setId("MainButton");
+
+
+        //button event listener
         backButton.setOnAction(V -> {
             scene3.show();
         });
@@ -67,13 +67,11 @@ public class Scene4A extends Scene3{
 
 
         //layouting
-        Button slideButton1 = new Button("<");
-        Button slideButton2 = new Button(">");
-        slideButton1.setId("slideButton");
-        slideButton2.setId("slideButton");
 
-        Label mainText2 = new Label(dataKota.getScene4ATripDetail());
+        Label mainText2 = new Label(getScene4ATripDetail);
         mainText2.setId("mainText2");
+        mainText2.setWrapText(true);
+        mainText2.setMaxWidth(590);
 
         Region spacer1 = new Region();
         HBox.setHgrow(spacer1, Priority.ALWAYS);
@@ -96,7 +94,7 @@ public class Scene4A extends Scene3{
         container3.setPadding(new Insets(20));
         container3.setId("header");
 
-        VBox mainContainer = new VBox(20);
+        VBox mainContainer = new VBox(0);
         mainContainer.setId("mainContainer");
         mainContainer.getChildren().addAll(container1, linebox, container2);
 
