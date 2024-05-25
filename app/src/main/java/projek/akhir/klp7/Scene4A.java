@@ -33,7 +33,7 @@ public class Scene4A {
         String Scene4ATripRatingUrl = getClass().getResource("/image/comp1.png").toExternalForm();
 
 
-
+        //layouting
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
         root_1.setStyle("-fx-background-image: url('" + Scene4ATripImageUrl + "');");
@@ -51,15 +51,21 @@ public class Scene4A {
         homeButton.setId("MainButton");
 
 
-
+        //button event listener
         Button backButton = new Button("BACK");
         backButton.setId("MainButton");
         backButton.setOnAction(V -> {
             scene3.show();
         });
 
+        homeButton.setOnAction(V -> {
+            Scene2 scene2 = new Scene2(stage);
+            scene2.show(); 
+        });
 
-        
+
+
+        //layouting
         Button slideButton1 = new Button("<");
         Button slideButton2 = new Button(">");
         slideButton1.setId("slideButton");
@@ -98,10 +104,6 @@ public class Scene4A {
         mainDetail.getChildren().addAll(mainContainer);
         mainDetail.setAlignment(Pos.CENTER);
 
-        homeButton.setOnAction(V -> {
-            Scene2 scene2 = new Scene2(stage);
-            scene2.show();
-        });
 
         // Scene layout
         root_1.setTop(container3);

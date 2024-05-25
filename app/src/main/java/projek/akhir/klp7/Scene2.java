@@ -33,7 +33,7 @@ public class Scene2 {
         String recomend3BgImageUrl = getClass().getResource("/image/image19.png").toExternalForm();
 
 
-
+        //layouting
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
 
@@ -43,7 +43,6 @@ public class Scene2 {
         Label subText = new Label("EXSPLORE NUSANTARA");
         subText.setId("subText");
         
-        
         Label label1 = new Label("CYTY/COUNTRY");
         label1.setId("recomendtext");
         BorderPane recomend1 = new BorderPane();
@@ -52,7 +51,6 @@ public class Scene2 {
         recomend1.setBottom(label1);
         recomend1.setStyle("-fx-background-image: url('" + recomend1BgImageUrl + "');");
 
-
         Label label2 = new Label("CULTURE");
         label2.setId("recomendtext");
         BorderPane recomend2 = new BorderPane();
@@ -60,7 +58,6 @@ public class Scene2 {
         recomend2.setId("recomend");
         recomend2.setBottom(label2);
         recomend2.setStyle("-fx-background-image: url('" + recomend2BgImageUrl + "');");
-
 
         Label label3 = new Label("CULINARY");
         label3.setId("recomendtext");
@@ -91,44 +88,33 @@ public class Scene2 {
                 );
 
         
-        
         VBox leftContainer = new VBox();
         leftContainer.getChildren().addAll(listView);
         leftContainer.setAlignment(Pos.CENTER);
         leftContainer.setId("listViewContainer");
 
-
-
         HBox mainTextcontainer = new HBox(mainText);
         mainTextcontainer.setAlignment(Pos.CENTER);
         mainTextcontainer.setId("mainTextcontainer");
-
 
         VBox mainContainer = new VBox(15);
         mainContainer.setAlignment(Pos.CENTER);
         mainContainer.setId("mainContainer");
         mainContainer.getChildren().addAll(mainTextcontainer, leftContainer);
         
-        
-        
         VBox recomendContainer = new VBox(10);
         recomendContainer.setAlignment(Pos.CENTER);
         recomendContainer.setId("recomendContainer");
         recomendContainer.getChildren().addAll(subText,recomend1,recomend2,recomend3);
         
-
-
         VBox container1 = new VBox();
         container1.getChildren().addAll(mainContainer);
         container1.setAlignment(Pos.CENTER);
         container1.setId("container1");
 
-
-
         HBox container2 = new HBox(recomendContainer);
         container2.setId("container2");
         container2.setAlignment(Pos.CENTER);
-
 
         Button backButton = new Button("BACK");
         backButton.setId("backButton");
@@ -136,9 +122,9 @@ public class Scene2 {
         backButtonContainer.setAlignment(Pos.TOP_RIGHT);
         backButtonContainer.setPadding(new Insets(0));
 
-
         VBox container3 = new VBox(70);
         container3.getChildren().addAll(backButtonContainer,container2);
+
 
 
         //button event listener
@@ -147,9 +133,6 @@ public class Scene2 {
             loginPage.show(); 
         });
 
-        
-        
-        
         //listview item listener
         listView.setItems(cityNames);
         listView.setId("listView");
@@ -160,11 +143,11 @@ public class Scene2 {
             scene3.show();
         });
 
-        
 
 
 
-        //scene layout
+
+        //layout arragnment
         root_1.setLeft(container1);
         root_1.setRight(container3);
 

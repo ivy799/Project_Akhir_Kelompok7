@@ -103,15 +103,15 @@ public class Scene1 {
 
 
         //button action listener
-        loginButton.setOnAction(V -> {
-            Scene4B scene3 = new Scene4B(stage);
-            scene3.show(); 
-        });
+        // loginButton.setOnAction(V -> {
+        //     Scene4B scene3 = new Scene4B(stage);
+        //     scene3.show(); 
+        // });
 
-        signupButton.setOnAction(V -> {
-            Scene2 scene2 = new Scene2(stage);
-            scene2.show(); 
-        });
+        // signupButton.setOnAction(V -> {
+        //     Scene2 scene2 = new Scene2(stage);
+        //     scene2.show(); 
+        // });
 
 
 

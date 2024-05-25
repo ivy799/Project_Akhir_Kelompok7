@@ -36,7 +36,6 @@ public class Scene3 {
 
     public void show() {
         // Scene 3 main variables
-
         //Right section
         //wisata
         String Scene3TripImageUrl1 = getClass().getResource(dataKota.getScene3TripImageUrl1()).toExternalForm();
@@ -113,6 +112,7 @@ public class Scene3 {
 
 
         //right section;
+        //Trip
         Button tripNameContainer1 = new Button(Scene3TripName1);
         tripNameContainer1.setPadding(new Insets(5));
         tripNameContainer1.setId("tripName");
@@ -125,13 +125,9 @@ public class Scene3 {
         tripNameContainer3.setPadding(new Insets(5));
         tripNameContainer3.setId("tripName");
 
-
-
         Label rightTittle1 = new Label("WISATA");
         rightTittle1.setId("rightTittle");
         
-
-
         BorderPane rightImage1 = new BorderPane();
         rightImage1.setBottom(tripNameContainer1);
         rightImage1.setId("rightImage");
@@ -147,13 +143,9 @@ public class Scene3 {
         rightImage3.setId("rightImage");
         rightImage3.setStyle("-fx-background-image: url('" + Scene3TripImageUrl3 + "');");
 
-
-
         HBox innerRightContainer1 = new HBox(10);
         innerRightContainer1.setAlignment(Pos.CENTER);
         innerRightContainer1.getChildren().addAll(rightImage1,rightImage2,rightImage3);
-
-
 
         //UMKM
         Label rightTittle2 = new Label("UMKM");
@@ -192,13 +184,9 @@ public class Scene3 {
         rightImage6.setId("umkm");
 
 
-
-
         HBox innerRightContainer2 = new HBox(10);
         innerRightContainer2.setAlignment(Pos.CENTER);
         innerRightContainer2.getChildren().addAll(rightImage4,rightImage5,rightImage6);
-
-
 
         VBox rightContainer1 = new VBox(40);
         rightContainer1.setId("rightContainer");
@@ -218,6 +206,12 @@ public class Scene3 {
             Scene2 scene2 = new Scene2(stage);
             scene2.show(); 
         });
+
+        homeButton.setOnAction(V -> {
+            Scene2 scene2 = new Scene2(stage);
+            scene2.show(); 
+        });
+
 
 
         //tripButton event lsitener
@@ -239,12 +233,19 @@ public class Scene3 {
         
         //UMKM button eventlistener
         umkmName1.setOnAction(V -> {
-            Scene4B scene4B = new Scene4B(stage);
+            Scene4B scene4B = new Scene4B(stage,this);
             scene4B.show(); 
         });
 
+        umkmName2.setOnAction(V -> {
+            Scene4B scene4B = new Scene4B(stage,this);
+            scene4B.show(); 
+        });
 
-
+        umkmName3.setOnAction(V -> {
+            Scene4B scene4B = new Scene4B(stage,this);
+            scene4B.show(); 
+        });
 
 
 
@@ -265,7 +266,7 @@ public class Scene3 {
 
 
 
-
+    //list item and additional class
     private List<ItemData> getItemData() {
         // main variables
         // images

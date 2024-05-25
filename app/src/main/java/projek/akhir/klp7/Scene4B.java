@@ -16,13 +16,17 @@ import javafx.stage.Stage;
 
 public class Scene4B {
     private Stage stage;
+    private Scene3 scene3;
 
-    public Scene4B(Stage stage) {
+    //constructor
+    public Scene4B(Stage stage, Scene3 scene3) {
         this.stage = stage;
+        this.scene3 = scene3;
+        initialize();
     }
 
-    public void show(){
-        
+
+    private void initialize(){
         //Scene 4B main variabel
         String Scene4BUmkmImageUrl = getClass().getResource("/image/image23.png").toExternalForm();
         String Scene4BUmkmName = "JALANGKOTE RACING";
@@ -32,18 +36,29 @@ public class Scene4B {
         String Scene4BContactDetail = "lorem ipsum";
         
 
+
+        //layoting
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
         root_1.setStyle("-fx-background-image: url('" + Scene4BUmkmImageUrl + "');");
 
 
-        //HEADER
+        // button eventListener
         Button backButton = new Button("BACK");
         backButton.setId("HeaderButton");
-
+        backButton.setOnAction(V -> {
+            scene3.show();
+        });
         Button homeButton = new Button("HOME");
         homeButton.setId("HeaderButton");
+        homeButton.setOnAction(V -> {
+            Scene2 scene2 = new Scene2(stage);
+            scene2.show(); 
+        });
 
+
+        
+        //HEADER
         Region spacer1 = new Region();
         HBox.setHgrow(spacer1, Priority.ALWAYS);
 
@@ -78,8 +93,7 @@ public class Scene4B {
         product.setId("tittle");
         Label contact = new Label("CONTACT");
         contact.setId("tittle");
-        
-        
+         
         //location detail
         Image line1 = new Image("/image/line2.png");
         ImageView line11 = new ImageView(line1);
@@ -95,7 +109,6 @@ public class Scene4B {
         locationContainer.setId("container");
         locationContainer.getChildren().addAll(location,line11,locationDetailContainer);
         
-
         //product detail
         Image line2 = new Image("/image/line2.png");
         ImageView line22 = new ImageView(line2);
@@ -110,7 +123,6 @@ public class Scene4B {
         productContainer.setAlignment(Pos.CENTER);
         productContainer.setId("container");
         productContainer.getChildren().addAll(product,line22,productDetailContainer);
-
 
         //contact detail
         Image line3 = new Image("/image/line2.png");
@@ -127,21 +139,6 @@ public class Scene4B {
         contactContainer.setId("container");
         contactContainer.getChildren().addAll(contact,line33,contactDetailContainer);
 
-
-
-        //button eventListener
-        // backButton.setOnAction(V -> {
-        //     Scene3 scene3 = new Scene3(stage);
-        //     scene3.show(); 
-        // });
-
-        homeButton.setOnAction(V -> {
-            Scene2 scene2 = new Scene2(stage);
-            scene2.show(); 
-        });
-
-        
-
         HBox mainDetail = new HBox(40);
         mainDetail.getChildren().addAll(locationContainer,productContainer,contactContainer);
         mainDetail.setId("mainDetail");
@@ -149,15 +146,7 @@ public class Scene4B {
 
 
 
-
-
-        homeButton.setOnAction(V -> {
-            Scene2 scene2 = new Scene2(stage);
-            scene2.show(); 
-        });
-
-
-
+        //layout arrangement
         root_1.setTop(header);
         root_1.setCenter(mainContainer);
         root_1.setBottom(mainDetail);
@@ -166,6 +155,9 @@ public class Scene4B {
         Scene scene = new Scene(root_1, 1300, 650);
         scene.getStylesheets().add(getClass().getResource("/styling/style4B.css").toExternalForm());
         stage.setScene(scene);
+    }
+
+    public void show(){
         stage.show();
     }
 
