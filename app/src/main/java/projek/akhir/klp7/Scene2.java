@@ -32,6 +32,8 @@ public class Scene2 {
         String recomend2BgImageUrl = getClass().getResource("/image/image19.png").toExternalForm();
         String recomend3BgImageUrl = getClass().getResource("/image/image19.png").toExternalForm();
 
+
+
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
 
@@ -145,18 +147,20 @@ public class Scene2 {
             loginPage.show(); 
         });
 
+        
+        
+        
         //listview item listener
         listView.setItems(cityNames);
         listView.setId("listView");
-
-    
-
         listView.setOnMouseClicked(e -> {
             String selectedCity = listView.getSelectionModel().getSelectedItem();
-            DataKota dataKota = DataKotaController.geDataKota(selectedCity);
+            DataKota dataKota = DataKotaController.getDataKota(selectedCity);
             Scene3 scene3 = new Scene3(stage,dataKota);
             scene3.show();
         });
+
+        
 
 
 

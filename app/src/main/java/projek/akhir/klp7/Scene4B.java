@@ -24,17 +24,17 @@ public class Scene4B {
     public void show(){
         
         //Scene 4B main variabel
-        String imageUrl = getClass().getResource("/image/image23.png").toExternalForm();
-        String namaUMKM = "JALANGKOTE RACING";
-        String RatingimageUrl = getClass().getResource("/image/image21.png").toExternalForm();
-        String locationDetailText = "lorem ipsum";
-        String productDetailText = "lorem ipsum";
-        String contactDetailText = "lorem ipsum";
+        String Scene4BUmkmImageUrl = getClass().getResource("/image/image23.png").toExternalForm();
+        String Scene4BUmkmName = "JALANGKOTE RACING";
+        String Scene4AUmkmRatingUrl = getClass().getResource("/image/image21.png").toExternalForm();
+        String Scene4BLocationDetail = "lorem ipsum";
+        String Scene4BProductDetail = "lorem ipsum";
+        String Scene4BContactDetail = "lorem ipsum";
         
 
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
-        root_1.setStyle("-fx-background-image: url('" + imageUrl + "');");
+        root_1.setStyle("-fx-background-image: url('" + Scene4BUmkmImageUrl + "');");
 
 
         //HEADER
@@ -54,11 +54,11 @@ public class Scene4B {
 
 
         //BODY
-        String text = namaUMKM;
+        String text = Scene4BUmkmName;
         Label mainText = new Label(text);
         mainText.setId("mainText");
 
-        Image ratingimage = new Image(RatingimageUrl);
+        Image ratingimage = new Image(Scene4AUmkmRatingUrl);
         ImageView rating = new ImageView(ratingimage);
 
         HBox mainTextContainer = new HBox(mainText);
@@ -66,7 +66,6 @@ public class Scene4B {
         mainTextContainer.setAlignment(Pos.CENTER_RIGHT);
 
         VBox mainContainer = new VBox(20);
-        // mainContainer.setStyle("-fx-background-color: blue;");
         mainContainer.getChildren().addAll(mainTextContainer,rating);
         mainContainer.setAlignment(Pos.CENTER_RIGHT);
         mainContainer.setPadding(new Insets(0, 130,0,0));
@@ -85,7 +84,7 @@ public class Scene4B {
         Image line1 = new Image("/image/line2.png");
         ImageView line11 = new ImageView(line1);
 
-        Label locationDetail = new Label(locationDetailText); 
+        Label locationDetail = new Label(Scene4BLocationDetail); 
         locationDetail.setId("detail");
         
         HBox locationDetailContainer = new HBox(locationDetail);
@@ -101,7 +100,7 @@ public class Scene4B {
         Image line2 = new Image("/image/line2.png");
         ImageView line22 = new ImageView(line2);
 
-        Label productDetail = new Label(productDetailText); 
+        Label productDetail = new Label(Scene4BProductDetail); 
         productDetail.setId("detail");
         
         HBox productDetailContainer = new HBox(productDetail);
@@ -117,7 +116,7 @@ public class Scene4B {
         Image line3 = new Image("/image/line2.png");
         ImageView line33 = new ImageView(line3);
 
-        Label contactDetail = new Label(contactDetailText); 
+        Label contactDetail = new Label(Scene4BContactDetail); 
         contactDetail.setId("detail");
         
         HBox contactDetailContainer = new HBox(contactDetail);

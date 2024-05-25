@@ -1,6 +1,5 @@
 package projek.akhir.klp7;
 
-
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -13,56 +12,60 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-// import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 
 public class Scene4A {
     private Stage stage;
-    
-    
-    //constructor
-    public Scene4A(Stage stage) {
+    private Scene3 scene3;
+
+    // Constructor
+    public Scene4A(Stage stage, Scene3 scene3) {
         this.stage = stage;
+        this.scene3 = scene3;
+        initialize();
     }
 
+    private void initialize() {
+        // Main variables for scene 4A
+        String Scene4ATripDetail = "Apparalang Cliff, a very high and wide rock cliff, to enjoy the beauty of Apparalang Beach. Usually,\n it is the beach that offers bonus tourist offerings in the form of cliffs. However, unlike this one, it\n is the cliff that offers a tourist bonus in the form of a beautiful beach.";
+        String Scene4ATripName = "Apparalang\nBulukumba,south sulawesi";
+        String Scene4ATripImageUrl = getClass().getResource("/image/image12.png").toExternalForm();
+        String Scene4ATripRatingUrl = getClass().getResource("/image/comp1.png").toExternalForm();
 
-
-    public void show(){
-        
-        //scene 4A main variabel
-        String deskripsiWisata = "Apparalang Cliff, a very high and wide rock cliff, to enjoy the beauty of Apparalang Beach. Usually,\n it is the beach that offers bonus tourist offerings in the form of cliffs. However, unlike this one, it\n is the cliff that offers a tourist bonus in the form of a beautiful beach.";
-        String namaWisata = "Apparalang\nBulukumba,south sulawesi";
-        String bgimageUrl = getClass().getResource("/image/image12.png").toExternalForm();
-        String ratingImageUrl = getClass().getResource("/image/comp1.png").toExternalForm();
 
 
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
-        root_1.setStyle("-fx-background-image: url('" + bgimageUrl + "');");
+        root_1.setStyle("-fx-background-image: url('" + Scene4ATripImageUrl + "');");
 
-
-
-        Label mainText = new Label(namaWisata);
+        Label mainText = new Label(Scene4ATripName);
         mainText.setId("namaWisata");
 
-        Image rating = new Image(ratingImageUrl);
+        Image rating = new Image(Scene4ATripRatingUrl);
         ImageView imageView = new ImageView(rating);
 
         Image line = new Image("/image/line1.png");
         ImageView line1 = new ImageView(line);
 
-        Button backButton = new Button("BACK");
         Button homeButton = new Button("HOME");
-        backButton.setId("MainButton");
         homeButton.setId("MainButton");
 
+
+
+        Button backButton = new Button("BACK");
+        backButton.setId("MainButton");
+        backButton.setOnAction(V -> {
+            scene3.show();
+        });
+
+
+        
         Button slideButton1 = new Button("<");
         Button slideButton2 = new Button(">");
         slideButton1.setId("slideButton");
         slideButton2.setId("slideButton");
 
-        Label mainText2 = new Label(deskripsiWisata);
+        Label mainText2 = new Label(Scene4ATripDetail);
         mainText2.setId("mainText2");
 
         Region spacer1 = new Region();
@@ -82,44 +85,34 @@ public class Scene4A {
         container2.setPadding(new Insets(20));
 
         HBox container3 = new HBox();
-        container3.getChildren().addAll(homeButton,spacer1,backButton);
+        container3.getChildren().addAll(homeButton, spacer1, backButton);
         container3.setPadding(new Insets(20));
         container3.setId("header");
 
         VBox mainContainer = new VBox(20);
         mainContainer.setId("mainContainer");
-        mainContainer.getChildren().addAll(container1,linebox,container2);
-
+        mainContainer.getChildren().addAll(container1, linebox, container2);
 
         HBox mainDetail = new HBox();
         mainDetail.setId("mainDetail");
         mainDetail.getChildren().addAll(mainContainer);
         mainDetail.setAlignment(Pos.CENTER);
 
-
-
-        //button eventListener
-        // backButton.setOnAction(V -> {
-        //     Scene3 scene3 = new Scene3(stage);
-        //     scene3.show(); 
-        // });
-
         homeButton.setOnAction(V -> {
             Scene2 scene2 = new Scene2(stage);
-            scene2.show(); 
+            scene2.show();
         });
 
-
-
-        //scene layout
+        // Scene layout
         root_1.setTop(container3);
         root_1.setBottom(mainDetail);
 
         Scene scene = new Scene(root_1, 1300, 650);
         scene.getStylesheets().add(getClass().getResource("/styling/style4A.css").toExternalForm());
         stage.setScene(scene);
-        stage.show();
     }
 
-    
+    public void show() {
+        stage.show();
+    }
 }

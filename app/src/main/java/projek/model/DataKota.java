@@ -1,45 +1,18 @@
 package projek.model;
+
 public class DataKota {
-    private String namaKota,UrlGmbrwisata1,UrlGmbrwisata2,UrlGmbrwisata3;
+    private String namaKota,Scene3TripImageUrl1,Scene3TripImageUrl2,Scene3TripImageUrl3;
 
-    public DataKota(String namaKota, String urlGmbrwisata1, String urlGmbrwisata2, String urlGmbrwisata3) {
+    
+
+    public DataKota(String namaKota, String scene3TripImageUrl1, String scene3TripImageUrl2, String scene3TripImageUrl3) {
         this.namaKota = namaKota;
-        UrlGmbrwisata1 = urlGmbrwisata1;
-        UrlGmbrwisata2 = urlGmbrwisata2;
-        UrlGmbrwisata3 = urlGmbrwisata3;
+        Scene3TripImageUrl1 = scene3TripImageUrl1;
+        Scene3TripImageUrl2 = scene3TripImageUrl2;
+        Scene3TripImageUrl3 = scene3TripImageUrl3;
     }
 
-    public String getNamaKota() {
-        return namaKota;
-    }
-
-    public void setNamaKota(String namaKota) {
-        this.namaKota = namaKota;
-    }
-
-    public String getUrlGmbrwisata1() {
-        return UrlGmbrwisata1;
-    }
-
-    public void setUrlGmbrwisata1(String urlGmbrwisata1) {
-        UrlGmbrwisata1 = urlGmbrwisata1;
-    }
-
-    public String getUrlGmbrwisata2() {
-        return UrlGmbrwisata2;
-    }
-
-    public void setUrlGmbrwisata2(String urlGmbrwisata2) {
-        UrlGmbrwisata2 = urlGmbrwisata2;
-    }
-
-    public String getUrlGmbrwisata3() {
-        return UrlGmbrwisata3;
-    }
-
-    public void setUrlGmbrwisata3(String urlGmbrwisata3) {
-        UrlGmbrwisata3 = urlGmbrwisata3;
-    }
+    
 
     // @Override
     // public String toString() {
@@ -50,6 +23,54 @@ public class DataKota {
     //             ", UrlGmbrwisata3='" + UrlGmbrwisata3 + '\'' +
     //             '}';
     // }
+
+
+
+    public String getNamaKota() {
+        return namaKota;
+    }
+
+
+
+    public void setNamaKota(String namaKota) {
+        this.namaKota = namaKota;
+    }
+
+
+
+    public String getScene3TripImageUrl1() {
+        return Scene3TripImageUrl1;
+    }
+
+
+
+    public void setScene3TripImageUrl1(String scene3TripImageUrl1) {
+        Scene3TripImageUrl1 = scene3TripImageUrl1;
+    }
+
+
+
+    public String getScene3TripImageUrl2() {
+        return Scene3TripImageUrl2;
+    }
+
+
+
+    public void setScene3TripImageUrl2(String scene3TripImageUrl2) {
+        Scene3TripImageUrl2 = scene3TripImageUrl2;
+    }
+
+
+
+    public String getScene3TripImageUrl3() {
+        return Scene3TripImageUrl3;
+    }
+
+
+
+    public void setScene3TripImageUrl3(String scene3TripImageUrl3) {
+        Scene3TripImageUrl3 = scene3TripImageUrl3;
+    }
 
     
 

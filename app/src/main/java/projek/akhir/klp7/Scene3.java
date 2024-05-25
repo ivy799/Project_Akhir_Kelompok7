@@ -39,21 +39,21 @@ public class Scene3 {
 
         //Right section
         //wisata
-        String UrlGmbrwisata1 = getClass().getResource(dataKota.getUrlGmbrwisata1()).toExternalForm();
-        String UrlGmbrwisata2 = getClass().getResource(dataKota.getUrlGmbrwisata2()).toExternalForm();
-        String UrlGmbrwisata3 = getClass().getResource(dataKota.getUrlGmbrwisata3()).toExternalForm();
+        String Scene3TripImageUrl1 = getClass().getResource(dataKota.getScene3TripImageUrl1()).toExternalForm();
+        String Scene3TripImageUrl2 = getClass().getResource(dataKota.getScene3TripImageUrl2()).toExternalForm();
+        String Scene3TripImageUrl3 = getClass().getResource(dataKota.getScene3TripImageUrl3()).toExternalForm();
 
-        String tripName1 = "NUSA PENIDA,\nsoutheast coast of Bali";
-        String tripName2 = "BATUR MOUNT,\ncentral-eastern of Bali";
-        String tripName3 = "KUTA Beach,\nsouthern of Bal";
+        String Scene3TripName1 = "NUSA PENIDA,\nsoutheast coast of Bali";
+        String Scene3TripName2 = "BATUR MOUNT,\ncentral-eastern of Bali";
+        String Scene3TripName3 = "KUTA Beach,\nsouthern of Bal";
         //UMKM
-        String umkmImageUrl1 = "/image/image29.png";
-        String umkmImageUrl2 = "/image/image30.png";
-        String umkmImageUrl3 = "/image/image31.png";
+        String Scene3UmkmImageUrl1 = "/image/image29.png";
+        String Scene3UmkmImageUrl2 = "/image/image30.png";
+        String Scene3UmkmImageUrl3 = "/image/image31.png";
 
-        String umkmNameUrl1 = "Tenun Bali Collection";
-        String umkmNameUrl2 = "Oleh Oleh Perak Bali";
-        String umkmNameUrl3 = "Leolle Official Shop";
+        String Scene3UmkmName1 = "Tenun Bali Collection";
+        String Scene3UmkmName2 = "Oleh Oleh Perak Bali";
+        String Scene3UmkmName3 = "Leolle Official Shop";
 
 
 
@@ -113,15 +113,15 @@ public class Scene3 {
 
 
         //right section;
-        Button tripNameContainer1 = new Button(tripName1);
+        Button tripNameContainer1 = new Button(Scene3TripName1);
         tripNameContainer1.setPadding(new Insets(5));
         tripNameContainer1.setId("tripName");
 
-        Button tripNameContainer2 = new Button(tripName2);
+        Button tripNameContainer2 = new Button(Scene3TripName2);
         tripNameContainer2.setPadding(new Insets(5));
         tripNameContainer2.setId("tripName");
 
-        Button tripNameContainer3 = new Button(tripName3);
+        Button tripNameContainer3 = new Button(Scene3TripName3);
         tripNameContainer3.setPadding(new Insets(5));
         tripNameContainer3.setId("tripName");
 
@@ -135,17 +135,17 @@ public class Scene3 {
         BorderPane rightImage1 = new BorderPane();
         rightImage1.setBottom(tripNameContainer1);
         rightImage1.setId("rightImage");
-        rightImage1.setStyle("-fx-background-image: url('" + UrlGmbrwisata1 + "');");
+        rightImage1.setStyle("-fx-background-image: url('" + Scene3TripImageUrl1 + "');");
 
         BorderPane rightImage2 = new BorderPane();
         rightImage2.setBottom(tripNameContainer2);
         rightImage2.setId("rightImage");
-        rightImage2.setStyle("-fx-background-image: url('" + UrlGmbrwisata2 + "');");
+        rightImage2.setStyle("-fx-background-image: url('" + Scene3TripImageUrl2 + "');");
 
         BorderPane rightImage3 = new BorderPane();
         rightImage3.setBottom(tripNameContainer3);
         rightImage3.setId("rightImage");
-        rightImage3.setStyle("-fx-background-image: url('" + UrlGmbrwisata3 + "');");
+        rightImage3.setStyle("-fx-background-image: url('" + Scene3TripImageUrl3 + "');");
 
 
 
@@ -159,22 +159,22 @@ public class Scene3 {
         Label rightTittle2 = new Label("UMKM");
         rightTittle2.setId("rightTittle");
 
-        Image umkmImage1 = new Image(umkmImageUrl1);
-        Image umkmImage2 = new Image(umkmImageUrl2);
-        Image umkmImage3 = new Image(umkmImageUrl3);
+        Image umkmImage1 = new Image(Scene3UmkmImageUrl1);
+        Image umkmImage2 = new Image(Scene3UmkmImageUrl2);
+        Image umkmImage3 = new Image(Scene3UmkmImageUrl3);
 
         ImageView umkmImg1 = new ImageView(umkmImage1);
         ImageView umkmImg2= new ImageView(umkmImage2);
         ImageView umkmImg3 = new ImageView(umkmImage3);
         
 
-        Label umkmName1 = new Label(umkmNameUrl1);
+        Button umkmName1 = new Button(Scene3UmkmName1);
         umkmName1.setPadding(new Insets(10));
         umkmName1.setId("umkmName");
-        Label umkmName2 = new Label(umkmNameUrl2);
+        Button umkmName2 = new Button(Scene3UmkmName2);
         umkmName2.setPadding(new Insets(10));
         umkmName2.setId("umkmName");
-        Label umkmName3 = new Label(umkmNameUrl3);
+        Button umkmName3 = new Button(Scene3UmkmName3);
         umkmName3.setPadding(new Insets(10));
         umkmName3.setId("umkmName");
 
@@ -219,19 +219,28 @@ public class Scene3 {
             scene2.show(); 
         });
 
+
+        //tripButton event lsitener
         tripNameContainer1.setOnAction(V -> {
-            Scene4A scene4A = new Scene4A(stage);
+            Scene4A scene4A = new Scene4A(stage,this);
             scene4A.show(); 
         });
 
         tripNameContainer2.setOnAction(V -> {
-            Scene4A scene4A = new Scene4A(stage);
+            Scene4A scene4A = new Scene4A(stage, this);
             scene4A.show(); 
         });
 
         tripNameContainer3.setOnAction(V -> {
-            Scene4A scene4A = new Scene4A(stage);
+            Scene4A scene4A = new Scene4A(stage,this);
             scene4A.show();  
+        });
+
+        
+        //UMKM button eventlistener
+        umkmName1.setOnAction(V -> {
+            Scene4B scene4B = new Scene4B(stage);
+            scene4B.show(); 
         });
 
 
@@ -260,35 +269,37 @@ public class Scene3 {
     private List<ItemData> getItemData() {
         // main variables
         // images
-        String image1_1 = "/image/image24.png";
-        String image1_2 = "/image/image24.png";
-        String image1_3 = "/image/image24.png";
+        String Scene3HistoryImageUrl1 = "/image/image24.png";
+        String Scene3HistoryImageUrl2 = "/image/image24.png";
+        String Scene3HistoryImageUrl3 = "/image/image24.png";
         
-        String image2_1 = "/image/image24.png";
-        String image2_2 = "/image/image24.png";
-        String image2_3 = "/image/image24.png";
+        String Scene3TraditionImageUrl1 = "/image/image24.png";
+        String Scene3TraditionImageUrl2 = "/image/image24.png";
+        String Scene3TraditionImageUrl3 = "/image/image24.png";
 
-        String image3_1 = "/image/image24.png";
-        String image3_2 = "/image/image24.png";
-        String image3_3 = "/image/image24.png";
+        String Scene3FoodImageUrl1 = "/image/image24.png";
+        String Scene3FoodImageUrl2 = "/image/image24.png";
+        String Scene3FoodImageUrl3 = "/image/image24.png";
 
         // texts
-        String text1_1 = "Text for item 1 in container 1.";
-        String text1_2 = "Text for item 1 in container 2.";
-        String text1_3 = "Text for item 1 in container 3.";
+        String Scene3HistoryText1 = "Text for item 1 in container 1.";
+        String Scene3HistoryText2 = "Text for item 1 in container 2.";
+        String Scene3HistoryText3 = "Text for item 1 in container 3.";
         
-        String text2_1 = "Text for item 2 in container 1.";
-        String text2_2 = "Text for item 2 in container 2.";
-        String text2_3 = "Text for item 2 in container 3.";
+        String Scene3TraditionText1 = "Text for item 2 in container 1.";
+        String Scene3TraditionText2 = "Text for item 2 in container 2.";
+        String Scene3TraditionText3 = "Text for item 2 in container 3.";
 
-        String text3_1 = "Text for item 3 in container 1.";
-        String text3_2 = "Text for item 3 in container 2.";
-        String text3_3 = "Text for item 3 in container 3.";
+        String Scene3FoodText1 = "Text for item 3 in container 1.";
+        String Scene3FoodText2 = "Text for item 3 in container 2.";
+        String Scene3FoodText3 = "Text for item 3 in container 3.";
+
+        
 
         List<ItemData> items = new ArrayList<>();
-        items.add(new ItemData("Sejarah dan Warisan", text1_1, image1_1, text1_2, image1_2, text1_3, image1_3));
-        items.add(new ItemData("tradisi dan Upacara Adat", text2_1, image2_1, text2_2, image2_2, text2_3, image2_3));
-        items.add(new ItemData("kuliner", text3_1, image3_1, text3_2, image3_2, text3_3, image3_3));
+        items.add(new ItemData("Sejarah dan Warisan", Scene3HistoryText1, Scene3HistoryImageUrl1, Scene3HistoryText2, Scene3HistoryImageUrl2, Scene3HistoryText3, Scene3HistoryImageUrl3));
+        items.add(new ItemData("tradisi dan Upacara Adat", Scene3TraditionText1, Scene3TraditionImageUrl1, Scene3TraditionText2, Scene3TraditionImageUrl2, Scene3TraditionText3, Scene3TraditionImageUrl3));
+        items.add(new ItemData("kuliner", Scene3FoodText1, Scene3FoodImageUrl1, Scene3FoodText2, Scene3FoodImageUrl2, Scene3FoodText3, Scene3FoodImageUrl3));
         return items;
     }
 

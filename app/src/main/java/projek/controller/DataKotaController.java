@@ -4,7 +4,7 @@ import config.DBconfig;
 import projek.model.DataKota;
 
 public class DataKotaController extends DBconfig{
-    public static DataKota geDataKota(String namaKotaYangDipencet) {
+    public static DataKota getDataKota(String namaKotaYangDipencet) {
         DataKota dataKota = null;
         String query = "SELECT * FROM DataKota WHERE namaKota = ?";
         try {
@@ -14,11 +14,11 @@ public class DataKotaController extends DBconfig{
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 String namaKota = resultSet.getString("namaKota");
-                String UrlGmbrwisata1 = resultSet.getString("UrlGmbrwisata1");
-                String UrlGmbrwisata2 = resultSet.getString("UrlGmbrwisata2");
-                String UrlGmbrwisata3 = resultSet.getString("UrlGmbrwisata3");
+                String Scene3TripImageUrl1 = resultSet.getString("Scene3TripImageUrl1");
+                String Scene3TripImageUrl2 = resultSet.getString("Scene3TripImageUrl2");
+                String Scene3TripImageUrl3 = resultSet.getString("Scene3TripImageUrl3");
 
-                dataKota = new DataKota(namaKota, UrlGmbrwisata1, UrlGmbrwisata2, UrlGmbrwisata3);
+                dataKota = new DataKota(namaKota, Scene3TripImageUrl1, Scene3TripImageUrl2, Scene3TripImageUrl3);
             }
         } catch (Exception e) {
             e.printStackTrace();

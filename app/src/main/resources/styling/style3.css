@@ -113,13 +113,15 @@
     -fx-alignment: CENTER;
     -fx-background-radius: 10;
 }
-#umkm:hover{
-    -fx-cursor: hand;
-}
 
 #umkmName{
     -fx-text-fill:#001B48;
     -fx-font-size:10px;
     -fx-font-weight: bold;
     -fx-alignment: CENTER;
+    -fx-background-color: transparent;
+}
+#umkmName:hover{
+    -fx-cursor: hand;
+    
 }
