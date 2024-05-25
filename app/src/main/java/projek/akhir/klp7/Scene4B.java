@@ -14,7 +14,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Scene4B {
+public class Scene4B extends Scene3{
     private Stage stage;
     private Scene3 scene3;
 
@@ -28,19 +28,19 @@ public class Scene4B {
 
     private void initialize(){
         //Scene 4B main variabel
-        String Scene4BUmkmImageUrl = getClass().getResource("/image/image23.png").toExternalForm();
-        String Scene4BUmkmName = "JALANGKOTE RACING";
-        String Scene4AUmkmRatingUrl = getClass().getResource("/image/image21.png").toExternalForm();
-        String Scene4BLocationDetail = "lorem ipsum";
-        String Scene4BProductDetail = "lorem ipsum";
-        String Scene4BContactDetail = "lorem ipsum";
+        // String Scene4BUmkmImageUrl = getClass().getResource("/image/image23.png").toExternalForm();
+        // String Scene4BUmkmName = "JALANGKOTE RACING";
+        // String Scene4BUmkmRatingUrl = getClass().getResource("/image/image21.png").toExternalForm();
+        // String Scene4BLocationDetail = "lorem ipsum";
+        // String Scene4BProductDetail = "lorem ipsum";
+        // String Scene4BContactDetail = "lorem ipsum";
         
 
 
         //layoting
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
-        root_1.setStyle("-fx-background-image: url('" + Scene4BUmkmImageUrl + "');");
+        root_1.setStyle("-fx-background-image: url('" + dataKota.getScene4BUmkmImageUrl() + "');");
 
 
         // button eventListener
@@ -69,11 +69,10 @@ public class Scene4B {
 
 
         //BODY
-        String text = Scene4BUmkmName;
-        Label mainText = new Label(text);
+        Label mainText = new Label(dataKota.getScene4BUmkmName());
         mainText.setId("mainText");
 
-        Image ratingimage = new Image(Scene4AUmkmRatingUrl);
+        Image ratingimage = new Image(dataKota.getScene4BUmkmRatingUrl());
         ImageView rating = new ImageView(ratingimage);
 
         HBox mainTextContainer = new HBox(mainText);
@@ -98,7 +97,7 @@ public class Scene4B {
         Image line1 = new Image("/image/line2.png");
         ImageView line11 = new ImageView(line1);
 
-        Label locationDetail = new Label(Scene4BLocationDetail); 
+        Label locationDetail = new Label(dataKota.getScene4BLocationDetail()); 
         locationDetail.setId("detail");
         
         HBox locationDetailContainer = new HBox(locationDetail);
@@ -113,7 +112,7 @@ public class Scene4B {
         Image line2 = new Image("/image/line2.png");
         ImageView line22 = new ImageView(line2);
 
-        Label productDetail = new Label(Scene4BProductDetail); 
+        Label productDetail = new Label(dataKota.getScene4BProductDetail()); 
         productDetail.setId("detail");
         
         HBox productDetailContainer = new HBox(productDetail);
@@ -128,7 +127,7 @@ public class Scene4B {
         Image line3 = new Image("/image/line2.png");
         ImageView line33 = new ImageView(line3);
 
-        Label contactDetail = new Label(Scene4BContactDetail); 
+        Label contactDetail = new Label(dataKota.getScene4BContactDetail()); 
         contactDetail.setId("detail");
         
         HBox contactDetailContainer = new HBox(contactDetail);

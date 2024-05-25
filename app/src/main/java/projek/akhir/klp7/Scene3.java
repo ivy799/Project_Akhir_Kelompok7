@@ -24,7 +24,7 @@ import projek.model.DataKota;
 
 public class Scene3 {
     private Stage stage;
-    private DataKota dataKota;
+    protected DataKota dataKota;
 
     public Scene3() {
     }
@@ -42,17 +42,17 @@ public class Scene3 {
         String Scene3TripImageUrl2 = getClass().getResource(dataKota.getScene3TripImageUrl2()).toExternalForm();
         String Scene3TripImageUrl3 = getClass().getResource(dataKota.getScene3TripImageUrl3()).toExternalForm();
 
-        String Scene3TripName1 = "NUSA PENIDA,\nsoutheast coast of Bali";
-        String Scene3TripName2 = "BATUR MOUNT,\ncentral-eastern of Bali";
-        String Scene3TripName3 = "KUTA Beach,\nsouthern of Bal";
+        String Scene3TripName1 = dataKota.getScene3TripName1();
+        String Scene3TripName2 = dataKota.getScene3TripName2();
+        String Scene3TripName3 = dataKota.getScene3TripName3();
         //UMKM
-        String Scene3UmkmImageUrl1 = "/image/image29.png";
-        String Scene3UmkmImageUrl2 = "/image/image30.png";
-        String Scene3UmkmImageUrl3 = "/image/image31.png";
+        String Scene3UmkmImageUrl1 = dataKota.getScene3UmkmImageUrl1();
+        String Scene3UmkmImageUrl2 = dataKota.getScene3UmkmImageUrl2();
+        String Scene3UmkmImageUrl3 = dataKota.getScene3UmkmImageUrl3();
 
-        String Scene3UmkmName1 = "Tenun Bali Collection";
-        String Scene3UmkmName2 = "Oleh Oleh Perak Bali";
-        String Scene3UmkmName3 = "Leolle Official Shop";
+        String Scene3UmkmName1 = dataKota.getScene3UmkmName1();
+        String Scene3UmkmName2 = dataKota.getScene3UmkmName2();
+        String Scene3UmkmName3 = dataKota.getScene3UmkmName3();
 
 
 
@@ -270,37 +270,37 @@ public class Scene3 {
     private List<ItemData> getItemData() {
         // main variables
         // images
-        String Scene3HistoryImageUrl1 = "/image/image24.png";
-        String Scene3HistoryImageUrl2 = "/image/image24.png";
-        String Scene3HistoryImageUrl3 = "/image/image24.png";
+        // String Scene3HistoryImageUrl1 = "/image/image24.png";
+        // String Scene3HistoryImageUrl2 = "/image/image24.png";
+        // String Scene3HistoryImageUrl3 = "/image/image24.png";
         
-        String Scene3TraditionImageUrl1 = "/image/image24.png";
-        String Scene3TraditionImageUrl2 = "/image/image24.png";
-        String Scene3TraditionImageUrl3 = "/image/image24.png";
+        // String Scene3TraditionImageUrl1 = "/image/image24.png";
+        // String Scene3TraditionImageUrl2 = "/image/image24.png";
+        // String Scene3TraditionImageUrl3 = "/image/image24.png";
 
-        String Scene3FoodImageUrl1 = "/image/image24.png";
-        String Scene3FoodImageUrl2 = "/image/image24.png";
-        String Scene3FoodImageUrl3 = "/image/image24.png";
+        // String Scene3FoodImageUrl1 = "/image/image24.png";
+        // String Scene3FoodImageUrl2 = "/image/image24.png";
+        // String Scene3FoodImageUrl3 = "/image/image24.png";
 
         // texts
-        String Scene3HistoryText1 = "Text for item 1 in container 1.";
-        String Scene3HistoryText2 = "Text for item 1 in container 2.";
-        String Scene3HistoryText3 = "Text for item 1 in container 3.";
+        // String Scene3HistoryText1 = dataKota.getScene3HistoryText1();
+        // String Scene3HistoryText2 = "Text for item 1 in container 2.";
+        // String Scene3HistoryText3 = "Text for item 1 in container 3.";
         
-        String Scene3TraditionText1 = "Text for item 2 in container 1.";
-        String Scene3TraditionText2 = "Text for item 2 in container 2.";
-        String Scene3TraditionText3 = "Text for item 2 in container 3.";
+        // String Scene3TraditionText1 = "Text for item 2 in container 1.";
+        // String Scene3TraditionText2 = "Text for item 2 in container 2.";
+        // String Scene3TraditionText3 = "Text for item 2 in container 3.";
 
-        String Scene3FoodText1 = "Text for item 3 in container 1.";
-        String Scene3FoodText2 = "Text for item 3 in container 2.";
-        String Scene3FoodText3 = "Text for item 3 in container 3.";
+        // String Scene3FoodText1 = "Text for item 3 in container 1.";
+        // String Scene3FoodText2 = "Text for item 3 in container 2.";
+        // String Scene3FoodText3 = "Text for item 3 in container 3.";
 
         
 
         List<ItemData> items = new ArrayList<>();
-        items.add(new ItemData("Sejarah dan Warisan", Scene3HistoryText1, Scene3HistoryImageUrl1, Scene3HistoryText2, Scene3HistoryImageUrl2, Scene3HistoryText3, Scene3HistoryImageUrl3));
-        items.add(new ItemData("tradisi dan Upacara Adat", Scene3TraditionText1, Scene3TraditionImageUrl1, Scene3TraditionText2, Scene3TraditionImageUrl2, Scene3TraditionText3, Scene3TraditionImageUrl3));
-        items.add(new ItemData("kuliner", Scene3FoodText1, Scene3FoodImageUrl1, Scene3FoodText2, Scene3FoodImageUrl2, Scene3FoodText3, Scene3FoodImageUrl3));
+        items.add(new ItemData("Sejarah dan Warisan", dataKota.getScene3HistoryText1(), dataKota.getScene3HistoryImageUrl1(), dataKota.getScene3HistoryText2(), dataKota.getScene3HistoryImageUrl2(), dataKota.getScene3HistoryText3(), dataKota.getScene3HistoryImageUrl3()));
+        items.add(new ItemData("tradisi dan Upacara Adat", dataKota.getScene3TraditionText1(), dataKota.getScene3TraditionImageUrl1(), dataKota.getScene3TraditionText2(), dataKota.getScene3TraditionImageUrl2(), dataKota.getScene3TraditionText3(), dataKota.getScene3TraditionImageUrl3()));
+        items.add(new ItemData("kuliner", dataKota.getScene3FoodText1(), dataKota.getScene3FoodImageUrl1(), dataKota.getScene3FoodText2(), dataKota.getScene3FoodImageUrl2(), dataKota.getScene3FoodText3(), dataKota.getScene3FoodImageUrl3()));
         return items;
     }
 

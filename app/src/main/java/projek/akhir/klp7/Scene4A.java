@@ -13,8 +13,9 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+// import projek.model.DataKota;
 
-public class Scene4A {
+public class Scene4A extends Scene3{
     private Stage stage;
     private Scene3 scene3;
 
@@ -27,21 +28,21 @@ public class Scene4A {
 
     private void initialize() {
         // Main variables for scene 4A
-        String Scene4ATripDetail = "Apparalang Cliff, a very high and wide rock cliff, to enjoy the beauty of Apparalang Beach. Usually,\n it is the beach that offers bonus tourist offerings in the form of cliffs. However, unlike this one, it\n is the cliff that offers a tourist bonus in the form of a beautiful beach.";
-        String Scene4ATripName = "Apparalang\nBulukumba,south sulawesi";
-        String Scene4ATripImageUrl = getClass().getResource("/image/image12.png").toExternalForm();
-        String Scene4ATripRatingUrl = getClass().getResource("/image/comp1.png").toExternalForm();
+        // String Scene4ATripDetail = "Apparalang Cliff, a very high and wide rock cliff, to enjoy the beauty of Apparalang Beach. Usually,\n it is the beach that offers bonus tourist offerings in the form of cliffs. However, unlike this one, it\n is the cliff that offers a tourist bonus in the form of a beautiful beach.";
+        // String Scene4ATripName = "Apparalang\nBulukumba,south sulawesi";
+        // String Scene4ATripImageUrl = getClass().getResource("/image/image12.png").toExternalForm();
+        // String Scene4ATripRatingUrl = getClass().getResource("/image/comp1.png").toExternalForm();
 
 
         //layouting
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
-        root_1.setStyle("-fx-background-image: url('" + Scene4ATripImageUrl + "');");
+        root_1.setStyle("-fx-background-image: url('" + dataKota.getScene4ATripImageUrl() + "');");
 
-        Label mainText = new Label(Scene4ATripName);
+        Label mainText = new Label(dataKota.getScene4ATripName());
         mainText.setId("namaWisata");
 
-        Image rating = new Image(Scene4ATripRatingUrl);
+        Image rating = new Image(dataKota.getScene4ATripRatingUrl());
         ImageView imageView = new ImageView(rating);
 
         Image line = new Image("/image/line1.png");
@@ -71,7 +72,7 @@ public class Scene4A {
         slideButton1.setId("slideButton");
         slideButton2.setId("slideButton");
 
-        Label mainText2 = new Label(Scene4ATripDetail);
+        Label mainText2 = new Label(dataKota.getScene4ATripDetail());
         mainText2.setId("mainText2");
 
         Region spacer1 = new Region();

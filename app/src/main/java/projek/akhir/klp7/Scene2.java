@@ -73,7 +73,7 @@ public class Scene2 {
         ListView<String> listView = new ListView<>();
         ObservableList<String> cityNames = FXCollections.observableArrayList(
                 "BALI",
-                "SINJAI",
+                "MAKASSAR",
                 "BULUKUMBA",
                 "BONE",
                 "GOWA",
@@ -136,6 +136,7 @@ public class Scene2 {
         //listview item listener
         listView.setItems(cityNames);
         listView.setId("listView");
+
         listView.setOnMouseClicked(e -> {
             String selectedCity = listView.getSelectionModel().getSelectedItem();
             DataKota dataKota = DataKotaController.getDataKota(selectedCity);
