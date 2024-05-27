@@ -40,6 +40,9 @@ public class Scene3 {
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
 
+        Label namaKota = new Label(dataKota.getNamaKota());
+        namaKota.setId("namaKota");
+
         Button backButton = new Button("BACK");
         Button homeButton = new Button("HOME");
         backButton.setId("button");
@@ -56,7 +59,7 @@ public class Scene3 {
 
         HBox header = new HBox();
         header.setPadding(new Insets(10));
-        header.getChildren().addAll(homeButton, spacer1, backButton);
+        header.getChildren().addAll(homeButton,spacer1,namaKota,spacer2,backButton);
         header.setId("header");
 
         //Header button eventListener
@@ -318,9 +321,9 @@ public class Scene3 {
             } else {
                 button.setText(item.getTitle());
     
-                updateContainer(innerContainer1, item.getText1(), item.getImageUrl1());
-                updateContainer(innerContainer2, item.getText2(), item.getImageUrl2());
-                updateContainer(innerContainer3, item.getText3(), item.getImageUrl3());
+                updateContainer2(innerContainer1, item.getText1(), item.getImageUrl1());
+                updateContainer1(innerContainer2, item.getText2(), item.getImageUrl2());
+                updateContainer2(innerContainer3, item.getText3(), item.getImageUrl3());
     
                 if (isExpanded) {
                     vbox.getChildren().addAll(innerContainer1, innerContainer2, innerContainer3);
@@ -331,14 +334,23 @@ public class Scene3 {
             }
         }
     
-        private void updateContainer(HBox container, String text, String imageUrl) {
+        private void updateContainer1(HBox container, String text, String imageUrl) {
             container.getChildren().clear();
             Label containerText = new Label(text);
             containerText.setWrapText(true);
             containerText.setMaxWidth(390);
             containerText.setId("detailText");
             ImageView containerImage = new ImageView(new Image(getClass().getResourceAsStream(imageUrl)));
-            container.getChildren().addAll(containerImage, containerText);
+            container.getChildren().addAll(containerText, containerImage);
+        }
+        private void updateContainer2(HBox container, String text, String imageUrl) {
+            container.getChildren().clear();
+            Label containerText = new Label(text);
+            containerText.setWrapText(true);
+            containerText.setMaxWidth(390);
+            containerText.setId("detailText");
+            ImageView containerImage = new ImageView(new Image(getClass().getResourceAsStream(imageUrl)));
+            container.getChildren().addAll(containerImage,containerText);
         }
     
         private void toggleDetails() {

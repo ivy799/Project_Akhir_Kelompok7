@@ -131,3 +131,9 @@
 #detailText{
     -fx-font-size:9px;
 }
+
+#namaKota{
+    -fx-text-fill:white;
+    -fx-font-size:40px;
+    -fx-font-weight: bold; 
+}

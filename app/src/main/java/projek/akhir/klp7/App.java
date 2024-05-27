@@ -11,7 +11,7 @@ public class App extends Application {
         //main-stage-1
         stage.setTitle("EXA");
         stage.setResizable(false);
-        Scene1A homeScene = new Scene1A(stage);
+        Scene2 homeScene = new Scene2(stage);
         homeScene.show();
     }
     
