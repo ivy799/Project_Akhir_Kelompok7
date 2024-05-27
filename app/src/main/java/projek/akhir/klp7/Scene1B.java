@@ -5,6 +5,8 @@ package projek.akhir.klp7;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -111,10 +113,21 @@ public class Scene1B {
             String username = usernameField.getText();
             String email = emailField.getText();
             String password = passwordField.getText();
-            DataUser userAccount = new DataUser(username, email, password);
-            DataUserController.addUser(userAccount);
-            Scene1A loginPage = new Scene1A(stage);
-            loginPage.show();
+
+            if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                // Display alert if any field is empty
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Sign Up Error");
+                alert.setHeaderText(null);
+                alert.setContentText("All fields must be filled out.");
+                alert.showAndWait();
+            } else {
+                // Proceed with creating the user account
+                DataUser userAccount = new DataUser(username, email, password);
+                DataUserController.addUser(userAccount);
+                Scene1A loginPage = new Scene1A(stage);
+                loginPage.show();
+            }
         });
 
 

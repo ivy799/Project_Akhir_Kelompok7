@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -108,18 +109,27 @@ public class Scene1A {
         loginButton.setOnAction(V -> {
             String username = usernameField.getText();
             String password = passwordField.getText();
-            
-            boolean loginSuccessful = DataUserController.loginUser(username, password);
-            if (loginSuccessful) {
-                System.out.println("Login successful!");
-                Scene2 scene2 = new Scene2(stage);
-                scene2.show();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Login Failed");
+
+            if (username.isEmpty() || password.isEmpty()) {
+                // Display alert if any field is empty
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Login Error");
                 alert.setHeaderText(null);
-                alert.setContentText("Invalid username or password.");
+                alert.setContentText("Username and password must be filled out.");
                 alert.showAndWait();
+            } else {
+                boolean loginSuccessful = DataUserController.loginUser(username, password);
+                if (loginSuccessful) {
+                    System.out.println("Login successful!");
+                    Scene2 scene2 = new Scene2(stage);
+                    scene2.show();
+                } else {
+                    Alert alert = new Alert(AlertType.ERROR);
+                    alert.setTitle("Login Failed");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Invalid username or password.");
+                    alert.showAndWait();
+                }
             }
         });
 
