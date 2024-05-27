@@ -8,10 +8,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-        //main-stage-1
         stage.setTitle("EXA");
         stage.setResizable(false);
-        Scene2 homeScene = new Scene2(stage);
+        Scene1A homeScene = new Scene1A(stage);
         homeScene.show();
     }
     
