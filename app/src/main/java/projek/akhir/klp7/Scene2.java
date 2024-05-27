@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -18,7 +20,6 @@ import projek.model.DataKota;
 public class Scene2 {
     private Stage stage;
 
-
     //constructor
     public Scene2(Stage stage) {
         this.stage = stage;
@@ -28,46 +29,59 @@ public class Scene2 {
 
     public void show(){
         //scene 2 main variabel
-        String recomend1BgImageUrl = getClass().getResource("/image/image19.png").toExternalForm();
-        String recomend2BgImageUrl = getClass().getResource("/image/image19.png").toExternalForm();
-        String recomend3BgImageUrl = getClass().getResource("/image/image19.png").toExternalForm();
-
-
-        //layouting
-        BorderPane root_1 = new BorderPane();
-        root_1.setId("body");
-
-        Label mainText = new Label("EXSPLOR MORE");
-        mainText.setId("mainText");
-
-        Label subText = new Label("EXSPLORE NUSANTARA");
-        subText.setId("subText");
-        
-        Label label1 = new Label("CYTY/COUNTRY");
+        String recomendBgImageUrl1 = getClass().getResource("/image/LayoutImage/Scene2RecomendImg1.png").toExternalForm();
+        Label label1 = new Label("CITY");
         label1.setId("recomendtext");
         BorderPane recomend1 = new BorderPane();
         recomend1.setPadding(new Insets(10));
         recomend1.setId("recomend");
         recomend1.setBottom(label1);
-        recomend1.setStyle("-fx-background-image: url('" + recomend1BgImageUrl + "');");
+        recomend1.setStyle("-fx-background-image: url('" + recomendBgImageUrl1 + "');");
 
-        Label label2 = new Label("CULTURE");
+        String recomendBgImageUrl2 = getClass().getResource("/image/LayoutImage/Scene2RecomendImg2.png").toExternalForm();
+        Label label2 = new Label("TRIP");
         label2.setId("recomendtext");
         BorderPane recomend2 = new BorderPane();
         recomend2.setPadding(new Insets(10));
         recomend2.setId("recomend");
         recomend2.setBottom(label2);
-        recomend2.setStyle("-fx-background-image: url('" + recomend2BgImageUrl + "');");
+        recomend2.setStyle("-fx-background-image: url('" + recomendBgImageUrl2 + "');");
 
-        Label label3 = new Label("CULINARY");
+        String recomendBgImageUrl3 = getClass().getResource("/image/image19.png").toExternalForm();
+        Label label3 = new Label("UMKM");
         label3.setId("recomendtext");
         BorderPane recomend3 = new BorderPane();
         recomend3.setPadding(new Insets(10));
         recomend3.setId("recomend");
         recomend3.setBottom(label3);
-        recomend3.setStyle("-fx-background-image: url('" + recomend3BgImageUrl + "');");
+        recomend3.setStyle("-fx-background-image: url('" + recomendBgImageUrl3 + "');");
 
 
+
+        label1.setOnMouseClicked(event -> {
+            DataKota dataKota = DataKotaController.getDataKota("BALI");
+            Scene3 scene3 = new Scene3(stage,dataKota);
+            scene3.show();
+        });
+
+        //TODO 1
+        label2.setOnMouseClicked(event -> {
+            DataKota dataKota = DataKotaController.getDataKota("BALI");
+            Scene3 scene3 = new Scene3(stage,dataKota);
+            String A = scene3.dataKota.getScene4ATripDetail1();
+            String B = scene3.dataKota.getScene4ATripRatingUrl1();
+            String C = scene3.dataKota.getScene4ATripImageUrl1();
+            String D = scene3.dataKota.getScene4ATripName1();
+            Scene4A scene4A = new Scene4A(stage,scene3,A,B,C,D);
+            scene4A.show();
+        });
+
+
+
+
+        //layouting
+        BorderPane root_1 = new BorderPane();
+        root_1.setId("body");
 
         //listview item
         ListView<String> listView = new ListView<>();
@@ -77,17 +91,28 @@ public class Scene2 {
                 "BULUKUMBA",
                 "BONE",
                 "GOWA",
-                "bandung",
-                "jakarta",
-                "solo",
-                "pare-pare",
-                "bali",
-                "jogja",
-                "surabaya",
-                "yogyakarta"
+                "BANDUNG",
+                "JAKARTA",
+                "SOLO",
+                "PARE-PARE",
+                "BALI",
+                "JOGJA",
+                "SURABAYA",
+                "YOGYAKARTA"
                 );
 
+
+                
+        Label mainText = new Label("EXSPLORE MORE");
+        mainText.setId("mainText");
+
+        Label subText = new Label("EXSPLORE NUSANTARA");
+        subText.setId("subText");
+
+        Image logoUrl = new Image("/image/LayoutImage/logo1.png");
+        ImageView logo = new ImageView(logoUrl);
         
+
         VBox leftContainer = new VBox();
         leftContainer.getChildren().addAll(listView);
         leftContainer.setAlignment(Pos.CENTER);
@@ -105,7 +130,7 @@ public class Scene2 {
         VBox recomendContainer = new VBox(10);
         recomendContainer.setAlignment(Pos.CENTER);
         recomendContainer.setId("recomendContainer");
-        recomendContainer.getChildren().addAll(subText,recomend1,recomend2,recomend3);
+        recomendContainer.getChildren().addAll(logo,subText,recomend1,recomend2,recomend3);
         
         VBox container1 = new VBox();
         container1.getChildren().addAll(mainContainer);
@@ -120,16 +145,16 @@ public class Scene2 {
         backButton.setId("backButton");
         HBox backButtonContainer = new HBox(backButton);
         backButtonContainer.setAlignment(Pos.TOP_RIGHT);
-        backButtonContainer.setPadding(new Insets(0));
+        backButtonContainer.setPadding(new Insets(10));
 
-        VBox container3 = new VBox(70);
+        VBox container3 = new VBox();
         container3.getChildren().addAll(backButtonContainer,container2);
 
 
 
         //button event listener
         backButton.setOnAction(V -> {
-            Scene1 loginPage = new Scene1(stage);
+            Scene1A loginPage = new Scene1A(stage);
             loginPage.show(); 
         });
 

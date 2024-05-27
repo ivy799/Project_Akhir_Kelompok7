@@ -29,6 +29,15 @@ public class Scene4A extends Scene3{
         this.getScene4ATripRatingUrl = getScene4ATripRatingUrl;
         initialize();
     }
+
+    public Scene4A(Stage stage, String getScene4ATripDetail, String getScene4ATripImageUrl,String getScene4ATripName, String getScene4ATripRatingUrl ) {
+        this.stage = stage;
+        this.getScene4ATripDetail = getScene4ATripDetail;
+        this.getScene4ATripImageUrl = getScene4ATripImageUrl;
+        this.getScene4ATripName = getScene4ATripName;
+        this.getScene4ATripRatingUrl = getScene4ATripRatingUrl;
+        initialize();
+    }
     
 
     private void initialize() {

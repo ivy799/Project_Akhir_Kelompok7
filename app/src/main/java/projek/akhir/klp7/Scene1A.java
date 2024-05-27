@@ -1,10 +1,11 @@
 package projek.akhir.klp7;
 
-import java.util.ArrayList;
+
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -16,13 +17,14 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import projek.controller.DataUserController;
 
-public class Scene1 {
+public class Scene1A {
     private Stage stage;
 
     
     //constructor
-    public Scene1(Stage stage) {
+    public Scene1A(Stage stage) {
         this.stage = stage;
     }
 
@@ -102,16 +104,30 @@ public class Scene1 {
 
 
 
-        //button action listener
-        // loginButton.setOnAction(V -> {
-        //     Scene4B scene3 = new Scene4B(stage);
-        //     scene3.show(); 
-        // });
+        // button action listener
+        loginButton.setOnAction(V -> {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+            
+            boolean loginSuccessful = DataUserController.loginUser(username, password);
+            if (loginSuccessful) {
+                System.out.println("Login successful!");
+                Scene2 scene2 = new Scene2(stage);
+                scene2.show();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Login Failed");
+                alert.setHeaderText(null);
+                alert.setContentText("Invalid username or password.");
+                alert.showAndWait();
+            }
+        });
 
-        // signupButton.setOnAction(V -> {
-        //     Scene2 scene2 = new Scene2(stage);
-        //     scene2.show(); 
-        // });
+
+        signupButton.setOnAction(V -> {
+            Scene1B signupScene = new Scene1B(stage);
+            signupScene.show();
+        });
 
 
 

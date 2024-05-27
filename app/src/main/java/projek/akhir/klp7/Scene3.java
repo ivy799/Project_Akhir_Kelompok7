@@ -35,27 +35,6 @@ public class Scene3 {
     }
 
     public void show() {
-        // Scene 3 main variables
-        //Right section
-        //wisata
-        String Scene3TripImageUrl1 = getClass().getResource(dataKota.getScene3TripImageUrl1()).toExternalForm();
-        String Scene3TripImageUrl2 = getClass().getResource(dataKota.getScene3TripImageUrl2()).toExternalForm();
-        String Scene3TripImageUrl3 = getClass().getResource(dataKota.getScene3TripImageUrl3()).toExternalForm();
-
-        String Scene3TripName1 = dataKota.getScene3TripName1();
-        String Scene3TripName2 = dataKota.getScene3TripName2();
-        String Scene3TripName3 = dataKota.getScene3TripName3();
-        //UMKM
-        String Scene3UmkmImageUrl1 = dataKota.getScene3UmkmImageUrl1();
-        String Scene3UmkmImageUrl2 = dataKota.getScene3UmkmImageUrl2();
-        String Scene3UmkmImageUrl3 = dataKota.getScene3UmkmImageUrl3();
-
-        String Scene3UmkmName1 = dataKota.getScene3UmkmName1();
-        String Scene3UmkmName2 = dataKota.getScene3UmkmName2();
-        String Scene3UmkmName3 = dataKota.getScene3UmkmName3();
-
-
-
 
         // header
         BorderPane root_1 = new BorderPane();
@@ -80,10 +59,121 @@ public class Scene3 {
         header.getChildren().addAll(homeButton, spacer1, backButton);
         header.setId("header");
 
+        //Header button eventListener
+        backButton.setOnAction(V -> {
+            Scene2 scene2 = new Scene2(stage);
+            scene2.show(); 
+        });
+
+        homeButton.setOnAction(V -> {
+            Scene2 scene2 = new Scene2(stage);
+            scene2.show(); 
+        });
 
 
 
-        // Left section
+
+
+        //main article (right)
+
+        //TRIP
+        //trip section layouting
+        Label rightTittle1 = new Label("WISATA");
+        rightTittle1.setId("rightTittle");
+
+        String[] scene3TripImageUrls = new String[]{dataKota.getScene3TripImageUrl1(), dataKota.getScene3TripImageUrl2(), dataKota.getScene3TripImageUrl3()};
+        String[] scene3TripNames = new String[]{dataKota.getScene3TripName1(), dataKota.getScene3TripName2(), dataKota.getScene3TripName3()};
+        String[] scene4ATripDetails = new String[]{dataKota.getScene4ATripDetail1(), dataKota.getScene4ATripDetail2(), dataKota.getScene4ATripDetail3()};
+        String[] scene4ATripRatingUrls = new String[]{dataKota.getScene4ATripRatingUrl1(), dataKota.getScene4ATripRatingUrl2(), dataKota.getScene4ATripRatingUrl3()};
+        String[] scene4ATripImageUrls = new String[]{dataKota.getScene4ATripImageUrl1(), dataKota.getScene4ATripImageUrl2(), dataKota.getScene4ATripImageUrl3()};
+        String[] scene4ATripNames = new String[]{dataKota.getScene4ATripName1(), dataKota.getScene4ATripName2(), dataKota.getScene4ATripName3()};
+
+
+        BorderPane[] rightImages = new BorderPane[3];
+        Button[] tripNameContainers = new Button[3];
+
+        for (int i = 0; i < rightImages.length; i++) {
+            String imageUrl = getClass().getResource(scene3TripImageUrls[i]).toExternalForm();
+            String tripName = scene3TripNames[i];
+
+            tripNameContainers[i] = new Button(tripName);
+            tripNameContainers[i].setPadding(new Insets(5));
+            tripNameContainers[i].setId("tripName");
+
+            rightImages[i] = new BorderPane();
+            rightImages[i].setBottom(tripNameContainers[i]);
+            rightImages[i].setId("rightImage");
+            rightImages[i].setStyle("-fx-background-image: url('" + imageUrl + "');");
+
+            int finalI = i;
+            tripNameContainers[i].setOnAction(V -> {
+                Scene4A scene4A = new Scene4A(stage, this, scene4ATripDetails[finalI], scene4ATripImageUrls[finalI], scene4ATripNames[finalI], scene4ATripRatingUrls[finalI]);
+                scene4A.show();
+            });
+        }
+
+        HBox innerRightContainer1 = new HBox(25);
+        innerRightContainer1.setAlignment(Pos.CENTER);
+        innerRightContainer1.getChildren().addAll(rightImages);
+
+        VBox rightContainer1 = new VBox(40);
+        rightContainer1.setId("rightContainer");
+        rightContainer1.getChildren().addAll(rightTittle1, innerRightContainer1);
+
+
+
+        //UMKM
+        //Umkm Section Layouting
+        String[] scene3UmkmImageUrls = new String[]{dataKota.getScene3UmkmImageUrl1(), dataKota.getScene3UmkmImageUrl2(), dataKota.getScene3UmkmImageUrl3()};
+        String[] scene3UmkmNames = new String[]{dataKota.getScene3UmkmName1(), dataKota.getScene3UmkmName2(), dataKota.getScene3UmkmName3()};
+        String[] scene4BUmkmImageUrls = new String[]{dataKota.getScene4BUmkmImageUrl1(), dataKota.getScene4BUmkmImageUrl2(), dataKota.getScene4BUmkmImageUrl3()};
+        String[] scene4BUmkmNames = new String[]{dataKota.getScene4BUmkmName1(), dataKota.getScene4BUmkmName2(), dataKota.getScene4BUmkmName3()};
+        String[] scene4BLocationDetails = new String[]{dataKota.getScene4BLocationDetail1(), dataKota.getScene4BLocationDetail2(), dataKota.getScene4BLocationDetail3()};
+        String[] scene4BProductDetails = new String[]{dataKota.getScene4BProductDetail1(), dataKota.getScene4BProductDetail2(), dataKota.getScene4BProductDetail3()};
+        String[] scene4BContactDetails = new String[]{dataKota.getScene4BContactDetail1(), dataKota.getScene4BContactDetail2(), dataKota.getScene4BContactDetail3()};
+        String[] scene4BTripRatingUrls = new String[]{dataKota.getScene4BUmkmRatingUrl1(), dataKota.getScene4BUmkmRatingUrl2(), dataKota.getScene4BUmkmRatingUrl3()};
+
+
+        Label rightTittle2 = new Label("UMKM");
+        rightTittle2.setId("rightTittle");
+
+        VBox rightContainer2 = new VBox(35);
+        rightContainer2.setId("rightContainer");
+        rightContainer2.getChildren().add(rightTittle2);
+
+        HBox innerRightContainer2 = new HBox(25);
+        innerRightContainer2.setAlignment(Pos.CENTER);
+
+        for (int i = 0; i < 3; i++) {
+            ImageView umkmImg = new ImageView(new Image(scene3UmkmImageUrls[i]));
+            Button umkmName = new Button(scene3UmkmNames[i]);
+            umkmName.setPadding(new Insets(10));
+            umkmName.setId("umkmName");
+            VBox rightImage = new VBox(10);
+            rightImage.getChildren().addAll(umkmImg, umkmName);
+            rightImage.setId("umkm");
+
+            int finalI = i;
+            umkmName.setOnAction(V -> {
+                Scene4B scene4B = new Scene4B(stage, this, scene4BUmkmImageUrls[finalI], scene4BUmkmNames[finalI], 
+                scene4BTripRatingUrls[finalI], scene4BLocationDetails[finalI], 
+                scene4BProductDetails[finalI], scene4BContactDetails[finalI]);
+                scene4B.show();
+            });
+
+            innerRightContainer2.getChildren().add(rightImage);
+        }
+
+        rightContainer2.getChildren().add(innerRightContainer2);
+
+
+
+
+
+
+
+
+        // Main Article (left)
         ListView<ItemData> listView = new ListView<>();
         listView.setId("listView");
         listView.getItems().addAll(getItemData());
@@ -109,142 +199,12 @@ public class Scene3 {
         leftContainer.getChildren().addAll(leftTittleContainer,listView);
 
 
-
-
-        //right section;
-        //Trip
-        Button tripNameContainer1 = new Button(Scene3TripName1);
-        tripNameContainer1.setPadding(new Insets(5));
-        tripNameContainer1.setId("tripName");
-
-        Button tripNameContainer2 = new Button(Scene3TripName2);
-        tripNameContainer2.setPadding(new Insets(5));
-        tripNameContainer2.setId("tripName");
-
-        Button tripNameContainer3 = new Button(Scene3TripName3);
-        tripNameContainer3.setPadding(new Insets(5));
-        tripNameContainer3.setId("tripName");
-
-        Label rightTittle1 = new Label("WISATA");
-        rightTittle1.setId("rightTittle");
-        
-        BorderPane rightImage1 = new BorderPane();
-        rightImage1.setBottom(tripNameContainer1);
-        rightImage1.setId("rightImage");
-        rightImage1.setStyle("-fx-background-image: url('" + Scene3TripImageUrl1 + "');");
-
-        BorderPane rightImage2 = new BorderPane();
-        rightImage2.setBottom(tripNameContainer2);
-        rightImage2.setId("rightImage");
-        rightImage2.setStyle("-fx-background-image: url('" + Scene3TripImageUrl2 + "');");
-
-        BorderPane rightImage3 = new BorderPane();
-        rightImage3.setBottom(tripNameContainer3);
-        rightImage3.setId("rightImage");
-        rightImage3.setStyle("-fx-background-image: url('" + Scene3TripImageUrl3 + "');");
-
-        HBox innerRightContainer1 = new HBox(25);
-        innerRightContainer1.setAlignment(Pos.CENTER);
-        innerRightContainer1.getChildren().addAll(rightImage1,rightImage2,rightImage3);
-
-        //UMKM
-        Label rightTittle2 = new Label("UMKM");
-        rightTittle2.setId("rightTittle");
-
-        Image umkmImage1 = new Image(Scene3UmkmImageUrl1);
-        Image umkmImage2 = new Image(Scene3UmkmImageUrl2);
-        Image umkmImage3 = new Image(Scene3UmkmImageUrl3);
-
-        ImageView umkmImg1 = new ImageView(umkmImage1);
-        ImageView umkmImg2= new ImageView(umkmImage2);
-        ImageView umkmImg3 = new ImageView(umkmImage3);
-        
-
-        Button umkmName1 = new Button(Scene3UmkmName1);
-        umkmName1.setPadding(new Insets(10));
-        umkmName1.setId("umkmName");
-        Button umkmName2 = new Button(Scene3UmkmName2);
-        umkmName2.setPadding(new Insets(10));
-        umkmName2.setId("umkmName");
-        Button umkmName3 = new Button(Scene3UmkmName3);
-        umkmName3.setPadding(new Insets(10));
-        umkmName3.setId("umkmName");
-
-
-        VBox rightImage4 = new VBox(10);
-        rightImage4.getChildren().addAll(umkmImg1,umkmName1);
-        rightImage4.setId("umkm");
-
-        VBox rightImage5 = new VBox(10);
-        rightImage5.getChildren().addAll(umkmImg2,umkmName2);
-        rightImage5.setId("umkm");
-
-        VBox rightImage6 = new VBox(10);
-        rightImage6.getChildren().addAll(umkmImg3,umkmName3);
-        rightImage6.setId("umkm");
-
-
-        HBox innerRightContainer2 = new HBox(25);
-        innerRightContainer2.setAlignment(Pos.CENTER);
-        innerRightContainer2.getChildren().addAll(rightImage4,rightImage5,rightImage6);
-
-        VBox rightContainer1 = new VBox(40);
-        rightContainer1.setId("rightContainer");
-        rightContainer1.getChildren().addAll(rightTittle1,innerRightContainer1);
-        
-        VBox rightContainer2 = new VBox(35);
-        rightContainer2.setId("rightContainer");
-        rightContainer2.getChildren().addAll(rightTittle2,innerRightContainer2);
-        
         VBox mainRightContainer = new VBox(20);
         mainRightContainer.getChildren().addAll(rightContainer1,rightContainer2);
 
 
 
-        //button eventListener
-        backButton.setOnAction(V -> {
-            Scene2 scene2 = new Scene2(stage);
-            scene2.show(); 
-        });
-
-        homeButton.setOnAction(V -> {
-            Scene2 scene2 = new Scene2(stage);
-            scene2.show(); 
-        });
-
-
-
-        //tripButton event lsitener
-        tripNameContainer1.setOnAction(V -> {
-            Scene4A scene4A = new Scene4A(stage,this,this.dataKota.getScene4ATripDetail1(),this.dataKota.getScene4ATripImageUrl1(),this.dataKota.getScene4ATripName1(),this.dataKota.getScene4ATripRatingUrl1());
-            scene4A.show(); 
-        });
-
-        tripNameContainer2.setOnAction(V -> {
-            Scene4A scene4A = new Scene4A(stage,this,this.dataKota.getScene4ATripDetail2(),this.dataKota.getScene4ATripImageUrl2(),this.dataKota.getScene4ATripName2(),this.dataKota.getScene4ATripRatingUrl2());
-            scene4A.show(); 
-        });
-
-        tripNameContainer3.setOnAction(V -> {
-            Scene4A scene4A = new Scene4A(stage,this,this.dataKota.getScene4ATripDetail3(),this.dataKota.getScene4ATripImageUrl3(),this.dataKota.getScene4ATripName3(),this.dataKota.getScene4ATripRatingUrl3());
-            scene4A.show();  
-        });
-
         
-        //UMKM button eventlistener
-        umkmName1.setOnAction(V -> {
-            Scene4B scene4B = new Scene4B(stage,this,this.dataKota.getScene4BUmkmImageUrl1(),this.dataKota.getScene4BUmkmName1(),this.dataKota.getScene4BUmkmRatingUrl1(),this.dataKota.getScene4BLocationDetail1(),this.dataKota.getScene4BProductDetail1(),this.dataKota.getScene4BContactDetail1());
-            scene4B.show(); 
-        });
-        umkmName2.setOnAction(V -> {
-            Scene4B scene4B = new Scene4B(stage,this,this.dataKota.getScene4BUmkmImageUrl2(),this.dataKota.getScene4BUmkmName2(),this.dataKota.getScene4BUmkmRatingUrl2(),this.dataKota.getScene4BLocationDetail2(),this.dataKota.getScene4BProductDetail2(),this.dataKota.getScene4BContactDetail2());
-            scene4B.show(); 
-        });
-        umkmName3.setOnAction(V -> {
-            Scene4B scene4B = new Scene4B(stage,this,this.dataKota.getScene4BUmkmImageUrl3(),this.dataKota.getScene4BUmkmName3(),this.dataKota.getScene4BUmkmRatingUrl3(),this.dataKota.getScene4BLocationDetail3(),this.dataKota.getScene4BProductDetail3(),this.dataKota.getScene4BContactDetail3());
-            scene4B.show(); 
-        });
-
 
 
         // Layout arrangement
@@ -330,7 +290,7 @@ public class Scene3 {
         private final HBox innerContainer2;
         private final HBox innerContainer3;
         private boolean isExpanded;
-
+    
         public ButtonListCell() {
             vbox = new VBox(20);
             button = new Button();
@@ -340,64 +300,47 @@ public class Scene3 {
             innerContainer1 = new HBox(20);
             innerContainer2 = new HBox(20);
             innerContainer3 = new HBox(20);
-
+    
             button.setOnAction(e -> toggleDetails());
-
+    
             buttonPane.getChildren().add(button);
             vbox.getChildren().add(buttonPane);
             setGraphic(vbox);
         }
-
+    
         @Override
         protected void updateItem(ItemData item, boolean empty) {
             super.updateItem(item, empty);
-
+    
             if (empty || item == null) {
                 setText(null);
                 setGraphic(null);
             } else {
                 button.setText(item.getTitle());
-
-                innerContainer1.getChildren().clear();
-                innerContainer2.getChildren().clear();
-                innerContainer3.getChildren().clear();
-
-                Label containerText1 = new Label(item.getText1());
-                containerText1.setWrapText(true);
-                containerText1.setMaxWidth(390); 
-                containerText1.setId("detailText");
-                ImageView containerImage1 = new ImageView(new Image(getClass().getResourceAsStream(item.getImageUrl1())));
-                innerContainer1.getChildren().addAll(containerImage1, containerText1);
-
-                Label containerText2 = new Label(item.getText2());
-                containerText2.setWrapText(true);
-                containerText2.setMaxWidth(390); 
-                containerText2.setId("detailText");
-                ImageView containerImage2 = new ImageView(new Image(getClass().getResourceAsStream(item.getImageUrl2())));
-                innerContainer2.getChildren().addAll(containerText2, containerImage2);
-
-                Label containerText3 = new Label(item.getText3());
-                containerText3.setWrapText(true);
-                containerText3.setMaxWidth(390); 
-                containerText3.setId("detailText");
-                ImageView containerImage3 = new ImageView(new Image(getClass().getResourceAsStream(item.getImageUrl3())));
-                innerContainer3.getChildren().addAll(containerImage3, containerText3);
-
+    
+                updateContainer(innerContainer1, item.getText1(), item.getImageUrl1());
+                updateContainer(innerContainer2, item.getText2(), item.getImageUrl2());
+                updateContainer(innerContainer3, item.getText3(), item.getImageUrl3());
+    
                 if (isExpanded) {
-                    if (!vbox.getChildren().contains(innerContainer1)) {
-                        vbox.getChildren().add(innerContainer1);
-                    }
-                    if (!vbox.getChildren().contains(innerContainer2)) {
-                        vbox.getChildren().add(innerContainer2);
-                    }
-                    if (!vbox.getChildren().contains(innerContainer3)) {
-                        vbox.getChildren().add(innerContainer3);
-                    }
+                    vbox.getChildren().addAll(innerContainer1, innerContainer2, innerContainer3);
+                } else {
+                    vbox.getChildren().removeAll(innerContainer1, innerContainer2, innerContainer3);
                 }
                 setGraphic(vbox);
             }
         }
-
+    
+        private void updateContainer(HBox container, String text, String imageUrl) {
+            container.getChildren().clear();
+            Label containerText = new Label(text);
+            containerText.setWrapText(true);
+            containerText.setMaxWidth(390);
+            containerText.setId("detailText");
+            ImageView containerImage = new ImageView(new Image(getClass().getResourceAsStream(imageUrl)));
+            container.getChildren().addAll(containerImage, containerText);
+        }
+    
         private void toggleDetails() {
             isExpanded = !isExpanded;
             if (isExpanded) {
@@ -407,4 +350,5 @@ public class Scene3 {
             }
         }
     }
+    
 }
