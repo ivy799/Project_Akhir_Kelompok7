@@ -28,7 +28,7 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 import projek.model.DataKota;
 
-public class Scene3 {
+public class Scene3 extends AbstractAnimation implements Show{
     private Stage stage;
     protected DataKota dataKota;
 
@@ -40,6 +40,7 @@ public class Scene3 {
         this.dataKota = dataKota;
     }
 
+    @Override
     public void show() {
 
         // header
@@ -217,41 +218,28 @@ public class Scene3 {
 
         //node animation
         Path path1 = new Path();
-        path1.getElements().add(new MoveTo(290, 50));
-        path1.getElements().add(new LineTo(290, 125));
-        PathTransition pathTransition1 = new PathTransition(Duration.seconds(1), path1, rightContainer1);
-        FadeTransition fadein1 = new FadeTransition(Duration.seconds(1),rightContainer1);
-        fadein1.setFromValue(0);
-        fadein1.setToValue(1);
-        pathTransition1.setCycleCount(1);
-        pathTransition1.setAutoReverse(true);
-        pathTransition1.play();
-        fadein1.play();
+    path1.getElements().add(new MoveTo(290, 50));
+    path1.getElements().add(new LineTo(290, 125));
+    PathTransition pathTransition1 = createPathTransition(Duration.seconds(1), path1, rightContainer1);
+    FadeTransition fadein1 = createFadeTransition(Duration.seconds(1), 0, 1, rightContainer1);
+    pathTransition1.play();
+    fadein1.play();
 
-        Path path2 = new Path();
-        path2.getElements().add(new MoveTo(290, 170));
-        path2.getElements().add(new LineTo(290, 130));
-        PathTransition pathTransition2 = new PathTransition(Duration.seconds(1), path2, rightContainer2);
-        FadeTransition fadein2 = new FadeTransition(Duration.seconds(1),rightContainer2);
-        fadein2.setFromValue(0);
-        fadein2.setToValue(1);
-        pathTransition2.setCycleCount(1);
-        pathTransition2.setAutoReverse(true);
-        pathTransition2.play();
-        fadein2.play();
-        
+    Path path2 = new Path();
+    path2.getElements().add(new MoveTo(290, 170));
+    path2.getElements().add(new LineTo(290, 130));
+    PathTransition pathTransition2 = createPathTransition(Duration.seconds(1), path2, rightContainer2);
+    FadeTransition fadein2 = createFadeTransition(Duration.seconds(1), 0, 1, rightContainer2);
+    pathTransition2.play();
+    fadein2.play();
 
-        Path path3 = new Path();
-        path3.getElements().add(new MoveTo(1, 265));
-        path3.getElements().add(new LineTo(330, 265));
-        PathTransition pathTransition3 = new PathTransition(Duration.seconds(1), path3, leftContainer);
-        FadeTransition fadein3 = new FadeTransition(Duration.seconds(1),leftContainer);
-        fadein3.setFromValue(0);
-        fadein3.setToValue(1);
-        pathTransition3.setCycleCount(1);
-        pathTransition3.setAutoReverse(true);
-        pathTransition3.play();
-        fadein3.play();
+    Path path3 = new Path();
+    path3.getElements().add(new MoveTo(1, 265));
+    path3.getElements().add(new LineTo(330, 265));
+    PathTransition pathTransition3 = createPathTransition(Duration.seconds(1), path3, leftContainer);
+    FadeTransition fadein3 = createFadeTransition(Duration.seconds(1), 0, 1, leftContainer);
+    pathTransition3.play();
+    fadein3.play();
 
 
 

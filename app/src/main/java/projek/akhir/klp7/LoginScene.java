@@ -4,7 +4,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.PathTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
+// import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -23,36 +23,17 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import projek.controller.DataUserController;
 import projek.model.DataUser;
+import javafx.scene.control.PasswordField;
 
-public class LoginScene {
+
+public class LoginScene extends AbstractAnimation implements Show {
     private Stage stage;
 
     public LoginScene(Stage stage) {
         this.stage = stage;
     }
 
-    private VBox createVBox(double spacing, Pos alignment, String id, Node... children) {
-        VBox vbox = new VBox(spacing);
-        vbox.setAlignment(alignment);
-        vbox.setId(id);
-        vbox.getChildren().addAll(children);
-        return vbox;
-    }
-
-    private FadeTransition createFadeTransition(Duration duration, double fromValue, double toValue, Node node) {
-        FadeTransition fadeTransition = new FadeTransition(duration, node);
-        fadeTransition.setFromValue(fromValue);
-        fadeTransition.setToValue(toValue);
-        return fadeTransition;
-    }
-
-    private PathTransition createPathTransition(Duration duration, Path path, Node node) {
-        PathTransition pathTransition = new PathTransition(duration, path, node);
-        pathTransition.setCycleCount(1);
-        pathTransition.setAutoReverse(true);
-        return pathTransition;
-    }
-
+    @Override
     public void show() {
         Image lineImage = new Image("/image/line2.png");
         ImageView line11 = new ImageView(lineImage);
@@ -61,9 +42,9 @@ public class LoginScene {
         Label mainText1 = new Label("DISCOVER THE BEAUTY OF INDONESIA");
         mainText1.setId("mainText1");
         mainText1.setWrapText(true);
-        mainText1.setMaxWidth(350);
+        mainText1.setMinWidth(400);
 
-        Label innerText1 = new Label("Dont have account ?");
+        Label innerText1 = new Label("Dont have account?");
         innerText1.setId("innerText1");
 
         Button toSignUpButton = new Button("Create account ->");
@@ -75,7 +56,7 @@ public class LoginScene {
         Label mainText2 = new Label("JOIN US TO EXPLORE INDONESIAN CULTURE");
         mainText2.setId("mainText1");
         mainText2.setWrapText(true);
-        mainText2.setMaxWidth(455);
+        mainText2.setMinWidth(500);
 
         Button toLogInButton = new Button("<- return to login page");
         toLogInButton.setId("toSignUpButton");
@@ -94,7 +75,7 @@ public class LoginScene {
         usernameTF1.setPromptText("Username");
         usernameTF1.setId("userTextField");
 
-        TextField passwordTF1 = new TextField();
+        PasswordField passwordTF1 = new PasswordField();
         passwordTF1.setPromptText("Password");
         passwordTF1.setId("userTextField");
 
@@ -112,7 +93,7 @@ public class LoginScene {
         usernameTF2.setPromptText("Username");
         usernameTF2.setId("userTextField");
 
-        TextField passwordTF2 = new TextField();
+        PasswordField passwordTF2 = new PasswordField();
         passwordTF2.setPromptText("Password");
         passwordTF2.setId("userTextField");
 
@@ -123,7 +104,7 @@ public class LoginScene {
         Button signButton = new Button("SIGN UP");
         signButton.setId("LSButton");
 
-        VBox textFieldContainer2 = createVBox(20, Pos.CENTER, "textFieldContainer1", usernameTF2, passwordTF2, emailTF2);
+        VBox textFieldContainer2 = createVBox(20, Pos.CENTER, "textFieldContainer1", usernameTF2, emailTF2, passwordTF2);
         VBox rightCNTR2 = createVBox(70, Pos.CENTER, "innerRightContainer", innerText3, textFieldContainer2, signButton);
         rightCNTR2.setVisible(false);
 
@@ -142,15 +123,15 @@ public class LoginScene {
         PathTransition pathTransition3 = createPathTransition(Duration.seconds(2), path3, leftMainContainer);
         PathTransition pathTransition4 = createPathTransition(Duration.seconds(2), path4, rightMainContainer);
 
-        FadeTransition fadeIn1 = createFadeTransition(Duration.seconds(2), 1, 0, rightCNTR1);
-        FadeTransition fadeIn2 = createFadeTransition(Duration.seconds(2), 0, 1, rightCNTR2);
-        FadeTransition fadeIn3 = createFadeTransition(Duration.seconds(2), 1, 0, leftCNTR1);
-        FadeTransition fadeIn4 = createFadeTransition(Duration.seconds(2), 0, 1, leftCNTR2);
+        FadeTransition fadeIn1 = createFadeTransition(Duration.seconds(5), 1, 0, rightCNTR1);
+        FadeTransition fadeIn2 = createFadeTransition(Duration.seconds(5), 0, 1, rightCNTR2);
+        FadeTransition fadeIn3 = createFadeTransition(Duration.seconds(5), 1, 0, leftCNTR1);
+        FadeTransition fadeIn4 = createFadeTransition(Duration.seconds(5), 0, 1, leftCNTR2);
 
-        FadeTransition fadeOut1 = createFadeTransition(Duration.seconds(2), 0, 1, rightCNTR1);
-        FadeTransition fadeOut2 = createFadeTransition(Duration.seconds(2), 1, 0, rightCNTR2);
-        FadeTransition fadeOut3 = createFadeTransition(Duration.seconds(2), 0, 1, leftCNTR1);
-        FadeTransition fadeOut4 = createFadeTransition(Duration.seconds(2), 1, 0, leftCNTR2);
+        FadeTransition fadeOut1 = createFadeTransition(Duration.seconds(5), 0, 1, rightCNTR1);
+        FadeTransition fadeOut2 = createFadeTransition(Duration.seconds(5), 1, 0, rightCNTR2);
+        FadeTransition fadeOut3 = createFadeTransition(Duration.seconds(5), 0, 1, leftCNTR1);
+        FadeTransition fadeOut4 = createFadeTransition(Duration.seconds(5), 1, 0, leftCNTR2);
 
         toSignUpButton.setOnAction(v -> {
             pathTransition1.play();
@@ -163,7 +144,6 @@ public class LoginScene {
             fadeIn2.play();
             fadeIn3.play();
             fadeIn4.play();
-
         });
 
         toLogInButton.setOnAction(v -> {
@@ -179,13 +159,12 @@ public class LoginScene {
             fadeOut4.play();
         });
 
-        loginButton.setOnAction(v ->{
+        loginButton.setOnAction(v -> {
             String username = usernameTF1.getText();
             String password = passwordTF1.getText();
             System.out.println("helloworld");
 
             if (username.isEmpty() || password.isEmpty()) {
-                // Display alert if any field is empty
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Login Error");
                 alert.setHeaderText(null);
@@ -207,11 +186,11 @@ public class LoginScene {
             }
         });
 
-        signButton.setOnAction(v ->{
+        signButton.setOnAction(v -> {
             String username = usernameTF2.getText();
             String email = emailTF2.getText();
             String password = passwordTF2.getText();
-
+        
             if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Sign Up Error");
@@ -222,18 +201,16 @@ public class LoginScene {
                 // Proceed with creating the user account
                 DataUser userAccount = new DataUser(username, email, password);
                 DataUserController.addUser(userAccount);
-                pathTransition3.play();
-                pathTransition4.play();
-                rightCNTR1.setVisible(true);
-                rightCNTR2.setVisible(false);
-                leftCNTR1.setVisible(true);
-                leftCNTR2.setVisible(false);
-                fadeOut1.play();
-                fadeOut2.play();
-                fadeOut3.play();
-                fadeOut4.play();
+        
+                // Show success message
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Sign Up Success");
+                alert.setHeaderText(null);
+                alert.setContentText("Account has been created successfully! Go to Login Page");
+                alert.showAndWait();
             }
         });
+        
 
         BorderPane root = new BorderPane();
         root.setId("body");
@@ -245,3 +222,5 @@ public class LoginScene {
         stage.show();
     }
 }
+
+

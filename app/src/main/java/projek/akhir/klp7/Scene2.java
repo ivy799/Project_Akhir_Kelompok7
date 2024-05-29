@@ -19,7 +19,7 @@ import javafx.util.Duration;
 import projek.controller.DataKotaController;
 import projek.model.DataKota;
 
-public class Scene2 {
+public class Scene2 extends AbstractAnimation implements Show{
     private Stage stage;
 
     //constructor
@@ -28,7 +28,7 @@ public class Scene2 {
     }
 
 
-
+    @Override
     public void show(){
         
         // main Article (right)
@@ -142,20 +142,15 @@ public class Scene2 {
 
 
         //node animation
-        FadeTransition fadein1 = new FadeTransition(Duration.seconds(0.5),recomend1);
-        fadein1.setFromValue(0);
-        fadein1.setToValue(1);
+        FadeTransition fadein1 = createFadeTransition(Duration.seconds(0.5), 0, 1, recomend1);
         fadein1.play();
 
-        FadeTransition fadein2 = new FadeTransition(Duration.seconds(2.5),recomend2);
-        fadein2.setFromValue(0);
-        fadein2.setToValue(1);
+        FadeTransition fadein2 = createFadeTransition(Duration.seconds(2.5), 0, 1, recomend2);
         fadein2.play();
 
-        FadeTransition fadein3 = new FadeTransition(Duration.seconds(3.5),recomend3);
-        fadein3.setFromValue(0);
-        fadein3.setToValue(2);
+        FadeTransition fadein3 = createFadeTransition(Duration.seconds(3.5), 0, 2, recomend3);
         fadein3.play();
+
 
         
 
