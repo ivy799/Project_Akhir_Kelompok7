@@ -28,7 +28,7 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 import projek.model.DataKota;
 
-public class Scene3 extends AbstractAnimation implements Show{
+public class Scene3 extends SceneUtil implements Show{
     private Stage stage;
     protected DataKota dataKota;
 

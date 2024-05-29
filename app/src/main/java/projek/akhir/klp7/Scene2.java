@@ -19,7 +19,7 @@ import javafx.util.Duration;
 import projek.controller.DataKotaController;
 import projek.model.DataKota;
 
-public class Scene2 extends AbstractAnimation implements Show{
+public class Scene2 extends SceneUtil implements Show{
     private Stage stage;
 
     //constructor
@@ -35,61 +35,43 @@ public class Scene2 extends AbstractAnimation implements Show{
         Image logoUrl = new Image("/image/LayoutImage/logo1.png");
         ImageView logo = new ImageView(logoUrl);
 
-
         Label subText = new Label("EXSPLORE NUSANTARA");
         subText.setId("subText");
 
-
         Button backButton = new Button("BACK");
         backButton.setId("backButton");
-        HBox backButtonContainer = new HBox(backButton);
-        backButtonContainer.setAlignment(Pos.TOP_RIGHT);
+        HBox backButtonContainer = createHBox(0, Pos.TOP_RIGHT, null, backButton);
         backButtonContainer.setPadding(new Insets(10));
 
 
-        String recomendBgImageUrl1 = getClass().getResource("/image/LayoutImage/Scene2RecomendImg1.png").toExternalForm();
-        Label label1 = new Label("BALI");
-        label1.setId("recomendtext");
-        BorderPane recomend1 = new BorderPane();
-        recomend1.setPadding(new Insets(10));
-        recomend1.setId("recomend");
-        recomend1.setBottom(label1);
-        recomend1.setStyle("-fx-background-image: url('" + recomendBgImageUrl1 + "');");
+        SceneUtil factory = new SceneUtil();
+        BorderPane recomend1 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg1.png", "BALI", event -> {
+            DataKota dataKota = DataKotaController.getDataKota("BALI");
+            Scene3 scene3 = new Scene3(stage, dataKota);
+            scene3.show();
+        });
 
+        BorderPane recomend2 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg2.png", "SURABAYA", event -> {
+            DataKota dataKota = DataKotaController.getDataKota("SURABAYA");
+            Scene3 scene3 = new Scene3(stage, dataKota);
+            scene3.show();
+        });
 
-        String recomendBgImageUrl2 = getClass().getResource("/image/LayoutImage/Scene2RecomendImg2.png").toExternalForm();
-        Label label2 = new Label("SURABAYA");
-        label2.setId("recomendtext");
-        BorderPane recomend2 = new BorderPane();
-        recomend2.setPadding(new Insets(10));
-        recomend2.setId("recomend");
-        recomend2.setBottom(label2);
-        recomend2.setStyle("-fx-background-image: url('" + recomendBgImageUrl2 + "');");
+        BorderPane recomend3 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg3.png", "MAKASSAR", event -> {
+            DataKota dataKota = DataKotaController.getDataKota("MAKASSAR");
+            Scene3 scene3 = new Scene3(stage, dataKota);
+            scene3.show();
+        });
 
-        
-        String recomendBgImageUrl3 = getClass().getResource("/image/LayoutImage/Scene2RecomendImg3.png").toExternalForm();
-        Label label3 = new Label("MAKASSAR");
-        label3.setId("recomendtext");
-        BorderPane recomend3 = new BorderPane();
-        recomend3.setPadding(new Insets(10));
-        recomend3.setId("recomend");
-        recomend3.setBottom(label3);
-        recomend3.setStyle("-fx-background-image: url('" + recomendBgImageUrl3 + "');");
 
 
         VBox recomendContainer = new VBox(10);
         recomendContainer.setAlignment(Pos.CENTER);
         recomendContainer.setId("recomendContainer");
         recomendContainer.getChildren().addAll(logo,subText,recomend1,recomend2,recomend3);
-
-        HBox container2 = new HBox(recomendContainer);
-        container2.setId("container2");
-        container2.setAlignment(Pos.CENTER);
-
+        HBox container2 = createHBox(0, Pos.CENTER, "container2", recomendContainer);
         VBox container3 = new VBox();
         container3.getChildren().addAll(backButtonContainer,container2);
-
-
 
 
 
@@ -116,73 +98,31 @@ public class Scene2 extends AbstractAnimation implements Show{
                 );
         
 
-        HBox mainTextcontainer = new HBox(mainText);
-        mainTextcontainer.setAlignment(Pos.CENTER);
-        mainTextcontainer.setId("mainTextcontainer");
+        HBox mainTextcontainer = createHBox(0, Pos.CENTER, "mainTextcontainer", mainText);
+        VBox leftContainer = createVBox(0, Pos.CENTER, "listViewContainer", listView);
+        VBox mainContainer = createVBox(15, Pos.CENTER, "mainContainer", mainTextcontainer, leftContainer);
+        VBox container1 = createVBox(0, Pos.CENTER, "container1", mainContainer);
 
-
-        VBox leftContainer = new VBox();
-        leftContainer.getChildren().addAll(listView);
-        leftContainer.setAlignment(Pos.CENTER);
-        leftContainer.setId("listViewContainer");
-
-
-        VBox mainContainer = new VBox(15);
-        mainContainer.setAlignment(Pos.CENTER);
-        mainContainer.setId("mainContainer");
-        mainContainer.getChildren().addAll(mainTextcontainer, leftContainer);
-
-        VBox container1 = new VBox();
-        container1.getChildren().addAll(mainContainer);
-        container1.setAlignment(Pos.CENTER);
-        container1.setId("container1");
 
         
-
-
-
         //node animation
         FadeTransition fadein1 = createFadeTransition(Duration.seconds(0.5), 0, 1, recomend1);
         fadein1.play();
-
         FadeTransition fadein2 = createFadeTransition(Duration.seconds(2.5), 0, 1, recomend2);
         fadein2.play();
-
         FadeTransition fadein3 = createFadeTransition(Duration.seconds(3.5), 0, 2, recomend3);
         fadein3.play();
 
 
         
-
-        
-
         //button event listener
         backButton.setOnAction(V -> {
             LoginScene loginPage = new LoginScene(stage);
             loginPage.show(); 
         });
 
-
-        label1.setOnMouseClicked(event -> {
-            DataKota dataKota = DataKotaController.getDataKota("BALI");
-            Scene3 scene3 = new Scene3(stage,dataKota);
-            scene3.show();
-        });
-        label2.setOnMouseClicked(event -> {
-            DataKota dataKota = DataKotaController.getDataKota("SURABAYA");
-            Scene3 scene3 = new Scene3(stage,dataKota);
-            scene3.show();
-        });
-        label3.setOnMouseClicked(event -> {
-            DataKota dataKota = DataKotaController.getDataKota("MAKASSAR");
-            Scene3 scene3 = new Scene3(stage,dataKota);
-            scene3.show();
-        });
-
-
         listView.setItems(cityNames);
         listView.setId("listView");
-
         listView.setOnMouseClicked(e -> {
             String selectedCity = listView.getSelectionModel().getSelectedItem();
             DataKota dataKota = DataKotaController.getDataKota(selectedCity);
@@ -192,16 +132,11 @@ public class Scene2 extends AbstractAnimation implements Show{
 
 
 
-
-
         //layout arragnment
         BorderPane root_1 = new BorderPane();
         root_1.setId("body");
         root_1.setLeft(container1);
         root_1.setRight(container3);
-
-
-
         Scene scene = new Scene(root_1, 1300, 650);
         scene.getStylesheets().add(getClass().getResource("/styling/stylee.css").toExternalForm());
         stage.setScene(scene);

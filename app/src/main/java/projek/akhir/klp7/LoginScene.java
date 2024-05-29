@@ -4,7 +4,6 @@ import javafx.animation.FadeTransition;
 import javafx.animation.PathTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-// import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -26,7 +25,7 @@ import projek.model.DataUser;
 import javafx.scene.control.PasswordField;
 
 
-public class LoginScene extends AbstractAnimation implements Show {
+public class LoginScene extends SceneUtil implements Show {
     private Stage stage;
 
     public LoginScene(Stage stage) {
@@ -35,6 +34,7 @@ public class LoginScene extends AbstractAnimation implements Show {
 
     @Override
     public void show() {
+        //left section 1
         Image lineImage = new Image("/image/line2.png");
         ImageView line11 = new ImageView(lineImage);
         ImageView line22 = new ImageView(lineImage);
@@ -53,6 +53,8 @@ public class LoginScene extends AbstractAnimation implements Show {
         VBox signUpContainer = createVBox(0, Pos.CENTER, "signUpContainer", innerText1, toSignUpButton, line11);
         VBox leftCNTR1 = createVBox(80, Pos.CENTER, "leftCNTR", mainText1, signUpContainer);
 
+
+        //left section 2
         Label mainText2 = new Label("JOIN US TO EXPLORE INDONESIAN CULTURE");
         mainText2.setId("mainText1");
         mainText2.setWrapText(true);
@@ -65,9 +67,11 @@ public class LoginScene extends AbstractAnimation implements Show {
         VBox leftCNTR2 = createVBox(80, Pos.CENTER, "leftCNTR", mainText2, loginContainer);
         leftCNTR2.setVisible(false);
 
-        StackPane leftMainContainer = new StackPane(leftCNTR1, leftCNTR2);
-        leftMainContainer.setId("leftMainContainer");
 
+
+
+
+        //right section 1
         Label innerText2 = new Label("Login to your account");
         innerText2.setId("innerText2");
 
@@ -86,6 +90,8 @@ public class LoginScene extends AbstractAnimation implements Show {
         VBox textFieldContainer1 = createVBox(20, Pos.CENTER, "textFieldContainer1", usernameTF1, passwordTF1);
         VBox rightCNTR1 = createVBox(100, Pos.CENTER, "innerRightContainer", innerText2, textFieldContainer1, loginButton);
 
+
+        //right section 2
         Label innerText3 = new Label("Make your account");
         innerText3.setId("innerText2");
 
@@ -108,11 +114,23 @@ public class LoginScene extends AbstractAnimation implements Show {
         VBox rightCNTR2 = createVBox(70, Pos.CENTER, "innerRightContainer", innerText3, textFieldContainer2, signButton);
         rightCNTR2.setVisible(false);
 
+
+
+
+        //container
+        StackPane leftMainContainer = new StackPane(leftCNTR1, leftCNTR2);
+        leftMainContainer.setId("leftMainContainer");
+
         String bgImage = getClass().getResource("/image/LayoutImage/bgImage.png").toExternalForm();
         StackPane rightMainContainer = new StackPane(rightCNTR1, rightCNTR2);
         rightMainContainer.setId("rightMainContainer");
         rightMainContainer.setStyle("-fx-background-image: url('" + bgImage + "');");
 
+
+
+
+
+        //node animation
         Path path1 = new Path(new MoveTo(325, 325), new LineTo(-325, 325));
         Path path2 = new Path(new MoveTo(325, 325), new LineTo(975, 325));
         Path path3 = new Path(new MoveTo(975, 325), new LineTo(325, 325));
@@ -133,6 +151,9 @@ public class LoginScene extends AbstractAnimation implements Show {
         FadeTransition fadeOut3 = createFadeTransition(Duration.seconds(5), 0, 1, leftCNTR1);
         FadeTransition fadeOut4 = createFadeTransition(Duration.seconds(5), 1, 0, leftCNTR2);
 
+
+
+        //button event listener
         toSignUpButton.setOnAction(v -> {
             pathTransition1.play();
             pathTransition2.play();
@@ -162,7 +183,6 @@ public class LoginScene extends AbstractAnimation implements Show {
         loginButton.setOnAction(v -> {
             String username = usernameTF1.getText();
             String password = passwordTF1.getText();
-            System.out.println("helloworld");
 
             if (username.isEmpty() || password.isEmpty()) {
                 Alert alert = new Alert(AlertType.ERROR);
@@ -210,12 +230,19 @@ public class LoginScene extends AbstractAnimation implements Show {
                 alert.showAndWait();
             }
         });
-        
 
+
+
+
+
+
+        //layout arragement
         BorderPane root = new BorderPane();
         root.setId("body");
+
         root.setLeft(leftMainContainer);
         root.setRight(rightMainContainer);
+
         Scene scene = new Scene(root, 1300, 650);
         scene.getStylesheets().add(getClass().getResource("/styling/login.css").toExternalForm());
         stage.setScene(scene);
