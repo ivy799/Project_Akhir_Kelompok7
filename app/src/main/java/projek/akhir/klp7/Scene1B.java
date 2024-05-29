@@ -80,10 +80,12 @@ public class Scene1B {
 
         Button signupButton = new Button("Sign up");
         signupButton.setId("mainButton");
+        Button returButton = new Button("Return");
+        returButton.setId("mainButton");
 
         HBox buttonContainer = new HBox(10);
         buttonContainer.setAlignment(Pos.CENTER);
-        buttonContainer.getChildren().add(signupButton);
+        buttonContainer.getChildren().addAll(signupButton, returButton);
 
         VBox userField = new VBox(20);
         userField.setAlignment(Pos.CENTER);
@@ -115,7 +117,6 @@ public class Scene1B {
             String password = passwordField.getText();
 
             if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                // Display alert if any field is empty
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Sign Up Error");
                 alert.setHeaderText(null);
@@ -128,6 +129,11 @@ public class Scene1B {
                 Scene1A loginPage = new Scene1A(stage);
                 loginPage.show();
             }
+        });
+
+        returButton.setOnAction(V -> {
+            Scene1A loginPage = new Scene1A(stage);
+            loginPage.show(); 
         });
 
 

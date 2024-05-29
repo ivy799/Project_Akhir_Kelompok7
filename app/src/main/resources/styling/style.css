@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "Petrona";
-    src: url("/font/Petrona-VariableFont_wght.ttf");
-}
-
 #body {
     -fx-background-image: url("/image/image12.png");
 }

@@ -10,7 +10,7 @@ public class App extends Application {
     public void start(Stage stage) {
         stage.setTitle("EXA");
         stage.setResizable(false);
-        Scene1A homeScene = new Scene1A(stage);
+        LoginScene homeScene = new LoginScene(stage);
         homeScene.show();
     }
     
