@@ -1,0 +1,84 @@
+#body{
+    -fx-background-color: #001B48;
+}
+
+#leftMainContainer{
+    /* -fx-background-color: #447bda; */
+    -fx-min-width: 650;
+}
+
+#rightMainContainer{
+    -fx-min-width: 650;
+}
+
+
+#mainText1{
+    -fx-font-size:48px;
+    -fx-text-fill:rgb(255, 255, 255);
+    -fx-font-weight: bold;
+}
+
+#innerText1{
+    -fx-font-size:13px;
+    -fx-text-fill:rgba(255, 255, 255, 0.548);
+}
+
+#toSignUpButton{
+    -fx-background-color: transparent;
+    -fx-font-size:12px;
+    -fx-text-fill:white;
+}
+
+#toSignUpButton:hover{
+    -fx-text-fill:rgb(177, 177, 177);
+    -fx-cursor: hand;
+}
+
+
+
+#innerText2{
+    -fx-font-size:16px;
+    -fx-text-fill:#001B48;
+    -fx-font-weight: bold;
+}
+
+#userTextField{
+    -fx-max-width: 281px;  
+    -fx-min-height: 37px; 
+    -fx-text-fill:rgba(0, 0, 0, 0.548); 
+}
+
+#innerRightContainer{
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-max-height: 437;
+    -fx-max-width: 383;
+}
+
+#LSButton{
+    -fx-min-height: 37;
+    -fx-max-width: 281;
+    -fx-background-color: #001B48;
+    -fx-text-fill:rgb(255, 255, 255); 
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+}
+
+#LSButton:hover{
+    -fx-text-fill:rgb(177, 177, 177);
+    -fx-cursor: hand;
+}
+
+#userTextField{
+    -fx-border-color: black; /* Warna border */
+    -fx-border-width: 1px;   /* Lebar border */
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+
+
+#leftCNTR{
+    -fx-min-height: 37;
+    -fx-max-width: 281;
+}

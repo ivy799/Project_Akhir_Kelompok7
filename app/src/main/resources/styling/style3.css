@@ -13,6 +13,7 @@
     /* -fx-text-fill:#001B48; */
     -fx-alignment: CENTER;
     -fx-background-color: transparent;
+    -fx-background-radius: 40;
 
 }
 
@@ -55,10 +56,13 @@
     -fx-font-size:12px;
     -fx-font-weight: bold;
     -fx-background-color: #001B48;
+    -fx-background-radius: 40;
 }
 
 #listViewButton:hover{
     -fx-cursor: hand;
+    -fx-font-size:15px;
+    -fx-text-fill:rgb(204, 204, 204);
 }
 
 #buttonContainer{
@@ -86,7 +90,7 @@
 
 #rightContainer{
     -fx-min-width: 577;
-    -fx-min-height: 235;
+    -fx-min-height: 255;
     -fx-background-color: #E5DDDA;
     -fx-alignment: CENTER;
     -fx-background-radius: 20;
@@ -104,8 +108,9 @@
 }
 
 #tripName:hover{
-    -fx-text-fill:rgb(193, 193, 193);
+    /* -fx-text-fill:rgb(193, 193, 193); */
     -fx-cursor: hand;
+    -fx-font-size:13px;
 }
 
 #umkm{
@@ -125,12 +130,18 @@
 }
 #umkmName:hover{
     -fx-cursor: hand;
+    -fx-text-fill:#003ca3;
     
 }
 
 #detailText{
-    -fx-font-size:9px;
+    -fx-font-size:10px;
+    -fx-text-fill:rgb(0, 0, 0);
 }
+#detailText:armed {
+    -fx-text-fill:rgb(0, 0, 0);
+}
+
 
 #namaKota{
     -fx-text-fill:white;

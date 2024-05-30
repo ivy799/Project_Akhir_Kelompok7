@@ -18,7 +18,6 @@ public class DBconfig {
     public static void getConnection() {
         try {
             connection = DriverManager.getConnection(DB_URL);
-            System.out.println("terhubung");
         } catch (SQLException e) {
             e.printStackTrace();
         }
