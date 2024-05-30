@@ -16,7 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import projek.controller.DataKotaController;
+import projek.controller.DataKotaControllerScene3;
 import projek.model.DataKota;
 
 public class Scene2 extends SceneUtil implements Show{
@@ -46,19 +46,19 @@ public class Scene2 extends SceneUtil implements Show{
 
         SceneUtil factory = new SceneUtil();
         BorderPane recomend1 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg1.png", "BALI", event -> {
-            DataKota dataKota = DataKotaController.getDataKota("BALI");
+            DataKota dataKota = DataKotaControllerScene3.getDataKota("BALI");
             Scene3 scene3 = new Scene3(stage, dataKota);
             scene3.show();
         });
 
         BorderPane recomend2 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg2.png", "SURABAYA", event -> {
-            DataKota dataKota = DataKotaController.getDataKota("SURABAYA");
+            DataKota dataKota = DataKotaControllerScene3.getDataKota("SURABAYA");
             Scene3 scene3 = new Scene3(stage, dataKota);
             scene3.show();
         });
 
         BorderPane recomend3 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg3.png", "MAKASSAR", event -> {
-            DataKota dataKota = DataKotaController.getDataKota("MAKASSAR");
+            DataKota dataKota = DataKotaControllerScene3.getDataKota("MAKASSAR");
             Scene3 scene3 = new Scene3(stage, dataKota);
             scene3.show();
         });
@@ -125,7 +125,7 @@ public class Scene2 extends SceneUtil implements Show{
         listView.setId("listView");
         listView.setOnMouseClicked(e -> {
             String selectedCity = listView.getSelectionModel().getSelectedItem();
-            DataKota dataKota = DataKotaController.getDataKota(selectedCity);
+            DataKota dataKota = DataKotaControllerScene3.getDataKota(selectedCity);
             Scene3 scene3 = new Scene3(stage,dataKota);
             scene3.show();
         });
@@ -138,7 +138,7 @@ public class Scene2 extends SceneUtil implements Show{
         root_1.setLeft(container1);
         root_1.setRight(container3);
         Scene scene = new Scene(root_1, 1300, 650);
-        scene.getStylesheets().add(getClass().getResource("/styling/stylee.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/styling/style2.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

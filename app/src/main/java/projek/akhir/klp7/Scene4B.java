@@ -13,16 +13,18 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import projek.controller.DataKotaControllerScene3;
+import projek.model.DataKota;
 
 public class Scene4B extends Scene3{
+    private DataKota dataKota;
     private Stage stage;
-    private Scene3 scene3;
-    String Scene4BUmkmImageUrl,Scene4BUmkmName,Scene4BUmkmRatingUrl,Scene4BLocationDetail,Scene4BProductDetail,Scene4BContactDetail;
+    private String Scene4BUmkmImageUrl,Scene4BUmkmName,Scene4BUmkmRatingUrl,Scene4BLocationDetail,Scene4BProductDetail,Scene4BContactDetail;
 
     //constructor
-    public Scene4B(Stage stage, Scene3 scene3, String Scene4BUmkmImageUrl,String Scene4BUmkmName,String Scene4BUmkmRatingUrl,String Scene4BLocationDetail,String Scene4BProductDetail,String Scene4BContactDetail) {
+    public Scene4B(Stage stage, DataKota dataKota, String Scene4BUmkmImageUrl,String Scene4BUmkmName,String Scene4BUmkmRatingUrl,String Scene4BLocationDetail,String Scene4BProductDetail,String Scene4BContactDetail) {
         this.stage = stage;
-        this.scene3 = scene3;
+        this.dataKota = dataKota;
         this.Scene4BUmkmImageUrl = Scene4BUmkmImageUrl;
         this.Scene4BUmkmName = Scene4BUmkmName;
         this.Scene4BUmkmRatingUrl = Scene4BUmkmRatingUrl;
@@ -48,8 +50,11 @@ public class Scene4B extends Scene3{
         Button backButton = new Button("BACK");
         backButton.setId("HeaderButton");
         backButton.setOnAction(V -> {
+            this.dataKota = DataKotaControllerScene3.getDataKota(dataKota.getNamaKota());
+            Scene3 scene3 = new Scene3(stage,this.dataKota);
             scene3.show();
         });
+        
         Button homeButton = new Button("HOME");
         homeButton.setId("HeaderButton");
         homeButton.setOnAction(V -> {

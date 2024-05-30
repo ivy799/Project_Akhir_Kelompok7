@@ -72,7 +72,7 @@ public class LoginScene extends SceneUtil implements Show {
 
 
         //right section 1
-        Label innerText2 = new Label("Login to your account");
+        Label innerText2 = new Label("LOGIN TO YOUR ACCOUNT");
         innerText2.setId("innerText2");
 
         TextField usernameTF1 = new TextField();
@@ -92,7 +92,7 @@ public class LoginScene extends SceneUtil implements Show {
 
 
         //right section 2
-        Label innerText3 = new Label("Make your account");
+        Label innerText3 = new Label("MAKE YOUR ACCOUNT");
         innerText3.setId("innerText2");
 
         TextField usernameTF2 = new TextField();
@@ -136,20 +136,20 @@ public class LoginScene extends SceneUtil implements Show {
         Path path3 = new Path(new MoveTo(975, 325), new LineTo(325, 325));
         Path path4 = new Path(new MoveTo(-500, 325), new LineTo(325, 325));
 
-        PathTransition pathTransition1 = createPathTransition(Duration.seconds(2), path1, rightMainContainer);
-        PathTransition pathTransition2 = createPathTransition(Duration.seconds(2), path2, leftMainContainer);
-        PathTransition pathTransition3 = createPathTransition(Duration.seconds(2), path3, leftMainContainer);
-        PathTransition pathTransition4 = createPathTransition(Duration.seconds(2), path4, rightMainContainer);
+        PathTransition pathTransition1 = createPathTransition(Duration.seconds(1.5), path1, rightMainContainer);
+        PathTransition pathTransition2 = createPathTransition(Duration.seconds(1.5), path2, leftMainContainer);
+        PathTransition pathTransition3 = createPathTransition(Duration.seconds(1.5), path3, leftMainContainer);
+        PathTransition pathTransition4 = createPathTransition(Duration.seconds(1.5), path4, rightMainContainer);
 
-        FadeTransition fadeIn1 = createFadeTransition(Duration.seconds(5), 1, 0, rightCNTR1);
-        FadeTransition fadeIn2 = createFadeTransition(Duration.seconds(5), 0, 1, rightCNTR2);
-        FadeTransition fadeIn3 = createFadeTransition(Duration.seconds(5), 1, 0, leftCNTR1);
-        FadeTransition fadeIn4 = createFadeTransition(Duration.seconds(5), 0, 1, leftCNTR2);
+        FadeTransition fadeIn1 = createFadeTransition(Duration.seconds(3), 1, 0, rightCNTR1);
+        FadeTransition fadeIn2 = createFadeTransition(Duration.seconds(3), 0, 1, rightCNTR2);
+        FadeTransition fadeIn3 = createFadeTransition(Duration.seconds(3), 1, 0, leftCNTR1);
+        FadeTransition fadeIn4 = createFadeTransition(Duration.seconds(3), 0, 1, leftCNTR2);
 
-        FadeTransition fadeOut1 = createFadeTransition(Duration.seconds(5), 0, 1, rightCNTR1);
-        FadeTransition fadeOut2 = createFadeTransition(Duration.seconds(5), 1, 0, rightCNTR2);
-        FadeTransition fadeOut3 = createFadeTransition(Duration.seconds(5), 0, 1, leftCNTR1);
-        FadeTransition fadeOut4 = createFadeTransition(Duration.seconds(5), 1, 0, leftCNTR2);
+        FadeTransition fadeOut1 = createFadeTransition(Duration.seconds(3), 0, 1, rightCNTR1);
+        FadeTransition fadeOut2 = createFadeTransition(Duration.seconds(3), 1, 0, rightCNTR2);
+        FadeTransition fadeOut3 = createFadeTransition(Duration.seconds(3), 0, 1, leftCNTR1);
+        FadeTransition fadeOut4 = createFadeTransition(Duration.seconds(3), 1, 0, leftCNTR2);
 
 
 

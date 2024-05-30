@@ -26,6 +26,8 @@ import javafx.scene.shape.Path;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import projek.controller.DataKotaControllerScene4A;
+import projek.controller.DataKotaControllerScene4B;
 import projek.model.DataKota;
 
 public class Scene3 extends SceneUtil implements Show{
@@ -64,10 +66,8 @@ public class Scene3 extends SceneUtil implements Show{
         Region spacer2 = new Region();
         HBox.setHgrow(spacer2, Priority.ALWAYS);
 
-        HBox header = new HBox();
+        HBox header = createHBox(0, null, "header", homeButton,spacer1,namaKota,spacer2,backButton);
         header.setPadding(new Insets(10));
-        header.getChildren().addAll(homeButton,spacer1,namaKota,spacer2,backButton);
-        header.setId("header");
 
         //Header button eventListener
         backButton.setOnAction(V -> {
@@ -92,13 +92,6 @@ public class Scene3 extends SceneUtil implements Show{
 
         String[] scene3TripImageUrls = new String[]{dataKota.getScene3TripImageUrl1(), dataKota.getScene3TripImageUrl2(), dataKota.getScene3TripImageUrl3()};
         String[] scene3TripNames = new String[]{dataKota.getScene3TripName1(), dataKota.getScene3TripName2(), dataKota.getScene3TripName3()};
-        String[] scene4ATripDetails = new String[]{dataKota.getScene4ATripDetail1(), dataKota.getScene4ATripDetail2(), dataKota.getScene4ATripDetail3()};
-        String[] scene4ATripRatingUrls = new String[]{dataKota.getScene4ATripRatingUrl1(), dataKota.getScene4ATripRatingUrl2(), dataKota.getScene4ATripRatingUrl3()};
-        String[] scene4ATripImageUrls = new String[]{dataKota.getScene4ATripImageUrl1(), dataKota.getScene4ATripImageUrl2(), dataKota.getScene4ATripImageUrl3()};
-        String[] scene4ATripNames = new String[]{dataKota.getScene4ATripName1(), dataKota.getScene4ATripName2(), dataKota.getScene4ATripName3()};
-
-
-        
         BorderPane[] rightImages = new BorderPane[3];
         Button[] tripNameContainers = new Button[3];
 
@@ -115,20 +108,30 @@ public class Scene3 extends SceneUtil implements Show{
             rightImages[i].setId("rightImage");
             rightImages[i].setStyle("-fx-background-image: url('" + imageUrl + "');");
 
-            int finalI = i;
-            tripNameContainers[i].setOnAction(V -> {
-                Scene4A scene4A = new Scene4A(stage, this, scene4ATripDetails[finalI], scene4ATripImageUrls[finalI], scene4ATripNames[finalI], scene4ATripRatingUrls[finalI]);
-                scene4A.show();
-            });
         }
 
-        HBox innerRightContainer1 = new HBox(30);
-        innerRightContainer1.setAlignment(Pos.CENTER);
-        innerRightContainer1.getChildren().addAll(rightImages);
+        //trip section button event listener
+        tripNameContainers[0].setOnAction(v ->{
+            this.dataKota = DataKotaControllerScene4A.getDataKota(this.dataKota.getNamaKota());
+            Scene4A scene4a = new Scene4A(stage,this.dataKota,dataKota.getScene4ATripDetail1(), dataKota.getScene4ATripImageUrl1(), dataKota.getScene4ATripName1(), dataKota.getScene4ATripRatingUrl3());
+            scene4a.show();
+        });
+        tripNameContainers[1].setOnAction(v ->{
+            this.dataKota = DataKotaControllerScene4A.getDataKota(this.dataKota.getNamaKota());
+            Scene4A scene4a = new Scene4A(stage,this.dataKota, dataKota.getScene4ATripDetail2(), dataKota.getScene4ATripImageUrl2(), dataKota.getScene4ATripName2(), dataKota.getScene4ATripRatingUrl2());
+            scene4a.show();
+        });
+        tripNameContainers[2].setOnAction(v ->{
+            this.dataKota = DataKotaControllerScene4A.getDataKota(this.dataKota.getNamaKota());
+            Scene4A scene4a = new Scene4A(stage,this.dataKota,dataKota.getScene4ATripDetail3(), dataKota.getScene4ATripImageUrl3(), dataKota.getScene4ATripName3(), dataKota.getScene4ATripRatingUrl3());
+            scene4a.show();
+        });
 
-        VBox rightContainer1 = new VBox(50);
-        rightContainer1.setId("rightContainer");
-        rightContainer1.getChildren().addAll(rightTittle1, innerRightContainer1);
+
+
+        HBox innerRightContainer1 = createHBox(30, Pos.CENTER, null, rightImages);
+        VBox rightContainer1 = createVBox(50, null, "rightContainer", rightTittle1, innerRightContainer1);
+
         
 
 
@@ -137,47 +140,46 @@ public class Scene3 extends SceneUtil implements Show{
         //Umkm Section Layouting
         String[] scene3UmkmImageUrls = new String[]{dataKota.getScene3UmkmImageUrl1(), dataKota.getScene3UmkmImageUrl2(), dataKota.getScene3UmkmImageUrl3()};
         String[] scene3UmkmNames = new String[]{dataKota.getScene3UmkmName1(), dataKota.getScene3UmkmName2(), dataKota.getScene3UmkmName3()};
-        String[] scene4BUmkmImageUrls = new String[]{dataKota.getScene4BUmkmImageUrl1(), dataKota.getScene4BUmkmImageUrl2(), dataKota.getScene4BUmkmImageUrl3()};
-        String[] scene4BUmkmNames = new String[]{dataKota.getScene4BUmkmName1(), dataKota.getScene4BUmkmName2(), dataKota.getScene4BUmkmName3()};
-        String[] scene4BLocationDetails = new String[]{dataKota.getScene4BLocationDetail1(), dataKota.getScene4BLocationDetail2(), dataKota.getScene4BLocationDetail3()};
-        String[] scene4BProductDetails = new String[]{dataKota.getScene4BProductDetail1(), dataKota.getScene4BProductDetail2(), dataKota.getScene4BProductDetail3()};
-        String[] scene4BContactDetails = new String[]{dataKota.getScene4BContactDetail1(), dataKota.getScene4BContactDetail2(), dataKota.getScene4BContactDetail3()};
-        String[] scene4BTripRatingUrls = new String[]{dataKota.getScene4BUmkmRatingUrl1(), dataKota.getScene4BUmkmRatingUrl2(), dataKota.getScene4BUmkmRatingUrl3()};
-
+        Button[] umkmNameContainers = new Button[3];
 
         Label rightTittle2 = new Label("MSMEs");
         rightTittle2.setId("rightTittle");
 
-        VBox rightContainer2 = new VBox(35);
-        rightContainer2.setId("rightContainer");
-        rightContainer2.getChildren().add(rightTittle2);
-
+        VBox rightContainer2 = createVBox(35, null, "rightContainer", rightTittle2);
         HBox innerRightContainer2 = new HBox(25);
         innerRightContainer2.setAlignment(Pos.CENTER);
+        
 
         for (int i = 0; i < 3; i++) {
             ImageView umkmImg = new ImageView(new Image(scene3UmkmImageUrls[i]));
-            Button umkmName = new Button(scene3UmkmNames[i]);
-            umkmName.setPadding(new Insets(10));
-            umkmName.setId("umkmName");
+            umkmNameContainers[i] = new Button(scene3UmkmNames[i]);
+            umkmNameContainers[i].setPadding(new Insets(10));
+            umkmNameContainers[i].setId("umkmName");
             VBox rightImage = new VBox(10);
-            rightImage.getChildren().addAll(umkmImg, umkmName);
+            rightImage.getChildren().addAll(umkmImg, umkmNameContainers[i]);
             rightImage.setId("umkm");
-
-            int finalI = i;
-            umkmName.setOnAction(V -> {
-                Scene4B scene4B = new Scene4B(stage, this, scene4BUmkmImageUrls[finalI], scene4BUmkmNames[finalI], 
-                scene4BTripRatingUrls[finalI], scene4BLocationDetails[finalI], 
-                scene4BProductDetails[finalI], scene4BContactDetails[finalI]);
-                scene4B.show();
-            });
 
             innerRightContainer2.getChildren().add(rightImage);
         }
 
+        //umkm section button event listener
+        umkmNameContainers[0].setOnAction(v ->{
+            this.dataKota = DataKotaControllerScene4B.getDataKota(this.dataKota.getNamaKota());
+            Scene4B scene4b = new Scene4B(stage, this.dataKota, dataKota.getScene4BUmkmImageUrl1(), dataKota.getScene4BUmkmName1(), dataKota.getScene4BUmkmRatingUrl1(), dataKota.getScene4BLocationDetail1(), dataKota.getScene4BProductDetail1(), dataKota.getScene4BContactDetail1());
+            scene4b.show();
+        });
+        umkmNameContainers[1].setOnAction(v ->{
+            this.dataKota = DataKotaControllerScene4B.getDataKota(this.dataKota.getNamaKota());
+            Scene4B scene4b = new Scene4B(stage, this.dataKota, dataKota.getScene4BUmkmImageUrl2(), dataKota.getScene4BUmkmName2(), dataKota.getScene4BUmkmRatingUrl2(), dataKota.getScene4BLocationDetail2(), dataKota.getScene4BProductDetail2(), dataKota.getScene4BContactDetail2());
+            scene4b.show();
+        });
+        umkmNameContainers[2].setOnAction(v ->{
+            this.dataKota = DataKotaControllerScene4B.getDataKota(this.dataKota.getNamaKota());
+            Scene4B scene4b = new Scene4B(stage, this.dataKota, dataKota.getScene4BUmkmImageUrl3(), dataKota.getScene4BUmkmName3(), dataKota.getScene4BUmkmRatingUrl3(), dataKota.getScene4BLocationDetail3(), dataKota.getScene4BProductDetail3(), dataKota.getScene4BContactDetail3());
+            scene4b.show();
+        });
+
         rightContainer2.getChildren().add(innerRightContainer2);
-
-
 
 
 
@@ -200,46 +202,41 @@ public class Scene3 extends SceneUtil implements Show{
         leftTittle.setAlignment(Pos.CENTER);
         leftTittle.setId("leftTittle");
 
-        HBox leftTittleContainer = new HBox(leftTittle);
-        leftTittleContainer.setAlignment(Pos.CENTER);
-        leftTittleContainer.setId("leftTittleContainer");
-
-        VBox leftContainer = new VBox(40);
+        HBox leftTittleContainer = createHBox(0, Pos.CENTER, "leftTittleContainer", leftTittle);
+        VBox leftContainer = createVBox(40, null, "leftContainer", leftTittleContainer,listView);
         leftContainer.setPadding(new Insets(10));
-        leftContainer.setId("leftContainer");
-        leftContainer.getChildren().addAll(leftTittleContainer,listView);
+        VBox mainRightContainer = createVBox(20, null, null, rightContainer1,rightContainer2);
 
 
-        VBox mainRightContainer = new VBox(20);
-        mainRightContainer.getChildren().addAll(rightContainer1,rightContainer2);
+
 
 
 
 
         //node animation
         Path path1 = new Path();
-    path1.getElements().add(new MoveTo(290, 50));
-    path1.getElements().add(new LineTo(290, 125));
-    PathTransition pathTransition1 = createPathTransition(Duration.seconds(1), path1, rightContainer1);
-    FadeTransition fadein1 = createFadeTransition(Duration.seconds(1), 0, 1, rightContainer1);
-    pathTransition1.play();
-    fadein1.play();
+        path1.getElements().add(new MoveTo(290, 50));
+        path1.getElements().add(new LineTo(290, 125));
+        PathTransition pathTransition1 = createPathTransition(Duration.seconds(1), path1, rightContainer1);
+        FadeTransition fadein1 = createFadeTransition(Duration.seconds(1), 0, 1, rightContainer1);
+        pathTransition1.play();
+        fadein1.play();
 
-    Path path2 = new Path();
-    path2.getElements().add(new MoveTo(290, 170));
-    path2.getElements().add(new LineTo(290, 130));
-    PathTransition pathTransition2 = createPathTransition(Duration.seconds(1), path2, rightContainer2);
-    FadeTransition fadein2 = createFadeTransition(Duration.seconds(1), 0, 1, rightContainer2);
-    pathTransition2.play();
-    fadein2.play();
+        Path path2 = new Path();
+        path2.getElements().add(new MoveTo(290, 170));
+        path2.getElements().add(new LineTo(290, 130));
+        PathTransition pathTransition2 = createPathTransition(Duration.seconds(1), path2, rightContainer2);
+        FadeTransition fadein2 = createFadeTransition(Duration.seconds(1), 0, 1, rightContainer2);
+        pathTransition2.play();
+        fadein2.play();
 
-    Path path3 = new Path();
-    path3.getElements().add(new MoveTo(1, 265));
-    path3.getElements().add(new LineTo(330, 265));
-    PathTransition pathTransition3 = createPathTransition(Duration.seconds(1), path3, leftContainer);
-    FadeTransition fadein3 = createFadeTransition(Duration.seconds(1), 0, 1, leftContainer);
-    pathTransition3.play();
-    fadein3.play();
+        Path path3 = new Path();
+        path3.getElements().add(new MoveTo(1, 265));
+        path3.getElements().add(new LineTo(330, 265));
+        PathTransition pathTransition3 = createPathTransition(Duration.seconds(1), path3, leftContainer);
+        FadeTransition fadein3 = createFadeTransition(Duration.seconds(1), 0, 1, leftContainer);
+        pathTransition3.play();
+        fadein3.play();
 
 
 

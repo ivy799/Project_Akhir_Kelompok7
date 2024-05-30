@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 import projek.controller.DataUserController;
 import projek.model.DataUser;
 
-public class Scene1B {
+public class Scene1B extends SceneUtil{
     private Stage stage;
 
     
@@ -52,10 +52,9 @@ public class Scene1B {
         HBox.setHgrow(spacer1, Priority.ALWAYS);
 
 
-        HBox header = new HBox();
-        header.getChildren().addAll(logo,spacer1,EXSA);
+        HBox header = createHBox(0, null, "header", logo,spacer1,EXSA);
         header.setPadding(new Insets(10));
-        header.setId("header");
+
 
 
 
@@ -83,30 +82,20 @@ public class Scene1B {
         Button returButton = new Button("Return");
         returButton.setId("mainButton");
 
-        HBox buttonContainer = new HBox(10);
-        buttonContainer.setAlignment(Pos.CENTER);
-        buttonContainer.getChildren().addAll(signupButton, returButton);
+        HBox buttonContainer = createHBox(10, Pos.CENTER, null, signupButton, returButton);
 
-        VBox userField = new VBox(20);
-        userField.setAlignment(Pos.CENTER);
-        userField.getChildren().addAll(usernameField,emailField,passwordField);
-        
+        VBox userField = createVBox(20, Pos.CENTER, null, usernameField,emailField,passwordField);
+
         HBox loginFieldText = new HBox(mainText2);
         loginFieldText.setPadding(new Insets(10));
 
-        VBox loginField = new VBox(70);
-        loginField.setAlignment(Pos.CENTER);
+        VBox loginField = createVBox(70, Pos.CENTER, "loginField", loginFieldText,userField,buttonContainer);
         loginField.setPadding(new Insets(20));
-        loginField.setId("loginField");
-        loginField.getChildren().addAll(loginFieldText,userField,buttonContainer);
-
 
         HBox mainTextContainer = new HBox(mainText1);
 
-        HBox mainContainer = new HBox(170);
-        mainContainer.setAlignment(Pos.CENTER);
-        mainContainer.setId("mainContainer");
-        mainContainer.getChildren().addAll(mainTextContainer,loginField);
+        HBox mainContainer = createHBox(170, Pos.CENTER, "mainContainer", mainTextContainer,loginField);
+
 
 
 

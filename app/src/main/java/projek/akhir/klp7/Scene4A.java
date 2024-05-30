@@ -13,16 +13,20 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import projek.controller.DataKotaControllerScene3;
+import projek.model.DataKota;
+
+
 
 public class Scene4A extends Scene3{
+    private DataKota dataKota;
     private Stage stage;
-    private Scene3 scene3;
     private String getScene4ATripDetail,getScene4ATripImageUrl,getScene4ATripName,getScene4ATripRatingUrl;
 
     // Constructor
-    public Scene4A(Stage stage, Scene3 scene3, String getScene4ATripDetail, String getScene4ATripImageUrl,String getScene4ATripName, String getScene4ATripRatingUrl ) {
+    public Scene4A(Stage stage, DataKota dataKota,String getScene4ATripDetail, String getScene4ATripImageUrl,String getScene4ATripName, String getScene4ATripRatingUrl ) {
         this.stage = stage;
-        this.scene3 = scene3;
+        this.dataKota = dataKota;
         this.getScene4ATripDetail = getScene4ATripDetail;
         this.getScene4ATripImageUrl = getScene4ATripImageUrl;
         this.getScene4ATripName = getScene4ATripName;
@@ -30,14 +34,6 @@ public class Scene4A extends Scene3{
         initialize();
     }
 
-    public Scene4A(Stage stage, String getScene4ATripDetail, String getScene4ATripImageUrl,String getScene4ATripName, String getScene4ATripRatingUrl ) {
-        this.stage = stage;
-        this.getScene4ATripDetail = getScene4ATripDetail;
-        this.getScene4ATripImageUrl = getScene4ATripImageUrl;
-        this.getScene4ATripName = getScene4ATripName;
-        this.getScene4ATripRatingUrl = getScene4ATripRatingUrl;
-        initialize();
-    }
     
 
     private void initialize() {
@@ -65,6 +61,8 @@ public class Scene4A extends Scene3{
 
         //button event listener
         backButton.setOnAction(V -> {
+            this.dataKota = DataKotaControllerScene3.getDataKota(dataKota.getNamaKota());
+            Scene3 scene3 = new Scene3(stage,this.dataKota);
             scene3.show();
         });
 
@@ -88,29 +86,18 @@ public class Scene4A extends Scene3{
         HBox linebox = new HBox(line1);
         linebox.setAlignment(Pos.CENTER);
 
-        HBox container1 = new HBox(280);
-        container1.getChildren().addAll(mainText, imageView);
-        container1.setId("container1");
+        HBox container1 = createHBox(280, Pos.CENTER, "container1", mainText, imageView);
         container1.setPadding(new Insets(10));
-        container1.setAlignment(Pos.CENTER);
 
-        HBox container2 = new HBox();
-        container2.getChildren().add(mainText2);
+        HBox container2 = createHBox(0, null, null, mainText2);
         container2.setPadding(new Insets(20));
 
-        HBox container3 = new HBox();
-        container3.getChildren().addAll(homeButton, spacer1, backButton);
+        HBox container3 = createHBox(0, null, "header", homeButton, spacer1, backButton);
         container3.setPadding(new Insets(20));
-        container3.setId("header");
 
-        VBox mainContainer = new VBox(0);
-        mainContainer.setId("mainContainer");
-        mainContainer.getChildren().addAll(container1, linebox, container2);
+        VBox mainContainer = createVBox(0, null, "mainContainer", container1, linebox, container2);
+        HBox mainDetail = createHBox(0, Pos.CENTER, "mainDetail", mainContainer);
 
-        HBox mainDetail = new HBox();
-        mainDetail.setId("mainDetail");
-        mainDetail.getChildren().addAll(mainContainer);
-        mainDetail.setAlignment(Pos.CENTER);
 
 
         // Scene layout
