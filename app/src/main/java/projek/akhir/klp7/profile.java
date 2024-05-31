@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import projek.controller.DataUserController;
 import projek.model.DataUser;
 
-public class profile extends SceneUtil{
+public class profile extends SceneUtil implements Show{
     private Stage stage;
     private DataUser user;
 

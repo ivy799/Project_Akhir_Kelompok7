@@ -44,8 +44,8 @@ public class DataUserController extends DBconfig{
         return false;
     }
 
-    public static void addUser(DataUser userData ) {
-        if (usernameExists(userData.getUsername())|| emailExists(userData.getEmail())) {
+    public static void addUser(DataUser userData) {
+        if (usernameExists(userData.getUsername()) || emailExists(userData.getEmail())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Sign up Failed");
             alert.setHeaderText(null);
@@ -53,19 +53,33 @@ public class DataUserController extends DBconfig{
             alert.showAndWait();
             return;
         }
-
+    
         String query = "INSERT INTO userData(username, email, password) VALUES(?,?,?)";
-        try{
+        try {
             getConnection();
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, userData.getUsername());
             preparedStatement.setString(2, userData.getEmail());
             preparedStatement.setString(3, userData.getPassword());
-            preparedStatement.executeUpdate();
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                successAlert.setTitle("Sign up Success");
+                successAlert.setHeaderText(null);
+                successAlert.setContentText("Account created successfully!");
+                successAlert.showAndWait();
+            } else {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setTitle("Sign up Failed");
+                errorAlert.setHeaderText(null);
+                errorAlert.setContentText("Failed to create account!");
+                errorAlert.showAndWait();
+            }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
+    
 
     public static boolean loginUser(String username, String password) {
         String query = "SELECT COUNT(*) FROM userData WHERE username = ? AND password = ?";
