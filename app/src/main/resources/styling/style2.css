@@ -99,3 +99,26 @@
     -fx-text-fill:rgb(153, 153, 153);
     -fx-cursor: hand;
 }
+
+#searchField{
+    -fx-min-width: 200;
+    -fx-background-radius: 10;
+}
+
+#searchButton{
+    -fx-background-color: #001B48;
+    -fx-font-size:13px;
+    -fx-text-fill:rgb(255, 255, 255);
+    -fx-font-weight: bold;
+}
+
+#searchButton:hover{
+    -fx-background-color: #003083;
+    -fx-cursor: hand;
+}
+
+#recomend:hover{
+    -fx-opacity: 0.2;
+    -fx-cursor: hand;
+    -fx-font-size:30px;
+}

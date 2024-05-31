@@ -99,7 +99,7 @@ public class LoginScene extends SceneUtil implements Show {
         usernameTF2.setPromptText("Username");
         usernameTF2.setId("userTextField");
 
-        PasswordField passwordTF2 = new PasswordField();
+        TextField passwordTF2 = new TextField();
         passwordTF2.setPromptText("Password");
         passwordTF2.setId("userTextField");
 

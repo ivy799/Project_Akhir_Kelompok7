@@ -6,9 +6,11 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -50,14 +52,35 @@ public class Scene2 extends SceneUtil implements Show{
             Scene3 scene3 = new Scene3(stage, dataKota);
             scene3.show();
         });
+        recomend1.setOnMouseClicked(v ->{
+            DataKota dataKota = DataKotaControllerScene3.getDataKota("BALI");
+            Scene3 scene3 = new Scene3(stage, dataKota);
+            scene3.show();
+        });
+
+
+        
 
         BorderPane recomend2 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg2.png", "SURABAYA", event -> {
             DataKota dataKota = DataKotaControllerScene3.getDataKota("SURABAYA");
             Scene3 scene3 = new Scene3(stage, dataKota);
             scene3.show();
+        }); 
+        recomend2.setOnMouseClicked(v ->{
+            DataKota dataKota = DataKotaControllerScene3.getDataKota("SURABAYA");
+            Scene3 scene3 = new Scene3(stage, dataKota);
+            scene3.show();
         });
 
+
+
+        
         BorderPane recomend3 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg3.png", "MAKASSAR", event -> {
+            DataKota dataKota = DataKotaControllerScene3.getDataKota("MAKASSAR");
+            Scene3 scene3 = new Scene3(stage, dataKota);
+            scene3.show();
+        });
+        recomend3.setOnMouseClicked(v ->{
             DataKota dataKota = DataKotaControllerScene3.getDataKota("MAKASSAR");
             Scene3 scene3 = new Scene3(stage, dataKota);
             scene3.show();
@@ -80,6 +103,15 @@ public class Scene2 extends SceneUtil implements Show{
         Label mainText = new Label("EXSPLORE MORE");
         mainText.setId("mainText");
 
+        TextField searchBar = new TextField();
+        searchBar.setPromptText("ENTER CITY NAME...");
+        searchBar.setId("searchField");
+
+        Button searchButton = new Button("Search");
+        searchButton.setId("searchButton");
+        HBox searchBarContainer = createHBox(10, Pos.CENTER, "SearchBar", searchBar,searchButton);
+
+
         ListView<String> listView = new ListView<>();
         ObservableList<String> cityNames = FXCollections.observableArrayList(
                 "BALI",
@@ -96,11 +128,25 @@ public class Scene2 extends SceneUtil implements Show{
                 "SURABAYA",
                 "YOGYAKARTA"
                 );
+
+        searchButton.setOnAction(e -> {
+            String cityToSearch = searchBar.getText().toUpperCase().trim();
+            if (cityToSearch.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText(null);
+                alert.setContentText("Please enter a city name to search.");
+                alert.showAndWait();
+            } else if (cityNames.contains(cityToSearch)) {
+                cityNames.remove(cityToSearch);
+                cityNames.add(0, cityToSearch);
+            }
+        });
         
 
         HBox mainTextcontainer = createHBox(0, Pos.CENTER, "mainTextcontainer", mainText);
         VBox leftContainer = createVBox(0, Pos.CENTER, "listViewContainer", listView);
-        VBox mainContainer = createVBox(15, Pos.CENTER, "mainContainer", mainTextcontainer, leftContainer);
+        VBox mainContainer = createVBox(15, Pos.CENTER, "mainContainer", mainTextcontainer,searchBarContainer, leftContainer);
         VBox container1 = createVBox(0, Pos.CENTER, "container1", mainContainer);
 
 
@@ -129,6 +175,8 @@ public class Scene2 extends SceneUtil implements Show{
             Scene3 scene3 = new Scene3(stage,dataKota);
             scene3.show();
         });
+
+
 
 
 
