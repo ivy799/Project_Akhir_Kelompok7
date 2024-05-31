@@ -13,7 +13,7 @@ public class App extends Application {
         stage.setResizable(false);
         Image iconApp = new Image(getClass().getResourceAsStream("/image/LayoutImage/logo3.png"));
         stage.getIcons().add(iconApp);
-        Scene2 homeScene = new Scene2(stage);
+        LoginScene homeScene = new LoginScene(stage);
         homeScene.show();
     }
     

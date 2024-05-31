@@ -20,14 +20,26 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import projek.controller.DataKotaControllerScene3;
 import projek.model.DataKota;
+import projek.model.DataUser;
 
 public class Scene2 extends SceneUtil implements Show{
     private Stage stage;
+    private DataUser userAccount;
 
     //constructor
+    public Scene2(Stage stage,DataUser userAccount) {
+        this.stage = stage;
+        this.userAccount = userAccount;
+    }
+
+    
+
+
     public Scene2(Stage stage) {
         this.stage = stage;
     }
+
+
 
 
     @Override
@@ -163,8 +175,8 @@ public class Scene2 extends SceneUtil implements Show{
         
         //button event listener
         backButton.setOnAction(V -> {
-            LoginScene loginPage = new LoginScene(stage);
-            loginPage.show(); 
+            profile userAccount = new profile(stage, this.userAccount);
+            userAccount.show();
         });
 
         listView.setItems(cityNames);

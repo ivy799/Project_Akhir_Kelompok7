@@ -93,4 +93,25 @@ public class DataUserController extends DBconfig{
         }
         return false;
     }
+
+    public static DataUser getUserDetails(String username) {
+        String query = "SELECT username, email, password FROM userData WHERE username = ?";
+        DataUser userData = null;
+        try {
+            getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    String name = resultSet.getString("username");
+                    String email = resultSet.getString("email");
+                    String password = resultSet.getString("password");
+                    userData = new DataUser(name, email, password);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return userData;
+    }
 }

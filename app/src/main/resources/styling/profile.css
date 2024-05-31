@@ -1,0 +1,47 @@
+#body{
+    -fx-background-image: url("/image/LayoutImage/profile3.png");
+}
+
+
+#backButton{
+    -fx-background-color: transparent;
+    -fx-font-size:15px;
+    -fx-text-fill:white;
+}
+
+
+#container1{
+    -fx-background-color: #ffffff;
+    -fx-max-height: 380;
+    -fx-min-width: 311;
+    -fx-background-radius: 20px;
+}
+
+#profileText{
+    -fx-background-color: #001B48;
+    -fx-text-fill:#ffffff;
+    -fx-border-radius: 10;
+    -fx-min-height: 27;
+    -fx-min-width: 179;
+}
+
+#editButton{
+    -fx-background-color: transparent;
+    -fx-font-size:15px;
+    -fx-text-fill:#001B48;
+    -fx-font-weight: bold;
+}
+
+
+
+
+
+#container4{
+    -fx-background-color: #ffffff;
+    -fx-max-height: 291;
+    -fx-min-width: 750;
+    -fx-background-radius: 20px;
+}
+
+
+
