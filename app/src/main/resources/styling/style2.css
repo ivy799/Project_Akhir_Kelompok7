@@ -25,12 +25,14 @@
 #mainContainer{
     /* -fx-background-color: #769ad8; */
     -fx-max-width: 362;
+    -fx-min-height: 555;
+
     -fx-background-image: url("/image/image17.png");
 
 }
 
 #listView .list-cell{
-    -fx-font-size:15px;
+    -fx-font-size:16px;
     -fx-font-weight: bold;
     -fx-text-fill:#001B48;
     -fx-alignment: CENTER;
@@ -87,17 +89,8 @@
 }
 
 
-#backButton {
-    -fx-background-color: transparent;
-    -fx-font-size:15px;
-    -fx-text-fill:rgb(255, 255, 255);
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 2, 2);
-}
-
-#backButton:hover {
-    -fx-text-fill:rgb(153, 153, 153);
-    -fx-cursor: hand;
+#profileButton:hover{
+    -fx-opacity: 0.7;
 }
 
 #searchField{

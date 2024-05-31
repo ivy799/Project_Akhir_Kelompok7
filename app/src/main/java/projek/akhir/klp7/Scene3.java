@@ -29,17 +29,27 @@ import javafx.util.Duration;
 import projek.controller.DataKotaControllerScene4A;
 import projek.controller.DataKotaControllerScene4B;
 import projek.model.DataKota;
+import projek.model.DataUser;
 
 public class Scene3 extends SceneUtil implements Show{
     private Stage stage;
     protected DataKota dataKota;
+    private DataUser userAccount;
 
     public Scene3() {
     }
 
-    public Scene3(Stage stage, DataKota dataKota) {
+    // public Scene3(Stage stage, DataKota dataKota) {
+    //     this.stage = stage;
+    //     this.dataKota = dataKota;
+    // }
+
+    
+
+    public Scene3(Stage stage, DataKota dataKota, DataUser userAccount) {
         this.stage = stage;
         this.dataKota = dataKota;
+        this.userAccount = userAccount;
     }
 
     @Override
@@ -71,7 +81,7 @@ public class Scene3 extends SceneUtil implements Show{
 
         //Header button eventListener
         backButton.setOnAction(V -> {
-            Scene2 scene2 = new Scene2(stage);
+            Scene2 scene2 = new Scene2(stage,userAccount);
             scene2.show(); 
         });
 
@@ -113,12 +123,12 @@ public class Scene3 extends SceneUtil implements Show{
         //trip section button event listener
         tripNameContainers[0].setOnAction(v ->{
             this.dataKota = DataKotaControllerScene4A.getDataKota(this.dataKota.getNamaKota());
-            Scene4A scene4a = new Scene4A(stage,this.dataKota,dataKota.getScene4ATripDetail1(), dataKota.getScene4ATripImageUrl1(), dataKota.getScene4ATripName1(), dataKota.getScene4ATripRatingUrl3());
+            Scene4A scene4a = new Scene4A(stage,userAccount,this.dataKota,dataKota.getScene4ATripDetail1(), dataKota.getScene4ATripImageUrl1(), dataKota.getScene4ATripName1(), dataKota.getScene4ATripRatingUrl3());
             scene4a.show();
         });
         rightImages[0].setOnMouseClicked(v ->{
             this.dataKota = DataKotaControllerScene4A.getDataKota(this.dataKota.getNamaKota());
-            Scene4A scene4a = new Scene4A(stage,this.dataKota,dataKota.getScene4ATripDetail1(), dataKota.getScene4ATripImageUrl1(), dataKota.getScene4ATripName1(), dataKota.getScene4ATripRatingUrl3());
+            Scene4A scene4a = new Scene4A(stage,userAccount,this.dataKota,dataKota.getScene4ATripDetail1(), dataKota.getScene4ATripImageUrl1(), dataKota.getScene4ATripName1(), dataKota.getScene4ATripRatingUrl3());
             scene4a.show();
         });
 
@@ -126,12 +136,12 @@ public class Scene3 extends SceneUtil implements Show{
 
         tripNameContainers[1].setOnAction(v ->{
             this.dataKota = DataKotaControllerScene4A.getDataKota(this.dataKota.getNamaKota());
-            Scene4A scene4a = new Scene4A(stage,this.dataKota, dataKota.getScene4ATripDetail2(), dataKota.getScene4ATripImageUrl2(), dataKota.getScene4ATripName2(), dataKota.getScene4ATripRatingUrl2());
+            Scene4A scene4a = new Scene4A(stage,userAccount,this.dataKota, dataKota.getScene4ATripDetail2(), dataKota.getScene4ATripImageUrl2(), dataKota.getScene4ATripName2(), dataKota.getScene4ATripRatingUrl2());
             scene4a.show();
         });
         rightImages[1].setOnMouseClicked(v ->{
             this.dataKota = DataKotaControllerScene4A.getDataKota(this.dataKota.getNamaKota());
-            Scene4A scene4a = new Scene4A(stage,this.dataKota, dataKota.getScene4ATripDetail2(), dataKota.getScene4ATripImageUrl2(), dataKota.getScene4ATripName2(), dataKota.getScene4ATripRatingUrl2());
+            Scene4A scene4a = new Scene4A(stage,userAccount,this.dataKota, dataKota.getScene4ATripDetail2(), dataKota.getScene4ATripImageUrl2(), dataKota.getScene4ATripName2(), dataKota.getScene4ATripRatingUrl2());
             scene4a.show();
         });
 
@@ -139,12 +149,12 @@ public class Scene3 extends SceneUtil implements Show{
 
         tripNameContainers[2].setOnAction(v ->{
             this.dataKota = DataKotaControllerScene4A.getDataKota(this.dataKota.getNamaKota());
-            Scene4A scene4a = new Scene4A(stage,this.dataKota,dataKota.getScene4ATripDetail3(), dataKota.getScene4ATripImageUrl3(), dataKota.getScene4ATripName3(), dataKota.getScene4ATripRatingUrl3());
+            Scene4A scene4a = new Scene4A(stage,userAccount,this.dataKota,dataKota.getScene4ATripDetail3(), dataKota.getScene4ATripImageUrl3(), dataKota.getScene4ATripName3(), dataKota.getScene4ATripRatingUrl3());
             scene4a.show();
         });
         rightImages[2].setOnMouseClicked(v ->{
             this.dataKota = DataKotaControllerScene4A.getDataKota(this.dataKota.getNamaKota());
-            Scene4A scene4a = new Scene4A(stage,this.dataKota,dataKota.getScene4ATripDetail3(), dataKota.getScene4ATripImageUrl3(), dataKota.getScene4ATripName3(), dataKota.getScene4ATripRatingUrl3());
+            Scene4A scene4a = new Scene4A(stage,userAccount,this.dataKota,dataKota.getScene4ATripDetail3(), dataKota.getScene4ATripImageUrl3(), dataKota.getScene4ATripName3(), dataKota.getScene4ATripRatingUrl3());
             scene4a.show();
         });
 
@@ -187,12 +197,12 @@ public class Scene3 extends SceneUtil implements Show{
         //umkm section button event listener
         umkmNameContainers[0].setOnAction(v ->{
             this.dataKota = DataKotaControllerScene4B.getDataKota(this.dataKota.getNamaKota());
-            Scene4B scene4b = new Scene4B(stage, this.dataKota, dataKota.getScene4BUmkmImageUrl1(), dataKota.getScene4BUmkmName1(), dataKota.getScene4BUmkmRatingUrl1(), dataKota.getScene4BLocationDetail1(), dataKota.getScene4BProductDetail1(), dataKota.getScene4BContactDetail1());
+            Scene4B scene4b = new Scene4B(stage,userAccount, this.dataKota, dataKota.getScene4BUmkmImageUrl1(), dataKota.getScene4BUmkmName1(), dataKota.getScene4BUmkmRatingUrl1(), dataKota.getScene4BLocationDetail1(), dataKota.getScene4BProductDetail1(), dataKota.getScene4BContactDetail1());
             scene4b.show();
         });
         umkmContainer[0].setOnMouseClicked(v ->{
             this.dataKota = DataKotaControllerScene4B.getDataKota(this.dataKota.getNamaKota());
-            Scene4B scene4b = new Scene4B(stage, this.dataKota, dataKota.getScene4BUmkmImageUrl1(), dataKota.getScene4BUmkmName1(), dataKota.getScene4BUmkmRatingUrl1(), dataKota.getScene4BLocationDetail1(), dataKota.getScene4BProductDetail1(), dataKota.getScene4BContactDetail1());
+            Scene4B scene4b = new Scene4B(stage, userAccount,this.dataKota, dataKota.getScene4BUmkmImageUrl1(), dataKota.getScene4BUmkmName1(), dataKota.getScene4BUmkmRatingUrl1(), dataKota.getScene4BLocationDetail1(), dataKota.getScene4BProductDetail1(), dataKota.getScene4BContactDetail1());
             scene4b.show();
         });
 
@@ -200,12 +210,12 @@ public class Scene3 extends SceneUtil implements Show{
 
         umkmNameContainers[1].setOnAction(v ->{
             this.dataKota = DataKotaControllerScene4B.getDataKota(this.dataKota.getNamaKota());
-            Scene4B scene4b = new Scene4B(stage, this.dataKota, dataKota.getScene4BUmkmImageUrl2(), dataKota.getScene4BUmkmName2(), dataKota.getScene4BUmkmRatingUrl2(), dataKota.getScene4BLocationDetail2(), dataKota.getScene4BProductDetail2(), dataKota.getScene4BContactDetail2());
+            Scene4B scene4b = new Scene4B(stage, userAccount,this.dataKota, dataKota.getScene4BUmkmImageUrl2(), dataKota.getScene4BUmkmName2(), dataKota.getScene4BUmkmRatingUrl2(), dataKota.getScene4BLocationDetail2(), dataKota.getScene4BProductDetail2(), dataKota.getScene4BContactDetail2());
             scene4b.show();
         });
         umkmContainer[1].setOnMouseClicked(v ->{
             this.dataKota = DataKotaControllerScene4B.getDataKota(this.dataKota.getNamaKota());
-            Scene4B scene4b = new Scene4B(stage, this.dataKota, dataKota.getScene4BUmkmImageUrl2(), dataKota.getScene4BUmkmName2(), dataKota.getScene4BUmkmRatingUrl2(), dataKota.getScene4BLocationDetail2(), dataKota.getScene4BProductDetail2(), dataKota.getScene4BContactDetail2());
+            Scene4B scene4b = new Scene4B(stage, userAccount,this.dataKota, dataKota.getScene4BUmkmImageUrl2(), dataKota.getScene4BUmkmName2(), dataKota.getScene4BUmkmRatingUrl2(), dataKota.getScene4BLocationDetail2(), dataKota.getScene4BProductDetail2(), dataKota.getScene4BContactDetail2());
             scene4b.show();
         });
 
@@ -214,12 +224,12 @@ public class Scene3 extends SceneUtil implements Show{
 
         umkmNameContainers[2].setOnAction(v ->{
             this.dataKota = DataKotaControllerScene4B.getDataKota(this.dataKota.getNamaKota());
-            Scene4B scene4b = new Scene4B(stage, this.dataKota, dataKota.getScene4BUmkmImageUrl3(), dataKota.getScene4BUmkmName3(), dataKota.getScene4BUmkmRatingUrl3(), dataKota.getScene4BLocationDetail3(), dataKota.getScene4BProductDetail3(), dataKota.getScene4BContactDetail3());
+            Scene4B scene4b = new Scene4B(stage, userAccount,this.dataKota, dataKota.getScene4BUmkmImageUrl3(), dataKota.getScene4BUmkmName3(), dataKota.getScene4BUmkmRatingUrl3(), dataKota.getScene4BLocationDetail3(), dataKota.getScene4BProductDetail3(), dataKota.getScene4BContactDetail3());
             scene4b.show();
         });
         umkmContainer[2].setOnMouseClicked(v ->{
             this.dataKota = DataKotaControllerScene4B.getDataKota(this.dataKota.getNamaKota());
-            Scene4B scene4b = new Scene4B(stage, this.dataKota, dataKota.getScene4BUmkmImageUrl3(), dataKota.getScene4BUmkmName3(), dataKota.getScene4BUmkmRatingUrl3(), dataKota.getScene4BLocationDetail3(), dataKota.getScene4BProductDetail3(), dataKota.getScene4BContactDetail3());
+            Scene4B scene4b = new Scene4B(stage, userAccount,this.dataKota, dataKota.getScene4BUmkmImageUrl3(), dataKota.getScene4BUmkmName3(), dataKota.getScene4BUmkmRatingUrl3(), dataKota.getScene4BLocationDetail3(), dataKota.getScene4BProductDetail3(), dataKota.getScene4BContactDetail3());
             scene4b.show();
         });
 

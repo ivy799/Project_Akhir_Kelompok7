@@ -52,21 +52,24 @@ public class Scene2 extends SceneUtil implements Show{
         Label subText = new Label("EXSPLORE NUSANTARA");
         subText.setId("subText");
 
-        Button backButton = new Button("BACK");
-        backButton.setId("backButton");
-        HBox backButtonContainer = createHBox(0, Pos.TOP_RIGHT, null, backButton);
-        backButtonContainer.setPadding(new Insets(10));
+
+        
+        ImageView profilIcon = new ImageView(new Image("/image/LayoutImage/icon3.png"));
+        HBox profilButtonContainer = createHBox(0, Pos.TOP_RIGHT, null, profilIcon);
+        profilButtonContainer.setPadding(new Insets(10));
+        profilIcon.setId("profileButton");
+
 
 
         SceneUtil factory = new SceneUtil();
         BorderPane recomend1 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg1.png", "BALI", event -> {
             DataKota dataKota = DataKotaControllerScene3.getDataKota("BALI");
-            Scene3 scene3 = new Scene3(stage, dataKota);
+            Scene3 scene3 = new Scene3(stage, dataKota,userAccount);
             scene3.show();
         });
         recomend1.setOnMouseClicked(v ->{
             DataKota dataKota = DataKotaControllerScene3.getDataKota("BALI");
-            Scene3 scene3 = new Scene3(stage, dataKota);
+            Scene3 scene3 = new Scene3(stage, dataKota,userAccount);
             scene3.show();
         });
 
@@ -75,12 +78,12 @@ public class Scene2 extends SceneUtil implements Show{
 
         BorderPane recomend2 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg2.png", "SURABAYA", event -> {
             DataKota dataKota = DataKotaControllerScene3.getDataKota("SURABAYA");
-            Scene3 scene3 = new Scene3(stage, dataKota);
+            Scene3 scene3 = new Scene3(stage, dataKota,userAccount);
             scene3.show();
         }); 
         recomend2.setOnMouseClicked(v ->{
             DataKota dataKota = DataKotaControllerScene3.getDataKota("SURABAYA");
-            Scene3 scene3 = new Scene3(stage, dataKota);
+            Scene3 scene3 = new Scene3(stage, dataKota,userAccount);
             scene3.show();
         });
 
@@ -89,24 +92,24 @@ public class Scene2 extends SceneUtil implements Show{
         
         BorderPane recomend3 = factory.createRecomendPane("/image/LayoutImage/Scene2RecomendImg3.png", "MAKASSAR", event -> {
             DataKota dataKota = DataKotaControllerScene3.getDataKota("MAKASSAR");
-            Scene3 scene3 = new Scene3(stage, dataKota);
+            Scene3 scene3 = new Scene3(stage, dataKota,userAccount);
             scene3.show();
         });
         recomend3.setOnMouseClicked(v ->{
             DataKota dataKota = DataKotaControllerScene3.getDataKota("MAKASSAR");
-            Scene3 scene3 = new Scene3(stage, dataKota);
+            Scene3 scene3 = new Scene3(stage, dataKota,userAccount);
             scene3.show();
         });
 
 
 
-        VBox recomendContainer = new VBox(10);
+        VBox recomendContainer = new VBox(5);
         recomendContainer.setAlignment(Pos.CENTER);
         recomendContainer.setId("recomendContainer");
         recomendContainer.getChildren().addAll(logo,subText,recomend1,recomend2,recomend3);
         HBox container2 = createHBox(0, Pos.CENTER, "container2", recomendContainer);
         VBox container3 = new VBox();
-        container3.getChildren().addAll(backButtonContainer,container2);
+        container3.getChildren().addAll(profilButtonContainer,container2);
 
 
 
@@ -174,7 +177,7 @@ public class Scene2 extends SceneUtil implements Show{
 
         
         //button event listener
-        backButton.setOnAction(V -> {
+        profilIcon.setOnMouseClicked(V -> {
             profile userAccount = new profile(stage, this.userAccount);
             userAccount.show();
         });
@@ -184,7 +187,7 @@ public class Scene2 extends SceneUtil implements Show{
         listView.setOnMouseClicked(e -> {
             String selectedCity = listView.getSelectionModel().getSelectedItem();
             DataKota dataKota = DataKotaControllerScene3.getDataKota(selectedCity);
-            Scene3 scene3 = new Scene3(stage,dataKota);
+            Scene3 scene3 = new Scene3(stage,dataKota,userAccount);
             scene3.show();
         });
 

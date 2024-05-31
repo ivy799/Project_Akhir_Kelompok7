@@ -15,17 +15,20 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import projek.controller.DataKotaControllerScene3;
 import projek.model.DataKota;
+import projek.model.DataUser;
 
 
 
 public class Scene4A extends Scene3{
     private DataKota dataKota;
+    private DataUser userAccount;
     private Stage stage;
     private String getScene4ATripDetail,getScene4ATripImageUrl,getScene4ATripName,getScene4ATripRatingUrl;
 
     // Constructor
-    public Scene4A(Stage stage, DataKota dataKota,String getScene4ATripDetail, String getScene4ATripImageUrl,String getScene4ATripName, String getScene4ATripRatingUrl ) {
+    public Scene4A(Stage stage, DataUser userAccount,DataKota dataKota,String getScene4ATripDetail, String getScene4ATripImageUrl,String getScene4ATripName, String getScene4ATripRatingUrl ) {
         this.stage = stage;
+        this.userAccount = userAccount;
         this.dataKota = dataKota;
         this.getScene4ATripDetail = getScene4ATripDetail;
         this.getScene4ATripImageUrl = getScene4ATripImageUrl;
@@ -62,7 +65,7 @@ public class Scene4A extends Scene3{
         //button event listener
         backButton.setOnAction(V -> {
             this.dataKota = DataKotaControllerScene3.getDataKota(dataKota.getNamaKota());
-            Scene3 scene3 = new Scene3(stage,this.dataKota);
+            Scene3 scene3 = new Scene3(stage,this.dataKota,userAccount);
             scene3.show();
         });
 

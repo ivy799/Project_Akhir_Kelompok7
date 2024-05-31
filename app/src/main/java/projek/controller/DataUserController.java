@@ -44,21 +44,12 @@ public class DataUserController extends DBconfig{
         return false;
     }
 
-    public static void addUser(DataUser userData) {
-        if (usernameExists(userData.getUsername())) {
+    public static void addUser(DataUser userData ) {
+        if (usernameExists(userData.getUsername())|| emailExists(userData.getEmail())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Sign up Failed");
             alert.setHeaderText(null);
-            alert.setContentText("Username already exists!");
-            alert.showAndWait();
-            return;
-        }
-
-        if (emailExists(userData.getEmail())) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Sign up Failed");
-            alert.setHeaderText(null);
-            alert.setContentText("Email already exists!");
+            alert.setContentText("Username or Email already exists!");
             alert.showAndWait();
             return;
         }
@@ -114,4 +105,22 @@ public class DataUserController extends DBconfig{
         }
         return userData;
     }
+
+    public static boolean updateUserDetails(String username, String newUserName, String newEmail, String newPassword) {
+        String query = "UPDATE userData SET username = ?, email = ?, password = ? WHERE username = ?";
+        try {
+            getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, newUserName);
+            preparedStatement.setString(2, newEmail);
+            preparedStatement.setString(3, newPassword);
+            preparedStatement.setString(4, username);
+            int updatedRows = preparedStatement.executeUpdate();
+            return updatedRows > 0;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+    
 }

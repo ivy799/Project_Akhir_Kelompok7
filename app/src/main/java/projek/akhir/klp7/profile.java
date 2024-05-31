@@ -1,8 +1,10 @@
 package projek.akhir.klp7;
 
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -31,6 +33,7 @@ public class profile extends SceneUtil{
         //header
         Button backButton = new Button("BACK");
         backButton.setId("backButton");
+        backButton.setPadding(new Insets(10));
 
         HBox buttonContainer = createHBox(0, Pos.CENTER_RIGHT, null, backButton);
 
@@ -47,31 +50,45 @@ public class profile extends SceneUtil{
         Button editProfile = new Button("EDIT PROFILE");
         editProfile.setId("editButton");
 
-        Image profilImage = new Image("/image/LayoutImage/profile0.png");
+        Image profilImage = new Image("/image/LayoutImage/icon1.png");
         ImageView profileImageContainer = new ImageView(profilImage);
 
+        ImageView logoutButton = new ImageView(new Image("/image/LayoutImage/logoutImg.png"));
+        logoutButton.setId("logoutImg");
+        HBox logoutBox = createHBox(0, Pos.CENTER_LEFT, null, logoutButton);
+        logoutBox.setPadding(new Insets(10));
+
         VBox profileField = createVBox(10, Pos.CENTER, "profileField", username,email,password);
-        VBox container1 = createVBox(40, Pos.CENTER, "container1", profileImageContainer,profileField,editProfile);
+        VBox container1 = createVBox(20, Pos.CENTER, "container1", profileImageContainer,profileField,editProfile,logoutBox);
 
 
         //edit profile section
-        Image editProfilImage = new Image("/image/LayoutImage/profile0.png");
+        Image editProfilImage = new Image("/image/LayoutImage/icon2.png");
         ImageView editProfileImageContainer = new ImageView(editProfilImage);
 
+        Label editText = new Label("Masukkan profil baru anda !");
+        editText.setId("editText");
 
         TextField editUsername = new TextField();
         editUsername.setId("profileText");
+        editUsername.setPromptText("Enter new username");
+
         TextField editEmail = new TextField();
         editEmail.setId("profileText");
+        editEmail.setPromptText("Enter new email adress");
+
+        TextField editPassword = new TextField();
+        editPassword.setId("profileText");
+        editPassword.setPromptText("Enter new password");
 
         Button updateButton = new Button("UPDATE");
         updateButton.setId("editButton");
-        updateButton.setPadding(new Insets(40,0,0,0));
+        updateButton.setPadding(new Insets(5));
 
-        VBox textFieldContainer = createVBox(10, Pos.CENTER, "textFieldContainer", editUsername,editEmail);
+        VBox textFieldContainer = createVBox(10, Pos.CENTER, "textFieldContainer", editUsername,editEmail,editPassword);
         VBox container2 = createVBox(10, Pos.CENTER, "container2", editProfileImageContainer);
 
-        VBox container3 = createVBox(10, Pos.CENTER, "container3", textFieldContainer,updateButton);
+        VBox container3 = createVBox(20, Pos.CENTER, "container3", editText, textFieldContainer,updateButton);
 
         HBox container4 = createHBox(40, Pos.CENTER, "container4", container2,container3);
         container4.setOpacity(0);
@@ -96,7 +113,32 @@ public class profile extends SceneUtil{
         });
 
         updateButton.setOnAction(v ->{
-            
+            String newUsername = editUsername.getText();
+            String newEmail = editEmail.getText();
+            String newPassword = editPassword.getText();
+
+            boolean updateStatus = DataUserController.updateUserDetails(username.getText(), newUsername, newEmail, newPassword);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            if (updateStatus) {
+                user.setUsername(newUsername);
+                user.setEmail(newEmail);
+                user.setPassword(newPassword); // Assuming you have a setPassword method
+
+                alert.setTitle("Update Successful");
+                alert.setHeaderText(null);
+                alert.setContentText("User details updated successfully!");
+            }else{
+                alert.setAlertType(Alert.AlertType.ERROR);
+                alert.setTitle("Update Failed");
+                alert.setHeaderText(null);
+                alert.setContentText("Failed to update user details. Please try again.");
+            }
+        });
+
+
+        logoutButton.setOnMouseClicked(v ->{
+            LoginScene loginScene = new LoginScene(stage);
+            loginScene.show();
         });
 
 

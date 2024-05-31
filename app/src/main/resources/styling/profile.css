@@ -7,6 +7,11 @@
     -fx-background-color: transparent;
     -fx-font-size:15px;
     -fx-text-fill:white;
+    -fx-font-weight: bold;
+}
+#backButton:hover{
+    -fx-cursor: hand;
+    -fx-text-fill:rgb(206, 205, 205);
 }
 
 
@@ -20,16 +25,26 @@
 #profileText{
     -fx-background-color: #001B48;
     -fx-text-fill:#ffffff;
-    -fx-border-radius: 10;
+    -fx-background-radius: 10;
     -fx-min-height: 27;
     -fx-min-width: 179;
+    -fx-padding : 10px;
 }
 
 #editButton{
-    -fx-background-color: transparent;
+    -fx-background-color: #a5a5a5;
     -fx-font-size:15px;
     -fx-text-fill:#001B48;
     -fx-font-weight: bold;
+}
+#editButton:hover{
+    -fx-cursor: hand;
+    -fx-text-fill:#002e7e;
+}
+
+#logoutImg:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 0.7;
 }
 
 
@@ -41,6 +56,12 @@
     -fx-max-height: 291;
     -fx-min-width: 750;
     -fx-background-radius: 20px;
+}
+
+#editText {
+    -fx-font-size:15px;
+    -fx-text-fill:#001B48;
+    -fx-font-weight: bold;
 }
 
 

@@ -223,13 +223,6 @@ public class LoginScene extends SceneUtil implements Show {
                 // Proceed with creating the user account
                 DataUser userAccount = new DataUser(username, email, password);
                 DataUserController.addUser(userAccount);
-        
-                // Show success message
-                Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setTitle("Sign Up Success");
-                alert.setHeaderText(null);
-                alert.setContentText("Account has been created successfully! Go to Login Page");
-                alert.showAndWait();
             }
         });
 

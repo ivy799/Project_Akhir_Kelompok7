@@ -15,15 +15,18 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import projek.controller.DataKotaControllerScene3;
 import projek.model.DataKota;
+import projek.model.DataUser;
 
 public class Scene4B extends Scene3{
     private DataKota dataKota;
+    private DataUser userAccount;
     private Stage stage;
     private String Scene4BUmkmImageUrl,Scene4BUmkmName,Scene4BUmkmRatingUrl,Scene4BLocationDetail,Scene4BProductDetail,Scene4BContactDetail;
 
     //constructor
-    public Scene4B(Stage stage, DataKota dataKota, String Scene4BUmkmImageUrl,String Scene4BUmkmName,String Scene4BUmkmRatingUrl,String Scene4BLocationDetail,String Scene4BProductDetail,String Scene4BContactDetail) {
+    public Scene4B(Stage stage,DataUser userAccount, DataKota dataKota, String Scene4BUmkmImageUrl,String Scene4BUmkmName,String Scene4BUmkmRatingUrl,String Scene4BLocationDetail,String Scene4BProductDetail,String Scene4BContactDetail) {
         this.stage = stage;
+        this.userAccount = userAccount;
         this.dataKota = dataKota;
         this.Scene4BUmkmImageUrl = Scene4BUmkmImageUrl;
         this.Scene4BUmkmName = Scene4BUmkmName;
@@ -51,7 +54,7 @@ public class Scene4B extends Scene3{
         backButton.setId("HeaderButton");
         backButton.setOnAction(V -> {
             this.dataKota = DataKotaControllerScene3.getDataKota(dataKota.getNamaKota());
-            Scene3 scene3 = new Scene3(stage,this.dataKota);
+            Scene3 scene3 = new Scene3(stage,this.dataKota,userAccount);
             scene3.show();
         });
         
