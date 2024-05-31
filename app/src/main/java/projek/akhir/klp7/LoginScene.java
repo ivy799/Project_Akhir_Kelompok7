@@ -5,6 +5,7 @@ import javafx.animation.PathTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart.Data;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -99,7 +100,7 @@ public class LoginScene extends SceneUtil implements Show {
         usernameTF2.setPromptText("Username");
         usernameTF2.setId("userTextField");
 
-        PasswordField passwordTF2 = new PasswordField();
+        TextField passwordTF2 = new TextField();
         passwordTF2.setPromptText("Password");
         passwordTF2.setId("userTextField");
 
@@ -194,7 +195,8 @@ public class LoginScene extends SceneUtil implements Show {
                 boolean loginSuccessful = DataUserController.loginUser(username, password);
                 if (loginSuccessful) {
                     System.out.println("Login successful!");
-                    Scene2 scene2 = new Scene2(stage);
+                    DataUser userAccount = new DataUser(username, password);
+                    Scene2 scene2 = new Scene2(stage,userAccount);
                     scene2.show();
                 } else {
                     Alert alert = new Alert(AlertType.ERROR);

@@ -12,6 +12,16 @@ public class DataUser {
         this.password = password;
     }
 
+    
+
+
+    public DataUser(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
+
+
+
 
     public String getUsername() {
         return username;

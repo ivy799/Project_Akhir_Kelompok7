@@ -88,6 +88,11 @@
     -fx-background-radius: 10;
 }
 
+#rightImage:hover{
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}
+
 #rightContainer{
     -fx-min-width: 577;
     -fx-min-height: 255;
@@ -147,4 +152,9 @@
     -fx-text-fill:white;
     -fx-font-size:40px;
     -fx-font-weight: bold; 
+}
+
+#umkm:hover{
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
 }
