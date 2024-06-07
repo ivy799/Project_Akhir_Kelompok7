@@ -84,6 +84,7 @@
 
 #rightImage{
     -fx-min-width: 140;
+    -fx-max-width: 140;
     -fx-min-height: 122;
     -fx-background-radius: 10;
 }
@@ -113,9 +114,7 @@
 }
 
 #tripName:hover{
-    /* -fx-text-fill:rgb(193, 193, 193); */
     -fx-cursor: hand;
-    -fx-font-size:13px;
 }
 
 #umkm{

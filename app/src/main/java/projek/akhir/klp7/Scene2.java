@@ -129,21 +129,28 @@ public class Scene2 extends SceneUtil implements Show{
 
         ListView<String> listView = new ListView<>();
         ObservableList<String> cityNames = FXCollections.observableArrayList(
-                "BALI",
-                "MAKASSAR",
-                "BULUKUMBA",
-                "BONE",
-                "GOWA",
-                "BANDUNG",
-                "JAKARTA",
-                "SOLO",
-                "PARE-PARE",
-                "BALI",
-                "JOGJA",
-                "SURABAYA",
-                "YOGYAKARTA"
-                );
+            "BALI",
+            "MAKASSAR",
+            "LOMBOK",
+            "KENDARI",
+            "BANDUNG",
+            "JAKARTA",
+            "SOLO",
+            "PARE-PARE",
+            "PALEMBANG",
+            "BOGOR",
+            "SURABAYA",
+            "YOGYAKARTA",
+            "MEDAN",
+            "BATAM",
+            "PADANG",
+            "PONTIANAK",
+            "SAMARINDA",
+            "BANDA ACEH",
+            "AMBON"
+        );
 
+        
         searchButton.setOnAction(e -> {
             String cityToSearch = searchBar.getText().toUpperCase().trim();
             if (cityToSearch.isEmpty()) {

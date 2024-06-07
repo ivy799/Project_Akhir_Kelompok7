@@ -5,7 +5,6 @@ import javafx.animation.PathTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.chart.PieChart.Data;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -24,6 +23,8 @@ import javafx.util.Duration;
 import projek.controller.DataUserController;
 import projek.model.DataUser;
 import javafx.scene.control.PasswordField;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 
 public class LoginScene extends SceneUtil implements Show {
@@ -213,14 +214,41 @@ public class LoginScene extends SceneUtil implements Show {
             String email = emailTF2.getText();
             String password = passwordTF2.getText();
         
+            // Define regex patterns
+            Pattern emailPattern = Pattern.compile("^[a-zA-Z0-9._%+-]+@gmail\\.com$");
+            Pattern usernamePattern = Pattern.compile("^(?=.*[A-Z]).{5,}$");
+            Pattern passwordPattern = Pattern.compile("^.{8,}$");
+        
+            // Match patterns with input
+            Matcher emailMatcher = emailPattern.matcher(email);
+            Matcher usernameMatcher = usernamePattern.matcher(username);
+            Matcher passwordMatcher = passwordPattern.matcher(password);
+        
             if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Sign Up Error");
                 alert.setHeaderText(null);
                 alert.setContentText("All fields must be filled out.");
                 alert.showAndWait();
+            } else if (!emailMatcher.matches()) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Sign Up Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Email must be in format@gmail.com.");
+                alert.showAndWait();
+            } else if (!usernameMatcher.matches()) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Sign Up Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Username must contain a capital letter and be more than 5 characters long.");
+                alert.showAndWait();
+            } else if (!passwordMatcher.matches()) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Sign Up Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Password must be at least 8 characters long.");
+                alert.showAndWait();
             } else {
-                // Proceed with creating the user account
                 DataUser userAccount = new DataUser(username, email, password);
                 DataUserController.addUser(userAccount);
             }

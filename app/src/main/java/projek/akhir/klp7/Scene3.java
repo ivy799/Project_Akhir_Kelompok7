@@ -33,7 +33,7 @@ import projek.model.DataUser;
 
 public class Scene3 extends SceneUtil implements Show{
     private Stage stage;
-    protected DataKota dataKota;
+    private DataKota dataKota;
     private DataUser userAccount;
 
     public Scene3() {
