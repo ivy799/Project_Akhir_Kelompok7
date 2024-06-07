@@ -58,6 +58,7 @@ B. User
 
 ## Penjelasan Penerapan Prinsip OOP
 1. Pada loginScene.java, terdapat class loginScene yang mewarisi class SceneUtil,dan mengimplementasikan method show dari interface Show. Selain itu, semua variabel bertipe private. (Inheritance, Abstraction, Encapsulation, dan Polimorfisme)
+
     ● Inheritance: loginScene mewarisi SceneUtil.
     ● Abstraction: Mengimplementasikan method abstract show dari interface Show.
     ● Encapsulation: Semua variabel dalam loginScene bertipe private.
@@ -65,6 +66,7 @@ B. User
 
 
 2. Pada scene2.java, terdapat class scene2 yang mewarisi class SceneUtil, dan mengimplementasikan method show dari interface Show. Selain itu, semua variabel bertipe private. (Inheritance, Abstraction, Encapsulation, dan Polimorfisme)
+
     ● Inheritance: scene2 mewarisi SceneUtil.
     ● Abstraction: Mengimplementasikan method show dari interface Show.
     ● Encapsulation: Semua variabel dalam scene2 bertipe private.
@@ -72,6 +74,7 @@ B. User
 
 
 3. Pada scene3.java, terdapat class scene3 yang mewarisi class SceneUtil, dan mengimplementasikan method show dari interface Show. Selain itu, semua variabel bertipe private. (Inheritance, Abstraction, Encapsulation, dan Polimorfisme).
+
     ● Inheritance: scene3 mewarisi SceneUtil.
     ● Abstraction: Mengimplementasikan method show dari interface Show.
     ● Encapsulation: Semua variabel dalam scene3 bertipe private.
@@ -79,12 +82,14 @@ B. User
 
 
 4. Pada scene4A.java, terdapat class scene4A yang mewarisi class scene3. Semua variabel dalam scene4A bertipe private, dan menggunakan method show. (Inheritance,Encapsulation, dan Polimorfisme)
+
     ● Inheritance: scene4A mewarisi scene3.
     ● Encapsulation: Semua variabel dalam scene4A bertipe private.
     ● Polimorfisme: Menggunakan method show dari class scene3.
 
 
 5. Pada profile.java, terdapat class profile yang mewarisi class sceneUtil. Semua variabel dalam class profile bertipe private, dan menggunakan method show. (Inheritance, Encapsulation, dan Polimorfisme)
+
     ● Inheritance: scene profile mewarisi sceneUtil.
     ● Encapsulation: Semua variabel dalam sceneProfile bertipe private.
     ● Polimorfisme: Membuat implementasi berbeda method abstract show dari interface Show.
