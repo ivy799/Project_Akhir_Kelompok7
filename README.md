@@ -1,6 +1,6 @@
 # TravelReview
 
-    EXSA adalah aplikasi yang bertujuan untuk memperkenalkan dan mempromosikan kekayaan budaya serta barang khas dari berbagai daerah di Indonesia. 
+EXSA adalah aplikasi yang bertujuan untuk memperkenalkan dan mempromosikan kekayaan budaya serta barang khas dari berbagai daerah di Indonesia. 
 
 ## Group Name : HepstarExplorers
 Nama Anggota :
@@ -17,10 +17,10 @@ Nama Anggota :
   2.  Kak Djul
 
 ## Executive Summary
-    EXSA adalah aplikasi yang bertujuan untuk memperkenalkan dan mempromosikan kekayaan budaya serta barang khas dari berbagai daerah di Indonesia. 
+EXSA adalah aplikasi yang bertujuan untuk memperkenalkan dan mempromosikan kekayaan budaya serta barang khas dari berbagai daerah di Indonesia. 
 
 ### 1. Latar Belakang
-    Kurangnya informasi yang sering dialami oleh wisatawan saat mengunjungi daerah baru menjadi masalah yang perlu diatasi. Hal ini dapat menghambat wisatawan dalam mengeksplorasi dan memahami lebih dalam tentang kekayaan budaya serta barang khas darisuatu daerah di Indonesia.
+Kurangnya informasi yang sering dialami oleh wisatawan saat mengunjungi daerah baru menjadi masalah yang perlu diatasi. Hal ini dapat menghambat wisatawan dalam mengeksplorasi dan memahami lebih dalam tentang kekayaan budaya serta barang khas darisuatu daerah di Indonesia.
 
 
 ### 2. Masalah yang diatasi
@@ -38,7 +38,7 @@ Nama Anggota :
 
 
 ### 3. Alasan Pemilihan Projek ini
-    Alasan kami memilih project ini adalah karena Indonesia memiliki potensi besar dalam hal pariwisata budaya dan ekonomi kreatif. Aplikasi ini dapat membantu membuka peluang baru bagi wisatawan dan pelaku usaha lokal dan Kurangnya informasi yang mudah diakses tentang budaya dan barang khas Indonesia merupakan masalah yang nyata yang dihadapi oleh wisatawan. Aplikasi ini hadir untuk menjawab kebutuhan tersebut
+Alasan kami memilih project ini adalah karena Indonesia memiliki potensi besar dalam hal pariwisata budaya dan ekonomi kreatif. Aplikasi ini dapat membantu membuka peluang baru bagi wisatawan dan pelaku usaha lokal dan Kurangnya informasi yang mudah diakses tentang budaya dan barang khas Indonesia merupakan masalah yang nyata yang dihadapi oleh wisatawan. Aplikasi ini hadir untuk menjawab kebutuhan tersebut
 
 ## Fitur Aplikasi
 A. General
@@ -123,5 +123,5 @@ interface Show.
 ![Detail UMKM](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/scene2B.png)
 
 ## Pengujian Pada Aplikasi
-![Table1](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/table.png)
+![Table1](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/table.jpg)
 
