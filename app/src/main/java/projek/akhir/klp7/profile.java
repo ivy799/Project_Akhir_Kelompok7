@@ -16,6 +16,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import projek.controller.DataUserController;
 import projek.model.DataUser;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class profile extends SceneUtil implements Show{
     private Stage stage;
@@ -112,26 +114,65 @@ public class profile extends SceneUtil implements Show{
             scene2.show();
         });
 
-        updateButton.setOnAction(v ->{
+        updateButton.setOnAction(v -> {
             String newUsername = editUsername.getText();
             String newEmail = editEmail.getText();
             String newPassword = editPassword.getText();
-
-            boolean updateStatus = DataUserController.updateUserDetails(username.getText(), newUsername, newEmail, newPassword);
+        
+            // Define regex patterns
+            Pattern emailPattern = Pattern.compile("^[a-zA-Z0-9._%+-]+@gmail\\.com$");
+            Pattern usernamePattern = Pattern.compile("^(?=.*[A-Z]).{6,}$");
+            Pattern passwordPattern = Pattern.compile("^.{8,}$");
+        
+            // Match patterns with input
+            Matcher emailMatcher = emailPattern.matcher(newEmail);
+            Matcher usernameMatcher = usernamePattern.matcher(newUsername);
+            Matcher passwordMatcher = passwordPattern.matcher(newPassword);
+        
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            if (updateStatus) {
-                user.setUsername(newUsername);
-                user.setEmail(newEmail);
-                user.setPassword(newPassword); // Assuming you have a setPassword method
-
-                alert.setTitle("Update Successful");
-                alert.setHeaderText(null);
-                alert.setContentText("User details updated successfully!");
-            }else{
+        
+            if (newUsername.isEmpty() || newEmail.isEmpty() || newPassword.isEmpty()) {
                 alert.setAlertType(Alert.AlertType.ERROR);
-                alert.setTitle("Update Failed");
+                alert.setTitle("Update Error");
                 alert.setHeaderText(null);
-                alert.setContentText("Failed to update user details. Please try again.");
+                alert.setContentText("All fields must be filled out.");
+                alert.showAndWait();
+            } else if (!emailMatcher.matches()) {
+                alert.setAlertType(Alert.AlertType.ERROR);
+                alert.setTitle("Update Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Email must be in format@gmail.com.");
+                alert.showAndWait();
+            } else if (!usernameMatcher.matches()) {
+                alert.setAlertType(Alert.AlertType.ERROR);
+                alert.setTitle("Update Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Username must contain a capital letter and be more than 5 characters long.");
+                alert.showAndWait();
+            } else if (!passwordMatcher.matches()) {
+                alert.setAlertType(Alert.AlertType.ERROR);
+                alert.setTitle("Update Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Password must be at least 8 characters long.");
+                alert.showAndWait();
+            } else {
+                boolean updateStatus = DataUserController.updateUserDetails(username.getText(), newUsername, newEmail, newPassword);
+                
+                if (updateStatus) {
+                    user.setUsername(newUsername);
+                    user.setEmail(newEmail);
+                    user.setPassword(newPassword); // Assuming you have a setPassword method
+        
+                    alert.setTitle("Update Successful");
+                    alert.setHeaderText(null);
+                    alert.setContentText("User details updated successfully!");
+                } else {
+                    alert.setAlertType(Alert.AlertType.ERROR);
+                    alert.setTitle("Update Failed");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Failed to update user details. Please try again.");
+                }
+                alert.showAndWait();
             }
         });
 

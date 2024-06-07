@@ -8,6 +8,7 @@
     -fx-font-size:15px;
     -fx-text-fill:white;
     -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 2, 2);
 }
 #backButton:hover{
     -fx-cursor: hand;
