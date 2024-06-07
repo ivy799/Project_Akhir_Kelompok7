@@ -82,6 +82,7 @@ interface Show.
 ● Polimorfisme: Menggunakan method show dari class scene3.
 
 5. Pada profile.java, terdapat class profile yang mewarisi class sceneUtil. Semua variabel dalam class profile bertipe private, dan menggunakan method show. (Inheritance, Encapsulation, dan Polimorfisme)
+
 ● Inheritance: scene profile mewarisi sceneUtil.
 ● Encapsulation: Semua variabel dalam sceneProfile bertipe private.
 ● Polimorfisme: Membuat implementasi berbeda method abstract show dari interface Show.
