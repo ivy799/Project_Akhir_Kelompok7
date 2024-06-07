@@ -1,4 +1,4 @@
-# TravelReview
+# EXSA
 
 EXSA adalah aplikasi yang bertujuan untuk memperkenalkan dan mempromosikan kekayaan budaya serta barang khas dari berbagai daerah di Indonesia. 
 
@@ -24,16 +24,16 @@ Kurangnya informasi yang sering dialami oleh wisatawan saat mengunjungi daerah b
 
 
 ### 2. Masalah yang diatasi
-1. Kurangnya Informasi
+1. Kurangnya Informasi : 
     Banyak wisatawan asing kesulitan dalam mendapatkan informasi yang tepat dan akurat mengenai tempat wisata, dll sehinng sulit untuk mengekplore indonesia. Informasi yang tersedia sering kali tersebar di berbagai sumber yang tidak terstruktur, atau tidak tersedia dalam bahasa yang mudah dipahami oleh wisatawan. Hal ini menyebabkan ketidakmampuan wisatawan untuk merencanakan perjalanan mereka dengan baik, sehingga mereka mungkin melewatkan pengalaman-pengalaman penting atau menghadapi kesulitan selama perjalanan.
 
 
-2. Keterbatasan Bahasa
+2. Keterbatasan Bahasa : 
     Indonesia adalah negara dengan bahasa yang beragam, dan Bahasa Indonesia menjadi bahasa resmi yang digunakan secara luas. Namun, banyak wisatawan asing yang tidak fasih berbahasa Indonesia, sehingga mereka kesulitan untuk berkomunikasi dengan penduduk lokal, memahami petunjuk atau informasi yang disediakan dalam bahasa Indonesia, dan berinteraksi dengan layanan publik. Keterbatasan ini seringkali menghambat wisatawan dalam mengeksplorasi dan menikmati pengalaman mereka di Indonesia.
 
 
 
-3. Kurangnya Pemahaman Tradisi Lokal
+3. Kurangnya Pemahaman Tradisi Lokal : 
     Indonesia memiliki tradisi dan budaya yang sangat beragam, yang menjadi daya tarik tersendiri bagi wisatawan. Namun, banyak wisatawan asing yang tidak memiliki pemahaman yang cukup tentang tradisi lokal, sehingga mereka mungkin melakukan tindakan yang dianggap tidak sopan atau tidak menghargai budaya setempat. Kurangnya pemahaman ini tidak hanya mengurangi kualitas pengalaman wisatawan, tetapi juga bisa menimbulkan ketegangan antara wisatawan dan penduduk lokal.
 
 
