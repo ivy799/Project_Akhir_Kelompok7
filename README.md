@@ -5,9 +5,9 @@
 ## Group Name : HepstarExplorers
 Nama Anggota :
 
-    1. H071231072 – Ahmad Rafly Putra Hasrun
-    2. H071231078 – Muhammad Raihan
-    3. H071231093 – Muh. Tegar Adyaksa
+1. H071231072 – Ahmad Rafly Putra Hasrun
+2. H071231078 – Muhammad Raihan
+3. H071231093 – Muh. Tegar Adyaksa
 
 ## Tema yang dipilih : Travel and Culture
 ## Nama Pendamping :  Kak ‘ Abd.Rafiq Anwar
@@ -17,28 +17,28 @@ Nama Anggota :
   2.  Kak Djul
 
 ## Executive Summary
-EXSA adalah aplikasi yang bertujuan untuk memperkenalkan dan mempromosikan kekayaan budaya serta barang khas dari berbagai daerah di Indonesia. 
+    EXSA adalah aplikasi yang bertujuan untuk memperkenalkan dan mempromosikan kekayaan budaya serta barang khas dari berbagai daerah di Indonesia. 
 
 ### 1. Latar Belakang
-Kurangnya informasi yang sering dialami oleh wisatawan saat mengunjungi daerah baru menjadi masalah yang perlu diatasi. Hal ini dapat menghambat wisatawan dalam mengeksplorasi dan memahami lebih dalam tentang kekayaan budaya serta barang khas darisuatu daerah di Indonesia.
+    Kurangnya informasi yang sering dialami oleh wisatawan saat mengunjungi daerah baru menjadi masalah yang perlu diatasi. Hal ini dapat menghambat wisatawan dalam mengeksplorasi dan memahami lebih dalam tentang kekayaan budaya serta barang khas darisuatu daerah di Indonesia.
 
 
 ### 2. Masalah yang diatasi
 1. Kurangnya Informasi
-Banyak wisatawan asing kesulitan dalam mendapatkan informasi yang tepat dan akurat mengenai tempat wisata, dll sehinng sulit untuk mengekplore indonesia. Informasi yang tersedia sering kali tersebar di berbagai sumber yang tidak terstruktur, atau tidak tersedia dalam bahasa yang mudah dipahami oleh wisatawan. Hal ini menyebabkan ketidakmampuan wisatawan untuk merencanakan perjalanan mereka dengan baik, sehingga mereka mungkin melewatkan pengalaman-pengalaman penting atau menghadapi kesulitan selama perjalanan.
+    Banyak wisatawan asing kesulitan dalam mendapatkan informasi yang tepat dan akurat mengenai tempat wisata, dll sehinng sulit untuk mengekplore indonesia. Informasi yang tersedia sering kali tersebar di berbagai sumber yang tidak terstruktur, atau tidak tersedia dalam bahasa yang mudah dipahami oleh wisatawan. Hal ini menyebabkan ketidakmampuan wisatawan untuk merencanakan perjalanan mereka dengan baik, sehingga mereka mungkin melewatkan pengalaman-pengalaman penting atau menghadapi kesulitan selama perjalanan.
 
 
 2. Keterbatasan Bahasa
-Indonesia adalah negara dengan bahasa yang beragam, dan Bahasa Indonesia menjadi bahasa resmi yang digunakan secara luas. Namun, banyak wisatawan asing yang tidak fasih berbahasa Indonesia, sehingga mereka kesulitan untuk berkomunikasi dengan penduduk lokal, memahami petunjuk atau informasi yang disediakan dalam bahasa Indonesia, dan berinteraksi dengan layanan publik. Keterbatasan ini seringkali menghambat wisatawan dalam mengeksplorasi dan menikmati pengalaman mereka di Indonesia.
+    Indonesia adalah negara dengan bahasa yang beragam, dan Bahasa Indonesia menjadi bahasa resmi yang digunakan secara luas. Namun, banyak wisatawan asing yang tidak fasih berbahasa Indonesia, sehingga mereka kesulitan untuk berkomunikasi dengan penduduk lokal, memahami petunjuk atau informasi yang disediakan dalam bahasa Indonesia, dan berinteraksi dengan layanan publik. Keterbatasan ini seringkali menghambat wisatawan dalam mengeksplorasi dan menikmati pengalaman mereka di Indonesia.
 
 
 
 3. Kurangnya Pemahaman Tradisi Lokal
-Indonesia memiliki tradisi dan budaya yang sangat beragam, yang menjadi daya tarik tersendiri bagi wisatawan. Namun, banyak wisatawan asing yang tidak memiliki pemahaman yang cukup tentang tradisi lokal, sehingga mereka mungkin melakukan tindakan yang dianggap tidak sopan atau tidak menghargai budaya setempat. Kurangnya pemahaman ini tidak hanya mengurangi kualitas pengalaman wisatawan, tetapi juga bisa menimbulkan ketegangan antara wisatawan dan penduduk lokal.
+    Indonesia memiliki tradisi dan budaya yang sangat beragam, yang menjadi daya tarik tersendiri bagi wisatawan. Namun, banyak wisatawan asing yang tidak memiliki pemahaman yang cukup tentang tradisi lokal, sehingga mereka mungkin melakukan tindakan yang dianggap tidak sopan atau tidak menghargai budaya setempat. Kurangnya pemahaman ini tidak hanya mengurangi kualitas pengalaman wisatawan, tetapi juga bisa menimbulkan ketegangan antara wisatawan dan penduduk lokal.
 
 
 ### 3. Alasan Pemilihan Projek ini
-Alasan kami memilih project ini adalah karena Indonesia memiliki potensi besar dalam hal pariwisata budaya dan ekonomi kreatif. Aplikasi ini dapat membantu membuka peluang baru bagi wisatawan dan pelaku usaha lokal dan Kurangnya informasi yang mudah diakses tentang budaya dan barang khas Indonesia merupakan masalah yang nyata yang dihadapi oleh wisatawan. Aplikasi ini hadir untuk menjawab kebutuhan tersebut
+    Alasan kami memilih project ini adalah karena Indonesia memiliki potensi besar dalam hal pariwisata budaya dan ekonomi kreatif. Aplikasi ini dapat membantu membuka peluang baru bagi wisatawan dan pelaku usaha lokal dan Kurangnya informasi yang mudah diakses tentang budaya dan barang khas Indonesia merupakan masalah yang nyata yang dihadapi oleh wisatawan. Aplikasi ini hadir untuk menjawab kebutuhan tersebut
 
 ## Fitur Aplikasi
 A. General
@@ -57,26 +57,26 @@ B. User
   7. Memiliki fitur untuk berpindah scene dengan tombol navigasi
 
 ## Penjelasan Penerapan Prinsip OOP
-1.Pada loginScene.java, terdapat class loginScene yang mewarisi class SceneUtil,dan mengimplementasikan method show dari interface Show. Selain itu, semua variabel bertipe private. (Inheritance, Abstraction, Encapsulation, dan Polimorfisme)
+1. Pada loginScene.java, terdapat class loginScene yang mewarisi class SceneUtil,dan mengimplementasikan method show dari interface Show. Selain itu, semua variabel bertipe private. (Inheritance, Abstraction, Encapsulation, dan Polimorfisme)
 ● Inheritance: loginScene mewarisi SceneUtil.
 ● Abstraction: Mengimplementasikan method abstract show dari interface Show.
 ● Encapsulation: Semua variabel dalam loginScene bertipe private.
 ● Polimorfisme: Membuat implementasi berbeda untuk method abstract show dari interface Show.
 
-2.Pada scene2.java, terdapat class scene2 yang mewarisi class SceneUtil, dan mengimplementasikan method show dari interface Show. Selain itu, semua variabel bertipe private. (Inheritance, Abstraction, Encapsulation, dan Polimorfisme)
+2. Pada scene2.java, terdapat class scene2 yang mewarisi class SceneUtil, dan mengimplementasikan method show dari interface Show. Selain itu, semua variabel bertipe private. (Inheritance, Abstraction, Encapsulation, dan Polimorfisme)
 ● Inheritance: scene2 mewarisi SceneUtil.
 ● Abstraction: Mengimplementasikan method show dari interface Show.
 ● Encapsulation: Semua variabel dalam scene2 bertipe private.
 ● Polimorfisme: Membuat implementasi berbeda untuk method abstract show dari interface Show.
 
-3.Pada scene3.java, terdapat class scene3 yang mewarisi class SceneUtil, dan mengimplementasikan method show dari interface Show. Selain itu, semua variabel bertipe private. (Inheritance, Abstraction, Encapsulation, dan Polimorfisme).
+3. Pada scene3.java, terdapat class scene3 yang mewarisi class SceneUtil, dan mengimplementasikan method show dari interface Show. Selain itu, semua variabel bertipe private. (Inheritance, Abstraction, Encapsulation, dan Polimorfisme).
 ● Inheritance: scene3 mewarisi SceneUtil.
 ● Abstraction: Mengimplementasikan method show dari interface Show.
 ● Encapsulation: Semua variabel dalam scene3 bertipe private.
 ● Polimorfisme: Membuat implementasi berbeda untuk method abstract show dari
 interface Show.
 
-4.Pada scene4A.java, terdapat class scene4A yang mewarisi class scene3. Semua variabel dalam scene4A bertipe private, dan menggunakan method show. (Inheritance,Encapsulation, dan Polimorfisme)
+4. Pada scene4A.java, terdapat class scene4A yang mewarisi class scene3. Semua variabel dalam scene4A bertipe private, dan menggunakan method show. (Inheritance,Encapsulation, dan Polimorfisme)
 ● Inheritance: scene4A mewarisi scene3.
 ● Encapsulation: Semua variabel dalam scene4A bertipe private.
 ● Polimorfisme: Menggunakan method show dari class scene3.
@@ -86,7 +86,7 @@ interface Show.
 ● Encapsulation: Semua variabel dalam sceneProfile bertipe private.
 ● Polimorfisme: Membuat implementasi berbeda method abstract show dari interface Show.
 
-6.Pada DataKotaController.java, terdapat class DataKotaController yang mewarisi class DBconfig. (Inheritance)Inheritance: DataKotaController mewarisi DBconfig.
+6. Pada DataKotaController.java, terdapat class DataKotaController yang mewarisi class DBconfig. (Inheritance)Inheritance: DataKotaController mewarisi DBconfig.
 
 7. Pada UserDataController.java, terdapat class UserDataController yang mewarisi class DBconfig. (Inheritance)Inheritance: UserDataController mewarisi DBconfig.
 
@@ -105,23 +105,23 @@ interface Show.
 ![Login Scene](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/login.png)
 
 ### *Register Scene*
-![Register Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/RegisterScene.jpg)
+![Register Scene](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/register.png)
 
 ### *Home Scene*
-![Home Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/HomeScene.jpg)
+![Home Scene](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/home.png)
 
-### *List Tempat Wisata Scene*
-![Daftar Tempat](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/DaftarTempatWisata.jpg)
+### *Profile Scene*
+![Profile Scene](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/profil.png)
 
-### *Deskripsi Tempat Wisata Scene*
-![Detail Tempat](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/DetailTempatWisata.jpg)
+### *Detail Kota*
+![Detail Kota](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/scene1.png)
 
-### *Komentar dan Rating Scene*
-![Kommentar Rating](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/RatingUlasan.jpg)
+### *Detail Wisata*
+![Detail Wisata](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/scene2A.png)
 
-### *Profile User Scene*
-![Profile Scene](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/ProfileScene.jpg)
+### *Detail UMKM*
+![Detail UMKM](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/scene2B.png)
 
 ## Pengujian Pada Aplikasi
-![Table1](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/Table1.png)
-![Table2](https://github.com/CSE-9124/TravelReview-project/blob/main/readme/Table2.png)
+![Table1](https://github.com/ivy799/Project_Akhir_Kelompok7/blob/main/readme/table.png)
+
